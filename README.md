@@ -1,7 +1,7 @@
 # Recyclo
 
 <p>
-<b>Front-end do sistema "Recyclo"desenvolvido durante o 3º, 4º e 5º semestre do curso de Análise e Desenvolvimento de Sistemas FSV - Faculdade de São Vicente - Unibr.</b>
+<b>Front-end do sistema "Recyclo" desenvolvido durante o 3º, 4º e 5º semestre do curso de Análise e Desenvolvimento de Sistemas FSV - Faculdade de São Vicente - Unibr.</b>
 </p>
 
 ## Integrantes
