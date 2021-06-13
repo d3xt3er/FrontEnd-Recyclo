@@ -10,25 +10,33 @@
 
 <body>
     <p>Página em desenvolvimento...</p>
+    <div id="resultado"></div>
 </body>
 
-<!-- Utilizando a API -->
+<!-- Utilizando a API Atualizado -->
 <script>
-
-    var request = new Request('https://backend-recyclo.herokuapp.com/usuario/usuarios',
-        {
-            method: 'GET',
-            headers: new Headers({ 'Content-Type': 'application/json' })
-        });
+    var request = new Request('https://backend-recyclo.herokuapp.com/usuario/usuarios', {
+        method: 'GET',
+        headers: new Headers({
+            'Content-Type': 'application/json'
+        })
+    });
 
     fetch(request)
-        .then(resp => {
-            console.log(resp);
+        .then((response) => {
+            return response.json();
+            // console.log(resp);
+        }).then((data) => {
+
+            var name = data[0].nm_usuario;
+
+            document.getElementById("resultado").innerHTML = name;
+
+            console.log(data[0].nm_usuario);
         })
         .catch(err => {
             console.log(err);
         });
-
 </script>
 
 </html>
