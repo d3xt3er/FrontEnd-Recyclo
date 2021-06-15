@@ -16,37 +16,11 @@
     <img class="logo" src="img/LogoRecycloV1.png" width="200" height="200">
     <p class="subtitulo">Por um mundo mais verde a Recyclo ajuda você!</p>
 
-    <a class="pessoa">Sou Pessoa</a>
+    <a href="./login_usuario/index.html" class="pessoa">Sou Pessoa</a>
     <br>
     <a class="empresa">Sou Empresa</a>
 
     <footer>Copyright @Recyclo</footer>
 </body>
-
-<!-- Utilizando a API Atualizado -->
-<!-- <script>
-    var request = new Request('https://backend-recyclo.herokuapp.com/usuario/usuarios', {
-        method: 'GET',
-        headers: new Headers({
-            'Content-Type': 'application/json'
-        })
-    });
-
-    fetch(request)
-        .then((response) => {
-            return response.json();
-            // console.log(resp);
-        }).then((data) => {
-
-            var name = data[0].nm_usuario;
-
-            document.getElementById("resultado").innerHTML = name;
-
-            console.log(data[0].nm_usuario);
-        })
-        .catch(err => {
-            console.log(err);
-        });
-</script> -->
 
 </html>
