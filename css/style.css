@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+.pessoa {
+    width: 200px;
+    background-color: rgb(90, 190, 65);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 5%;
+}
+
+.pessoa:hover {
+    background-color: #ccc;
+    transition: 0.5s;
+}
+
+.empresa {
+    width: 200px;
+    background-color: rgb(90, 190, 65);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.empresa:hover {
+    background-color: #ccc;
+    transition: 0.5s;
+}
+
+footer {
+    padding: 20px;
+    position: fixed;
+    margin: 0 auto;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(90, 190, 65);
+    color: white;
+    /* text-align: center; */
+}
+
+.logo {
+    margin-top: 60px;
+}
+
+.subtitulo {
+    margin-top: 3%;
+}
+
+
+/* Mobile */
+
+@media only screen and (max-width: 600px) {
+    footer {
+        text-align: center;
+        background-color: blue;
+        font-size: 12px;
+        padding: 15px;
+    }
+    .pessoa {
+        margin-top: 80px;
+    }
+}
