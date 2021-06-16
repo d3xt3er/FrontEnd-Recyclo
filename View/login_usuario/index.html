@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="../img/LogoRecycloV1.png">
+    <title>Login - Pessoa</title>
+</head>
+
+<body>
+    <div>
+        <form onsubmit="login()" method="GET">
+            <h3>Login</h3>
+            <input class="input" required type="text" placeholder="Email:example@.com" id="nome" name="nome">
+            <input class="input" required type="password" id="senha"placeholder="Senha:" name="senha">
+            <input id="btnLogin" type="submit" value="Entrar">
+        </form>
+        <button id="btnCadastro" onclick="goCadastro()" >Cadastro</button>
+    </div>
+</body>
+
+<script src="js/index.js"></script>
+
+</html>

@@ -27,3 +27,7 @@ function login(e) {
 
 
 }
+
+function goCadastro(){
+    location.replace("../cadastro_usuario/index.html");
+}
