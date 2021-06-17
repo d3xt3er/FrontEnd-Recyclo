@@ -1,33 +1,26 @@
-function login(e) {
-    e.preventDefault();
-
-    var nome = document.getElementById("nome").value;
-    var senha = document.getElementById("senha").value;
-
-    var request = new Request(`https://backend-recyclo.herokuapp.com/usuario/usuarios/login/${nome}/${senha}`, {
-        method: 'GET',
-        headers: new Headers({
-            'Content-Type': 'application/json'
-        }),
-        data: nome,
-        senha
-    });
-
-    fetch(request)
-        .then((response) => {
-            return response.json();
-        }).then((data) => {
-            console.log(data);
-
-        })
-        .catch(err => {
-            console.log(err);
+$(document).ready(function() {
+    $("form").submit(function(event) {
+        var formData = {
+            nome: $("#nome").val(),
+            senha: $("#senha").val(),
+        };
+        console.log(formData);
+        $.ajax({
+            type: "GET",
+            url: "https://backend-recyclo.herokuapp.com/usuario/login/",
+            data: formData,
+            dataType: "json",
+            encode: true,
+        }).then(function(data) {
+            alert(data);
+        }).catch(function(error) {
+            alert(error.responseText);
         });
 
+        event.preventDefault();
+    });
+});
 
-
-}
-
-function goCadastro(){
+function goCadastro() {
     location.replace("../cadastro_usuario/index.html");
 }
