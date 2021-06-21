@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="../img/LogoRecycloV1.png">
+    <title>Cadastro</title>
+</head>
+<body>
+    <div id="esquerda">
+        <img src="../img/LogoRecycloV1.png" onclick="location.replace('../index.html');">
+        <!-- Div com mesagem generica sobre o meio ambiente-->
+        <p> Nos ajude a tonar um mundo num lugar mais ecologico</p>
+    </div>
+    
+    <Div id="direita">
+        <!-- Selecao de cadastro-->
+        <div id="quadrado">
+            
+            <!--Aplicar hover e transformar em divs -->
+            <div id="selecao">
+                <a id="changeU" onclick="SwitchForm(false)">Usuario</a>   
+                <a id="changeE" onclick="SwitchForm(true)"> Empresa</a>
+            </div>
+
+            <!-- cadastro de Usuarios -->
+            <div id="formUsuario">
+                <form onsubmit="" method="GET" id="formUsuario" >
+                    <h3>Cadastro</h3>
+                    <input class="input" required type="text" placeholder="Nome:" id="Nome" name="nome">
+                    <input class="input" required type="text" placeholder="Email:example@.com" id="Email" name="Email">
+                    <input class="input" required type="number" placeholder="CPF:" id="Cpf" name="Cpf">
+                    <input class="input" required type="password" placeholder="Senha:" id="senha" name="senha">
+                    <input class="input" required type="password" placeholder="Confirme a sua senha: " id="ConfirmarSsenha" name="ConfirmarSenha">
+                    <input id="btnCadastrar" class="BtnOk" type="submit" value="Criar Conta">
+                </form>
+            </div>
+        
+            <!-- Cadastro de empresas -->
+            <div id="formEmpresa">
+                <form onsubmit="" method="GET" type="hidden" name="formEmpresa">
+                    <h3>Cadastro de Empresas</h3>
+                    <input class="input" required type="text" placeholder="Razão Social:" id="Nome" name="nome">
+                    <input class="input" required type="text" placeholder="Email:example@.com" id="Email" name="Email">
+                    <input class="input" required type="number" placeholder="CNPJ: " id="Cnpj" name="Cnpj">
+                    <input class="input" required type="password" placeholder="Senha:" id="senha" name="senha">
+                    <input class="input" required type="password" placeholder="Confirme a sua senha: " id="ConfirmarSsenha" name="ConfirmarSenha">
+                    <input id="btnCadastrar" class="BtnOk" type="submit" value="Criar Conta">
+                </form>
+            </div>
+
+        </div>
+        <button id="btnLogin" onclick="location.replace('../login_usuario/index.html');"> Ja tem uma conta? </button>    
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>

@@ -20,7 +20,3 @@ $(document).ready(function() {
         event.preventDefault();
     });
 });
-
-function goCadastro() {
-    location.replace("../cadastro_usuario/index.html");
-}
