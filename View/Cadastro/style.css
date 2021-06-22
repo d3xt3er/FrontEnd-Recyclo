@@ -4,9 +4,7 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-
-
-#esquerda{
+#esquerda {
     background: url("../img/imgCadastro.jpg") no-repeat;
     background-size: cover;
     width: 45%;
@@ -14,14 +12,14 @@
     position: absolute;
 }
 
-img{
+img {
     width: 15vw;
     height: 15vw;
     opacity: 0.8;
     margin-left: 7vw;
 }
 
-p{
+p {
     margin-top: 15px;
     opacity: 0.8;
     font-family: sans-serif;
@@ -32,7 +30,7 @@ p{
     font-weight: bolder;
 }
 
-#direita{
+#direita {
     background: white;
     width: 55%;
     height: 100%;
@@ -42,34 +40,35 @@ p{
     text-align: center;
 }
 
-#quadrado{
+#quadrado {
     border-radius: 15px;
     margin-left: 20px;
 }
 
-#selecao{
+#selecao {
     display: inline-block;
     width: 51vw;
     margin-top: 15px;
 }
 
-a{
+a {
     width: 30vw;
     height: 5vw;
     padding: 10px 9vw;
 }
 
-a:hover{
+a:hover {
     background-color: #35d786;
     transition: 1s;
+    cursor: pointer;
 }
 
-form{
+form {
     margin-top: 15px;
     padding: 10px;
 }
 
-input{
+input {
     width: 48vw;
     height: 50px;
     margin-top: 15px;
@@ -77,29 +76,30 @@ input{
     border: 0;
 }
 
-.BtnOk{
-    width:48vw ;
+.BtnOk {
+    width: 48vw;
     height: 50px;
-    margin-top: 30px; 
+    margin-top: 30px;
     border: 0;
-    background-color:rgb(90, 190, 65);
+    background-color: rgb(90, 190, 65);
     font-size: larger;
     font-weight: 500;
     display: inline-block;
     opacity: 6;
 }
-.BtnOk:hover{
+
+.BtnOk:hover {
     transition: 1s;
-    background-color:rgb(109, 223, 81) ;
+    background-color: rgb(109, 223, 81);
 }
 
-#btnLogin{
-    width:48vw;
+#btnLogin {
+    width: 48vw;
     height: 50px;
     margin-top: 20px;
-    margin-left:20px ; 
+    margin-left: 20px;
     border: 0;
-    background-color:rgb(14, 108, 216);
+    background-color: rgb(14, 108, 216);
     font-size: larger;
     font-weight: 500;
     display: inline-block;
