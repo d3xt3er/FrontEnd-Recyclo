@@ -25,7 +25,7 @@ function SwitchForm(op) {
     }
 }
 
-// Código JS Back-End
+// Código JS Back-End - Cadastro Usuario
 
 $(document).ready(function() {
     $("#formUser").submit(function(event) {
@@ -37,7 +37,9 @@ $(document).ready(function() {
         var cpf = document.getElementById("cpf").value;
         var senha = document.getElementById("senha").value;
 
+        // chave ID  temporária até ser auto increment no banco de dados
         var obj = JSON.stringify({
+            "id": 2,
             "nome": nome,
             "email": email,
             "cpf": cpf,
@@ -47,26 +49,28 @@ $(document).ready(function() {
         console.log(obj);
 
 
-        var url = "http://localhost:8080/usuario/login/";
+        var url = "http://localhost:8080/usuario/criar/";
 
-        var xhr = new XMLHttpRequest();
-        xhr.open("POST", url);
+        var request = new XMLHttpRequest();
+        request.open("POST", url);
 
-        xhr.setRequestHeader("Accept", "application/json");
-        xhr.setRequestHeader("Content-Type", "application/json");
+        request.setRequestHeader("Accept", "application/json");
+        request.setRequestHeader("Content-Type", "application/json");
 
-        xhr.onreadystatechange = function() {
-            if (xhr.readyState === 4) {
-                console.log(xhr.status);
-                console.log(xhr.responseText);
+        request.onreadystatechange = function() {
+            if (request.readyState === 4) {
+                console.log(request.status);
+                console.log(request.responseText);
             }
         };
 
-        xhr.send(data);
+        request.send(obj);
 
     });
 });
 
+
+// Código JS Back-End - Cadastro Usuario
 
 $(document).ready(function() {
     $("#formEmpresa").submit(function(event) {
@@ -87,17 +91,21 @@ $(document).ready(function() {
 
         console.log(obj);
 
+        // var url = "http://localhost:8080/usuario/criar/";
 
-        // var xhr = new XMLHttpRequest();
-        // var url = "http://localhost:8080/usuario/login/" + nome + "/" + senha + "";
-        // xhr.open("GET", url, true);
-        // xhr.setRequestHeader("Content-Type", "application/json");
-        // xhr.onreadystatechange = function() {
-        //     if (xhr.readyState === 4 && xhr.status === 200) {
-        //         var json = xhr.responseText;
-        //         alert(json);
+        // var request = new XMLHttpRequest();
+        // request.open("POST", url);
+
+        // request.setRequestHeader("Accept", "application/json");
+        // request.setRequestHeader("Content-Type", "application/json");
+
+        // request.onreadystatechange = function() {
+        //     if (request.readyState === 4) {
+        //         console.log(request.status);
+        //         console.log(request.responseText);
         //     }
         // };
-        // xhr.send();
+
+        // request.send(obj);
     });
 });
