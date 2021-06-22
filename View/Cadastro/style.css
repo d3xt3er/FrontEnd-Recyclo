@@ -16,7 +16,8 @@ img {
     width: 15vw;
     height: 15vw;
     opacity: 0.8;
-    margin-left: 7vw;
+    margin-left: 12vw;
+    cursor: pointer;
 }
 
 p {
@@ -28,6 +29,7 @@ p {
     width: 70%;
     text-align: center;
     font-weight: bolder;
+    margin-left: 3.5vw;
 }
 
 #direita {
@@ -54,7 +56,7 @@ p {
 a {
     width: 30vw;
     height: 5vw;
-    padding: 10px 9vw;
+    padding: 8px 3vw;
 }
 
 a:hover {
@@ -86,6 +88,8 @@ input {
     font-weight: 500;
     display: inline-block;
     opacity: 6;
+    border-radius: 22px;
+    cursor: pointer;
 }
 
 .BtnOk:hover {
@@ -103,4 +107,6 @@ input {
     font-size: larger;
     font-weight: 500;
     display: inline-block;
+    border-radius: 22px;
+    cursor: pointer;
 }
