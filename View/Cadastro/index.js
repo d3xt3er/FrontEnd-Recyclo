@@ -5,7 +5,7 @@ var frmUsuario =document.getElementById("formUsuario");
 
 frmEmpresa.style.display = "none";
 document.getElementById("changeE").style.background ="white";
-        document.getElementById("changeU").style.background = "#35d786";
+document.getElementById("changeU").style.background = "#35d786";
 // Troca o form a de cadastro entre
 function SwitchForm(op){
     

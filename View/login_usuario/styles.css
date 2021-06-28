@@ -10,6 +10,9 @@ body{
     background: url("../img/login.jpg") no-repeat;
     background-size: cover;
 }
+form{
+    display: inline-block;
+}
 
 div {
     border-radius: 15px;
@@ -67,4 +70,23 @@ img{
 #btnLogin:hover{
     transition: 1s;
     background-color:rgb(106, 223, 77);
+}
+
+/*-- Mobile --*/
+@media only screen and (max-width: 600px) {
+    body{
+        background: white;
     }
+    div{
+        width: 80%;
+    }
+    .input{
+      width: 60vw;  
+    }
+    #btnCadastro{
+        width: 60vw;
+    }
+    #btnLogin{
+        width: 60vw;
+    }
+}

@@ -49,14 +49,11 @@ p{
 
 #selecao{
     display: inline-block;
-    width: 51vw;
     margin-top: 15px;
 }
 
 a{
-    width: 30vw;
-    height: 5vw;
-    padding: 10px 9vw;
+    padding: 10px 7vw;
 }
 
 a:hover{
@@ -82,7 +79,7 @@ input{
     height: 50px;
     margin-top: 30px; 
     border: 0;
-    background-color:rgb(90, 190, 65);
+    background-color:rgba(90, 190, 65, 0.8);
     font-size: larger;
     font-weight: 500;
     display: inline-block;
@@ -90,7 +87,7 @@ input{
 }
 .BtnOk:hover{
     transition: 1s;
-    background-color:rgb(109, 223, 81) ;
+    background-color:rgb(90, 190, 65) ;
 }
 
 #btnLogin{
@@ -99,8 +96,53 @@ input{
     margin-top: 20px;
     margin-left:20px ; 
     border: 0;
-    background-color:rgb(14, 108, 216);
+    background-color: rgba(14, 108, 216, 0.8);
     font-size: larger;
     font-weight: 500;
     display: inline-block;
+}
+#btnLogin:hover{
+    background-color: rgb(14, 108, 216);
+    transition: 1s;
+}
+
+/*-- Mobile --*/
+
+@media only screen and (max-width:600px) {
+    body{
+        padding: 20px;
+    }
+    #esquerda{
+        display: none;
+    }
+
+    #direita{
+        width: 80%;
+        height: 90%;
+        left: 10%;
+        display: inline-block;
+        opacity: 0.8;
+    }
+
+    #selecao{
+        display: inline-flex;
+        
+    }
+    
+    a{
+        
+        padding: 5px 7vw; 
+    }
+
+    input{
+        height:40px ;
+    }
+    .BtnOk{
+        height:40px ; 
+    }
+    #btnLogin{
+       height:40px ;
+       margin-top: 0;
+       background-color: rgb(14, 108, 216);
+    }
 }

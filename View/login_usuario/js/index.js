@@ -20,3 +20,11 @@ $(document).ready(function() {
         event.preventDefault();
     });
 });
+
+/* mensagem de erro padrao sweetalert
+    Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Something went wrong!',
+      })
+*/
