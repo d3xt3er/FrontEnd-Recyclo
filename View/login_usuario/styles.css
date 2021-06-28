@@ -5,8 +5,7 @@
     text-align: center;
 }
 
-
-body{
+body {
     background: url("../img/login.jpg") no-repeat;
     background-size: cover;
 }
@@ -20,55 +19,60 @@ div {
     opacity: 0.9;
     position: absolute;
     left: 50%;
-    transform: translate(-50%,20%);
+    transform: translate(-50%, 20%);
     background-color: white;
     padding: 10px;
 }
-img{
+
+img {
     left: 5px;
     width: 10vw;
     height: 10vw;
 }
 
-
 .input {
-    width:40vw;
+    width: 40vw;
     height: 50px;
     margin-top: 15px;
     font-size: medium;
     padding-left: 3px;
     border: 0;
 }
-#btnCadastro{
-    width:40vw;
+
+#btnCadastro {
+    width: 40vw;
     height: 50px;
-    margin-top: 20px; 
+    margin-top: 20px;
     border: 0;
     border-radius: 6px;
-    background-color:rgb(14, 108, 216);
+    background-color: rgb(14, 108, 216);
     font-size: larger;
     font-weight: 500;
     display: inline-block;
+    cursor: pointer;
 }
 
-#btnCadastro:hover{
-    background-color:rgb(29, 108, 199);
+#btnCadastro:hover {
+    background-color: rgb(29, 108, 199);
     transition: 1;
 }
 
-#btnLogin{
-    width:40vw;
+#btnLogin {
+    width: 40vw;
     height: 50px;
-    margin-top: 30px; 
+    margin-top: 30px;
     border: 0;
     border-radius: 6px;
-    background-color:rgb(90, 190, 65);
+    background-color: rgb(90, 190, 65);
     font-size: larger;
     font-weight: 500;
     display: inline-block;
+    cursor: pointer;
 }
-#btnLogin:hover{
+
+#btnLogin:hover {
     transition: 1s;
+
     background-color:rgb(106, 223, 77);
 }
 

@@ -4,9 +4,7 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-
-
-#esquerda{
+#esquerda {
     background: url("../img/imgCadastro.jpg") no-repeat;
     background-size: cover;
     width: 45%;
@@ -14,14 +12,15 @@
     position: absolute;
 }
 
-img{
+img {
     width: 15vw;
     height: 15vw;
     opacity: 0.8;
-    margin-left: 7vw;
+    margin-left: 12vw;
+    cursor: pointer;
 }
 
-p{
+p {
     margin-top: 15px;
     opacity: 0.8;
     font-family: sans-serif;
@@ -30,9 +29,10 @@ p{
     width: 70%;
     text-align: center;
     font-weight: bolder;
+    margin-left: 3.5vw;
 }
 
-#direita{
+#direita {
     background: white;
     width: 55%;
     height: 100%;
@@ -42,12 +42,12 @@ p{
     text-align: center;
 }
 
-#quadrado{
+#quadrado {
     border-radius: 15px;
     margin-left: 20px;
 }
 
-#selecao{
+#selecao {
     display: inline-block;
     margin-top: 15px;
 }
@@ -56,17 +56,19 @@ a{
     padding: 10px 7vw;
 }
 
-a:hover{
+
+a:hover {
     background-color: #35d786;
     transition: 1s;
+    cursor: pointer;
 }
 
-form{
+form {
     margin-top: 15px;
     padding: 10px;
 }
 
-input{
+input {
     width: 48vw;
     height: 50px;
     margin-top: 15px;
@@ -74,28 +76,32 @@ input{
     border: 0;
 }
 
-.BtnOk{
-    width:48vw ;
+.BtnOk {
+    width: 48vw;
     height: 50px;
-    margin-top: 30px; 
+    margin-top: 30px;
     border: 0;
     background-color:rgba(90, 190, 65, 0.8);
     font-size: larger;
     font-weight: 500;
     display: inline-block;
     opacity: 6;
-}
-.BtnOk:hover{
-    transition: 1s;
-    background-color:rgb(90, 190, 65) ;
+    cursor: pointer;
 }
 
-#btnLogin{
-    width:48vw;
+.BtnOk:hover {
+    transition: 1s;
+    background-color:rgb(90, 190, 65) ;
+
+}
+
+#btnLogin {
+    width: 48vw;
     height: 50px;
     margin-top: 20px;
-    margin-left:20px ; 
+    margin-left: 20px;
     border: 0;
+
     background-color: rgba(14, 108, 216, 0.8);
     font-size: larger;
     font-weight: 500;
@@ -126,7 +132,6 @@ input{
 
     #selecao{
         display: inline-flex;
-        
     }
     
     a{
@@ -139,6 +144,7 @@ input{
     }
     .BtnOk{
         height:40px ; 
+        background-color:rgb(90, 190, 65) ;
     }
     #btnLogin{
        height:40px ;
