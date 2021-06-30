@@ -4,7 +4,7 @@ var frmUsuario = document.getElementById("formUsuario");
 
 frmEmpresa.style.display = "none";
 
-document.getElementById("changeE").style.background ="white";
+document.getElementById("changeE").style.background = "white";
 
 document.getElementById("changeU").style.background = "#35d786";
 // Troca o form a de cadastro entre
@@ -30,14 +30,18 @@ function SwitchForm(op) {
 // Código JS Back-End - Cadastro Usuario
 
 $(document).ready(function() {
+
+    $("#cpf").mask("999.999.999-99");
+
     $("#formUser").submit(function(event) {
 
         event.preventDefault();
-
+        
         var nome = document.getElementById("nome").value;
         var email = document.getElementById("email").value;
         var cpf = document.getElementById("cpf").value;
         var senha = document.getElementById("senha").value;
+        
 
         // chave ID  temporária até ser auto increment no banco de dados
         var obj = JSON.stringify({
@@ -50,14 +54,16 @@ $(document).ready(function() {
 
         console.log(obj);
 
-
-        var url = "http://localhost:8080/usuario/criar/";
+        
+        // var url = "http://localhost:8080/usuario/criar/";
+        var url = "https://backend-recyclo.herokuapp.com/usuario/criar/";
 
         var request = new XMLHttpRequest();
         request.open("POST", url);
 
         request.setRequestHeader("Accept", "application/json");
         request.setRequestHeader("Content-Type", "application/json");
+        request.setRequestHeader('Access-Control-Allow-Origin', '*');
 
         request.onreadystatechange = function() {
             if (request.readyState === 4) {
@@ -72,9 +78,12 @@ $(document).ready(function() {
 });
 
 
-// Código JS Back-End - Cadastro Usuario
+// Código JS Back-End - Cadastro Empresa
 
 $(document).ready(function() {
+
+    $("#cnpj").mask("99.999.999/9999-99");
+
     $("#formEmpresa").submit(function(event) {
 
         event.preventDefault();
@@ -94,20 +103,24 @@ $(document).ready(function() {
         console.log(obj);
 
         // var url = "http://localhost:8080/usuario/criar/";
+        var url = "https://backend-recyclo.herokuapp.com/empresa/criar/";
 
-        // var request = new XMLHttpRequest();
-        // request.open("POST", url);
 
-        // request.setRequestHeader("Accept", "application/json");
-        // request.setRequestHeader("Content-Type", "application/json");
+        var request = new XMLHttpRequest();
+        request.open("POST", url);
 
-        // request.onreadystatechange = function() {
-        //     if (request.readyState === 4) {
-        //         console.log(request.status);
-        //         console.log(request.responseText);
-        //     }
-        // };
+        request.setRequestHeader("Accept", "application/json");
+        request.setRequestHeader("Content-Type", "application/json");
+        request.setRequestHeader('Access-Control-Allow-Origin', '*');
 
-        // request.send(obj);
+
+        request.onreadystatechange = function() {
+            if (request.readyState === 4) {
+                console.log(request.status);
+                console.log(request.responseText);
+            }
+        };
+
+        request.send(obj);
     });
 });
