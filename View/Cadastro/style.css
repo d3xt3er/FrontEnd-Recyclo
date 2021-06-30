@@ -89,7 +89,7 @@ input {
     cursor: pointer;
 }
 
-.BtnOk:hover {
+    .BtnOk:hover {
     transition: 1s;
     background-color:rgb(90, 190, 65) ;
 
