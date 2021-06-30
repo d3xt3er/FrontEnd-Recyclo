@@ -14,19 +14,19 @@ $(document).ready(function() {
         request.onreadystatechange = function() {
             if (request.readyState === 4 && request.status === 200) {
                 var json = request.responseText;
-                alert(json);
+                if(json == 'Usuario encontrado!'){
+                    alert(json)
+                }
+
+                else if(json == 'Usuario não existente'){
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Something went wrong!',
+                    })
+                }
             }
         };
         request.send();
     });
-
-
-    /* mensagem de erro padrao sweetalert
-        Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: 'Something went wrong!',
-          })
-    */
-
 });

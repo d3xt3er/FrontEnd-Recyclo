@@ -81,7 +81,7 @@ $(document).ready(function() {
 // Código JS Back-End - Cadastro Empresa
 
 $(document).ready(function() {
-    
+
     $("#cnpj").mask("99.999.999/9999-99");
 
     $("#formEmpresa").submit(function(event) {
@@ -103,20 +103,24 @@ $(document).ready(function() {
         console.log(obj);
 
         // var url = "http://localhost:8080/usuario/criar/";
+        var url = "https://backend-recyclo.herokuapp.com/empresa/criar/";
 
-        // var request = new XMLHttpRequest();
-        // request.open("POST", url);
 
-        // request.setRequestHeader("Accept", "application/json");
-        // request.setRequestHeader("Content-Type", "application/json");
+        var request = new XMLHttpRequest();
+        request.open("POST", url);
 
-        // request.onreadystatechange = function() {
-        //     if (request.readyState === 4) {
-        //         console.log(request.status);
-        //         console.log(request.responseText);
-        //     }
-        // };
+        request.setRequestHeader("Accept", "application/json");
+        request.setRequestHeader("Content-Type", "application/json");
+        request.setRequestHeader('Access-Control-Allow-Origin', '*');
 
-        // request.send(obj);
+
+        request.onreadystatechange = function() {
+            if (request.readyState === 4) {
+                console.log(request.status);
+                console.log(request.responseText);
+            }
+        };
+
+        request.send(obj);
     });
 });
