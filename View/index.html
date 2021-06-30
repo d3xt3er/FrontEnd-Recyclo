@@ -1,26 +1,55 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="img/LogoRecycloV1.png">
-    <title>Recyclo</title>
+    <title>Seja bem vindo a Recyclo</title>
 </head>
-
 <body>
-    <div id="resultado"></div>
 
-    <img class="logo" src="img/LogoRecycloV1.png" width="200" height="200">
-    <p class="subtitulo">Por um mundo mais verde a Recyclo ajuda você!</p>
+    <!-- menu superior// navbar-->
+    <div id="Intro">
+        <img id="logo" src="img/LogoRecycloV1.png">
+        <h1> Bem vindo a Recyclo</h1>
+    </div>
 
-    <a href="./login_usuario/index.html" class="pessoa">Sou Pessoa</a>
-    <br>
-    <a class="empresa">Sou Empresa</a>
+    <!-- nav -->
+    <ul id="navbar">
+        <li><a href="#Home">Mapa</a></li>
+        <li><a href="#Conta">Entrar</a></li>
+        <li><a href="">Sobre</a></li>
+    </ul>
+
+    
+    <div id="Home" class="Divs">
+        <div id="mask" class="Divs">    
+            <h2>Utilize nosso mapa!</h2>
+            <div id="HomeTxt">
+                <ul id="listaFuncionalidades">
+                    <li>Localizar de pontos de coleta</li>
+                    <li>Denunciar descartes ilegais</li>
+                    <li>Averiguar se a remoção do descarte ilagal ja foi realizada</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- login/ criar conta -->
+    <div id="Conta" class="Divs">
+        <p>Se você deseja nos ajudar a criar um mundo mais consciente crie uma conta</p>
+        <div id="Entrar_Login">
+            <img id="imgPerfil" src="img/perfil.png">
+            <button id="Login" onclick=" window.location.assign('login_usuario/index.html');" class="btn">Entrar</button>
+            <button id="CriarConta" onclick=" window.location.assign('Cadastro/index.html');" class="btn" >Criar Conta</button>
+        </div>
+    </div>
+    
+    <!-- Sobre/fim  -->
+
 
     <footer>Copyright @Recyclo</footer>
+    <script src="index.js"></script>
 </body>
-
 </html>

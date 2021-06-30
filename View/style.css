@@ -1,81 +1,148 @@
-* {
+*{
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Arial;
+}
+body{
+    background-color: whitesmoke;
+}
+.Divs{
+    height: 40vw;
+    margin-top: 20px;
+}
+
+.btn{
+    width: 17vw;
+    height: 65px;
+    background-color:rgba(90, 190, 65, 0.8);
+    border: 0;  
+    letter-spacing: 2px;
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.btn:hover{
+    transition: 1s;
+    background-color:rgb(90, 190, 65) ;
+}
+
+#Intro{
+    margin-top: 2%;
     text-align: center;
 }
 
-.pessoa {
-    width: 200px;
-    background-color: rgb(90, 190, 65);
-    border: none;
+#logo{
+    align-self: center;
+    width: 10vw;
+    height: 10vw;
+}
+
+#navbar{    
+    position: sticky;
+    list-style-type:none;
+    overflow: hidden;
+    margin: 0;
+    top: 6px;
+    padding: 0;
+    background-color:rgb(90, 190, 65) ;
+}
+
+#navbar li{
+    float:left
+}
+
+#navbar li:hover{
+    background-color: #333;
+}
+
+#navbar li  a{
+    display: block;
     color: white;
-    padding: 15px 32px;
     text-align: center;
+    padding: 14px 16px;
     text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 5px;
-    margin-top: 5%;
+}
+/* -- Imagem provisoria 
+        retirada da unsplash --*/
+#Home{
+    background: url("https://images.unsplash.com/photo-1533027052290-2b4ece075c42?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80") no-repeat;
+    background-size: cover;
+    background-position-y: center;
+    border-radius: 15px;
+    text-align: center;
 }
 
-.pessoa:hover {
-    background-color: #ccc;
-    transition: 0.5s;
+#mask{
+    background: rgba(0, 0, 0, 0.25);
+    padding: 10px;
 }
 
-.empresa {
-    width: 200px;
-    background-color: rgb(90, 190, 65);
-    border: none;
+h2{
+    margin-top: 10px;
+    font-size: 50px;
     color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 5px;
+}
+#listaFuncionalidades{
+    margin-left: 20px;
+    margin-top: 20px;
+    width: 50%;
+    color: white;
+
+}
+#listaFuncionalidades li{
+    text-align: left;
+    margin-top: 20px;
+    font-size: 30px;
+    font-weight: 700;
+    list-style-type: none;
 }
 
-.empresa:hover {
-    background-color: #ccc;
-    transition: 0.5s;
+#Conta{
+    background: url("img/login.jpg") no-repeat;
+    background-position-y: center;
+    background-size: cover;
+    padding: 30px;
+    display: flex;
 }
+#Conta p{
+    font-family: sans-serif;
+    color: white;
+    font-weight: 1000;
+    font-size: 50px;
+    width: 50vw;
+    margin-top: 50px;
+    opacity: 0.8;
+}
+
+#Entrar_Login{
+    text-align: center;
+    width: 50%;
+    white-space: pre-wrap;
+    background-color:rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 50px;
+}
+#Entrar_Login button{
+    margin-top: 15px;
+}
+
+#imgPerfil{
+    margin-top: 20px;
+    height: 130px;
+    opacity: 0.9;
+    background-color: white;
+    border-radius: 50px;
+}
+
 
 footer {
     padding: 20px;
-    position: fixed;
     margin: 0 auto;
     left: 0;
     bottom: 0;
-    width: 100%;
     background-color: rgb(90, 190, 65);
     color: white;
-    /* text-align: center; */
+    text-align: center; 
 }
 
-.logo {
-    margin-top: 60px;
-}
-
-.subtitulo {
-    margin-top: 3%;
-}
-
-
-/* Mobile */
-
-@media only screen and (max-width: 600px) {
-    footer {
-        text-align: center;
-        font-size: 12px;
-        padding: 15px;
-    }
-    .pessoa {
-        margin-top: 80px;
-    }
-}
+/*-- mobile --*/
