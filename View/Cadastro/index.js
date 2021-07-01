@@ -43,36 +43,35 @@ $(document).ready(function() {
         var senha = document.getElementById("senha").value;
         
 
-        // chave ID  temporária até ser auto increment no banco de dados
-        var obj = JSON.stringify({
-            "id": 2,
-            "nome": nome,
-            "email": email,
-            "cpf": cpf,
-            "senha": senha,
-        })
+            // chave ID  temporária até ser auto increment no banco de dados
+            var obj = JSON.stringify({
+                "id": 2,
+                "nome": nome,
+                "email": email,
+                "cpf": cpf,
+                "senha": senha,
+            })
 
-        console.log(obj);
+            // console.log(obj);
 
-        
-        // var url = "http://localhost:8080/usuario/criar/";
-        var url = "https://backend-recyclo.herokuapp.com/usuario/criar/";
+            var url = "http://localhost:8080/usuario/criar/";
+            // var url = "https://backend-recyclo.herokuapp.com/usuario/criar/";
 
-        var request = new XMLHttpRequest();
-        request.open("POST", url);
+            var request = new XMLHttpRequest();
+            request.open("POST", url);
 
-        request.setRequestHeader("Accept", "application/json");
-        request.setRequestHeader("Content-Type", "application/json");
-        request.setRequestHeader('Access-Control-Allow-Origin', '*');
+            request.setRequestHeader("Accept", "application/json");
+            request.setRequestHeader("Content-Type", "application/json");
+            request.setRequestHeader('Access-Control-Allow-Origin', '*');
 
-        request.onreadystatechange = function() {
-            if (request.readyState === 4) {
-                console.log(request.status);
-                console.log(request.responseText);
-            }
-        };
+            request.onreadystatechange = function() {
+                if (request.readyState === 4) {
+                    console.log(request.status);
+                    console.log(request.responseText);
+                }
+            };
 
-        request.send(obj);
+            request.send(obj);
 
     });
 });
@@ -115,6 +114,7 @@ $(document).ready(function() {
 
 
         request.onreadystatechange = function() {
+            
             if (request.readyState === 4) {
                 console.log(request.status);
                 console.log(request.responseText);

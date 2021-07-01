@@ -12,6 +12,16 @@ $(document).ready(function() {
         request.setRequestHeader("Content-Type", "application/json");
         request.setRequestHeader('Access-Control-Allow-Origin', '*');
         request.onreadystatechange = function() {
+
+            // Função loader sweetalert
+            Swal.fire({
+                title: 'Aguarde!',
+                html: 'Verificando...',
+                allowOutsideClick: false,
+                onBeforeOpen: () => {
+                    Swal.showLoading()
+                },
+            });
             if (request.readyState === 4 && request.status === 200) {
                 var json = request.responseText;
                 if(json == 'Usuario encontrado!'){
@@ -21,8 +31,8 @@ $(document).ready(function() {
                 else if(json == 'Usuario não existente'){
                     Swal.fire({
                         icon: 'error',
-                        title: 'Oops...',
-                        text: 'Something went wrong!',
+                        title: 'Desculpe,',
+                        text: 'Não te encontramos em nosso sistema!',
                     })
                 }
             }
