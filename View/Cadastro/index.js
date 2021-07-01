@@ -47,7 +47,6 @@ $(document).ready(function() {
         {
         	           // chave ID  temporária até ser auto increment no banco de dados
                        var obj = JSON.stringify({
-                        "id": 2,
                         "nome": nome,
                         "email": email,
                         "cpf": cpf,
