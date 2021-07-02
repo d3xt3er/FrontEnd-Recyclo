@@ -90,7 +90,7 @@ $(document).ready(function() {
 
     $("#cnpj").mask("99.999.999/9999-99");
 
-    $("#formEmpresa").submit(function(event) {
+    $("#formCompany").submit(function(event) {
 
         event.preventDefault();
 
@@ -103,7 +103,7 @@ $(document).ready(function() {
         if (senha != "" && ConfirmaSenha != "" && senha === ConfirmaSenha)
         {
             var obj = JSON.stringify({
-                "razao": razao,
+                "nome": razao,
                 "email": email,
                 "cnpj": cnpj,
                 "senha": senha,
@@ -111,7 +111,7 @@ $(document).ready(function() {
     
             console.log(obj);
     
-            // var url = "http://localhost:8080/usuario/criar/";
+            // var url = "http://localhost:8080/empresa/criar/";
             var url = "https://backend-recyclo.herokuapp.com/empresa/criar/";
     
     
