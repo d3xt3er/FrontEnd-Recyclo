@@ -41,38 +41,44 @@ $(document).ready(function() {
         var email = document.getElementById("email").value;
         var cpf = document.getElementById("cpf").value;
         var senha = document.getElementById("senha").value;
+        var ConfirmSenha = document.getElementById("ConfirmarSsenha").value;
+
+        if (senha != "" && ConfirmSenha != "" && senha === ConfirmSenha)
+        {
+        	           // chave ID  temporária até ser auto increment no banco de dados
+                       var obj = JSON.stringify({
+                        "nome": nome,
+                        "email": email,
+                        "cpf": cpf,
+                        "senha": senha,
+                    })
         
-
-        // chave ID  temporária até ser auto increment no banco de dados
-        var obj = JSON.stringify({
-            "id": 2,
-            "nome": nome,
-            "email": email,
-            "cpf": cpf,
-            "senha": senha,
-        })
-
-        console.log(obj);
-
+                    // console.log(obj);
         
-        // var url = "http://localhost:8080/usuario/criar/";
-        var url = "https://backend-recyclo.herokuapp.com/usuario/criar/";
+                    // var url = "http://localhost:8080/usuario/criar/";
+                    var url = "https://backend-recyclo.herokuapp.com/usuario/criar/";
+        
+                    var request = new XMLHttpRequest();
+                    request.open("POST", url);
+        
+                    request.setRequestHeader("Accept", "application/json");
+                    request.setRequestHeader("Content-Type", "application/json");
+                    request.setRequestHeader('Access-Control-Allow-Origin', '*');
+        
+                    request.onreadystatechange = function() {
+                        if (request.readyState === 4) {
+                            console.log(request.status);
+                            console.log(request.responseText);
+                        }
+                    };
+        
+                    request.send(obj);
+        }
 
-        var request = new XMLHttpRequest();
-        request.open("POST", url);
-
-        request.setRequestHeader("Accept", "application/json");
-        request.setRequestHeader("Content-Type", "application/json");
-        request.setRequestHeader('Access-Control-Allow-Origin', '*');
-
-        request.onreadystatechange = function() {
-            if (request.readyState === 4) {
-                console.log(request.status);
-                console.log(request.responseText);
-            }
-        };
-
-        request.send(obj);
+        else
+        {
+        	alert('Senhas diferentes!');
+        }
 
     });
 });
@@ -84,7 +90,7 @@ $(document).ready(function() {
 
     $("#cnpj").mask("99.999.999/9999-99");
 
-    $("#formEmpresa").submit(function(event) {
+    $("#formCompany").submit(function(event) {
 
         event.preventDefault();
 
@@ -92,35 +98,46 @@ $(document).ready(function() {
         var email = document.getElementById("Email").value;
         var cnpj = document.getElementById("cnpj").value;
         var senha = document.getElementById("Senha").value;
+        var ConfirmaSenha = document.getElementById("ConfirmarSenha").value;
 
-        var obj = JSON.stringify({
-            "razao": razao,
-            "email": email,
-            "cnpj": cnpj,
-            "senha": senha,
-        })
+        if (senha != "" && ConfirmaSenha != "" && senha === ConfirmaSenha)
+        {
+            var obj = JSON.stringify({
+                "nome": razao,
+                "email": email,
+                "cnpj": cnpj,
+                "senha": senha,
+            })
+    
+            console.log(obj);
+    
+            // var url = "http://localhost:8080/empresa/criar/";
+            var url = "https://backend-recyclo.herokuapp.com/empresa/criar/";
+    
+    
+            var request = new XMLHttpRequest();
+            request.open("POST", url);
+    
+            request.setRequestHeader("Accept", "application/json");
+            request.setRequestHeader("Content-Type", "application/json");
+            request.setRequestHeader('Access-Control-Allow-Origin', '*');
+    
+    
+            request.onreadystatechange = function() {
+                
+                if (request.readyState === 4) {
+                    console.log(request.status);
+                    console.log(request.responseText);
+                }
+            };
+    
+            request.send(obj);
+        }
 
-        console.log(obj);
+        else
+        {
+            alert('Senhas diferentes!');
+        }
 
-        // var url = "http://localhost:8080/usuario/criar/";
-        var url = "https://backend-recyclo.herokuapp.com/empresa/criar/";
-
-
-        var request = new XMLHttpRequest();
-        request.open("POST", url);
-
-        request.setRequestHeader("Accept", "application/json");
-        request.setRequestHeader("Content-Type", "application/json");
-        request.setRequestHeader('Access-Control-Allow-Origin', '*');
-
-
-        request.onreadystatechange = function() {
-            if (request.readyState === 4) {
-                console.log(request.status);
-                console.log(request.responseText);
-            }
-        };
-
-        request.send(obj);
     });
 });
