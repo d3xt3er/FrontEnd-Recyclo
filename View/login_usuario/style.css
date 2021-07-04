@@ -3,12 +3,15 @@
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
 }
-
+body{
+    background: white;
+}
 #esquerda {
-    background: url("../img/imgCadastro.jpg") no-repeat;
+    background: url("../img/login.jpg") no-repeat;
     background-size: cover;
     width: 45%;
     height: 100%;
+    background-position-x: right;
     position: absolute;
 }
 
@@ -33,7 +36,7 @@ p {
 }
 
 #direita {
-    background: white;
+    background:white;
     width: 55%;
     height: 100%;
     position: absolute;
@@ -43,43 +46,35 @@ p {
 }
 
 #quadrado {
-    border-radius: 15px;
-    margin-left: 20px;
-}
-
-#selecao {
-    display: inline-block;
-    margin-top: 15px;
-}
-
-a{
-    padding: 10px 7vw;
-}
-
-
-a:hover {
-    background-color: #35d786;
-    transition: 1s;
-    cursor: pointer;
+    margin-left: 30px;
+    margin-top: 15%;
 }
 
 form {
-    margin-top: 15px;
+    margin-top: 2vw;
     padding: 10px;
 }
 
+h2{
+    letter-spacing: 10px;
+    font-weight: 900;
+    font-size: 3vw;
+}
+
 input {
-    width: 48vw;
+    width: 47vw;
     height: 50px;
     margin-top: 15px;
     padding-left: 5px;
     border: 0;
+    border-radius: 5px;
 }
 
 .BtnOk {
-    width: 48vw;
+    width: 47vw;
     height: 50px;
     margin-top: 30px;
+    border-radius: 5px;
     border: 0;
     background-color:rgba(90, 190, 65, 0.8);
     font-size: larger;
@@ -89,25 +84,23 @@ input {
     cursor: pointer;
 }
 
-    .BtnOk:hover {
+.BtnOk:hover {
     transition: 1s;
     background-color:rgb(90, 190, 65) ;
-
 }
 
-#btnLogin {
-    width: 48vw;
+#btnCadastrar {
+    width: 47vw;
     height: 50px;
-    margin-top: 20px;
-    margin-left: 20px;
+    margin-bottom: 15px;
     border: 0;
-
+    border-radius: 5px;
     background-color: rgba(14, 108, 216, 0.8);
     font-size: larger;
     font-weight: 500;
     display: inline-block;
 }
-#btnLogin:hover{
+#btnCadastrar:hover{
     background-color: rgb(14, 108, 216);
     transition: 1s;
 }
@@ -123,23 +116,20 @@ input {
         display: none;
     }
 
+    h2{
+        font-size: xx-large;
+    }
+    #formUsuario{
+        border-radius: 15px;
+        background-color: white;
+    }
     #direita{
         width: 80%;
         height: 90%;
         left: 10%;
         display: inline-block;
-        border-radius: 10px;
+        margin-top: 7%;
     }
-
-    #selecao{
-        display: inline-flex;
-    }
-    
-    a{
-        
-        padding: 5px 7vw; 
-    }
-
     input{
         height:40px ;
     }
@@ -147,7 +137,7 @@ input {
         height:40px ; 
         background-color:rgb(90, 190, 65) ;
     }
-    #btnLogin{
+    #btnCadastrar{
        height:40px ;
        margin-top: 0;
        background-color: rgb(14, 108, 216);

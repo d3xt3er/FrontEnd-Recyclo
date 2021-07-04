@@ -6,22 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="../img/LogoRecycloV1.png">
-    <!-- nao sei por que mas o bing nao reconhece minha key
-        <script type='text/javascript' src='http://www.bing.com/api/maps/mapcontrol?callback=GetMap&branch=experimental&key=[AtG4ndldNlNi6znKdOGam3tgqhWWlUTzTPA4gIYt94uCwnekHHqL5XEWsdw8s-Om]' async defer></script>
-    -->
+    <script type='text/javascript' src='http://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=AijOdUHzY5DvlON3_9lG2KYowiYa4tVQJEDyckIt6enyt7lxUK0yXzMBgLnhTHqV' async defer></script>
+    <script src="../sweetalert.js"></script>
     <script src="index.js"></script>
     <title>Map</title>
 </head>
-<body >
+<body onload="GetMap()">
+    
     <!-- navbar -->
-    <ul id="navbar">
-        <img style="float:left" id="icone" src="../img/LogoRecycloV1.png" >
-        <li><a href="">Sobre</a></li>
-        <li><a href="">Entrar</a></li>
-        <li><a href="">Perfil</a></li>
+    <ul>
+        <li><a class="lia" href="../login_usuario/index.html">Entrar</a></li>
+        <li><a class="lia" href="#contact">Sobre</a></li>
+        <li style="float:left" onclick="location.replace('../index.html');"><img id="logo" src="../img/LogoRecycloV1.png"></li>
+        <li id="titulo" style="float:left"><a >Recyclo</a></li>
     </ul>
 
-    <div id="map">
+    <!-- Mapa -->
+    <div id="myMap" style="height: 91%; position: absolute ">
         
     </div>
 </body>

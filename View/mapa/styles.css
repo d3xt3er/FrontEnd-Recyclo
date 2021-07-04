@@ -5,37 +5,39 @@
     text-align: center;
 }
 
-#icone{
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 5px;
+    overflow: hidden;
+    background-color: rgba(90, 190, 65);
+
+}
+#logo{
     height: 40px;
     width: 50px;
-    margin-left: 10px;
 }
+#titulo{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    letter-spacing: 2px;
+    font-weight: 900;
+  }
 
-#navbar{    
-    list-style-type:none;
-    overflow: hidden;
-    margin: 0;
-    padding: 0;
-    background-color:rgb(90, 190, 65) ;
-}
-
-#navbar li{
+li {
     float: right;
-}
+  }
 
-#navbar li:hover{
-    background-color: #333;
-}
-
-#navbar li  a{
+.lia{
     display: block;
     color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-}
-
-#map{
-    max-width: fit-content;
-    height: 100%;
+  }
+.lia:hover {
+    background-color: #111;
+    border-radius: 10px;
 }

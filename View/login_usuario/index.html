@@ -5,33 +5,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="icon" href="../img/LogoRecycloV1.png">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../sweetalert.js"></script>
-    <!-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> -->
-    <title>Login - Pessoa</title>
-    <script src="js/index.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="jquery-1.2.6.pack.js"></script>
+    <script src="jquery.maskedinput-1.1.4.pack.js"></script>
+
+    <title>Login</title>
 </head>
 
-<body>
- 
-    <div>
+<body onload="test()">
 
-        <form id="form" method="POST">
-            <img src="../img/LogoRecycloV1.png" alt="Voltar para inicial" onclick="location.replace('../index.html')">
-
-            <h2>Login</h2>
-            <input class="input" required type="text" placeholder="Email:example@example.com" id="nome" name="nome">
-            <input class="input" required type="password" id="senha" placeholder="Senha:" name="senha">
-            <input id="btnLogin" type="submit" value="Entrar">
-        </form>
-
-        <button id="btnCadastro" onclick="location.replace('../Cadastro/index.html');">Criar Conta</button>
-
-
+    <div id="esquerda">
+        <img src="../img/LogoRecycloV1.png" onclick="location.replace('../index.html');">
+        <!-- Div com mesagem generica sobre o meio ambiente-->
+        <p>Ajude a tornar o mundo mais consciente</p>
     </div>
+
+    <Div id="direita">
+        <!-- Selecao de cadastro-->
+        <div id="quadrado">
+
+            <!-- cadastro de Usuarios -->
+            <div id="formUsuario">
+                <form id="form" method="POST">        
+                    <h2>Login</h2>
+                    <input class="input" required type="text" placeholder="Email:example@example.com" id="nome" name="nome">
+                    <input class="input" required type="password" id="senha" placeholder="Senha:" name="senha">
+                    <input id="btnLogin" class="BtnOk" type="submit" value="Entrar">
+                </form>
+        
+            </div>
+        <button id="btnCadastrar" onclick="window.location.assign('../Cadastro/index.html');" > Não tem uma conta? </button>
+    </div>
+    <script src="js/index.js"></script> 
 </body>
 
 </html>

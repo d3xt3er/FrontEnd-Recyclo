@@ -8,7 +8,6 @@ body{
 }
 .Divs{
     height: 40vw;
-    margin-top: 20px;
 }
 
 .btn{
@@ -26,41 +25,41 @@ body{
     background-color:rgb(90, 190, 65) ;
 }
 
-#Intro{
-    margin-top: 2%;
-    text-align: center;
-}
-
-#logo{
-    align-self: center;
-    width: 10vw;
-    height: 10vw;
-}
-
-#navbar{    
-    position: sticky;
-    list-style-type:none;
-    overflow: hidden;
+ul {
+    list-style-type: none;
     margin: 0;
-    top: 6px;
-    padding: 0;
-    background-color:rgb(90, 190, 65) ;
+    padding: 5px;
+    overflow: hidden;
+    background-color: rgba(90, 190, 65, 0.8);
+    box-shadow: 0px 10px rgba(0, 0, 0, 0.158);
 }
-
-#navbar li{
-    float:left
+#logo{
+    height: 40px;
+    width: 50px;
 }
+#titulo{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    letter-spacing: 2px;
+    font-weight: 900;
+  }
 
-#navbar li:hover{
-    background-color: #333;
-}
+li {
+    float: right;
+  }
 
-#navbar li  a{
+.lia{
     display: block;
     color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+  }
+.lia:hover {
+    background-color: #111;
+    border-radius: 10px;
 }
 /* -- Imagem provisoria 
         retirada da unsplash --*/
@@ -68,13 +67,12 @@ body{
     background: url("https://images.unsplash.com/photo-1533027052290-2b4ece075c42?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80") no-repeat;
     background-size: cover;
     background-position-y: center;
-    border-radius: 15px;
+    height: 50vw;
     text-align: center;
 }
 
 #mask{
     background: rgba(0, 0, 0, 0.25);
-    padding: 10px;
 }
 
 h2{
@@ -103,6 +101,7 @@ h2{
     background-size: cover;
     padding: 30px;
     display: flex;
+    margin-top: 20px;
 }
 #Conta p{
     font-family: sans-serif;
@@ -130,8 +129,8 @@ h2{
     margin-top: 20px;
     height: 130px;
     opacity: 0.9;
-    background-color: white;
-    border-radius: 50px;
+    border-style: solid;
+    border-radius: 30px;
 }
 
 
