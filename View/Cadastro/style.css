@@ -87,6 +87,8 @@ input {
     display: inline-block;
     opacity: 6;
     cursor: pointer;
+    border-radius: 5px;
+
 }
 
     .BtnOk:hover {
@@ -101,6 +103,8 @@ input {
     margin-top: 20px;
     margin-left: 20px;
     border: 0;
+    border-radius: 5px;
+    cursor: pointer;
 
     background-color: rgba(14, 108, 216, 0.8);
     font-size: larger;
