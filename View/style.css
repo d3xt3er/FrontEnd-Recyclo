@@ -9,6 +9,7 @@
     margin: 0;
     padding: 0;
     font-family: Arial;
+    scroll-behavior: smooth;
 }
 body{
     background-color: whitesmoke;
@@ -23,6 +24,7 @@ body{
     letter-spacing: 2px;
     font-size: 20px;
     font-weight: 900;
+    cursor: pointer;
 }
 
 .btn:hover{
@@ -52,8 +54,8 @@ ul {
 }
 
 #logo{
-    height: 40px;
-    width: 50px;
+    height: 45px;
+    width: 47px;
 }
 #titulo{
     display: block;
@@ -76,8 +78,9 @@ li {
     text-decoration: none;
   }
 .lia:hover {
-    background-color: #111;
-    border-radius: 10px;
+    background-color: rgb(83, 83, 83);
+    border-radius: 5px;
+    transition: 1.2s;
 }
 
 /*--divHome --*/

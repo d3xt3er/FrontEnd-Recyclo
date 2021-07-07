@@ -99,6 +99,7 @@ input {
     font-size: larger;
     font-weight: 500;
     display: inline-block;
+    cursor: pointer;
 }
 #btnCadastrar:hover{
     background-color: rgb(41, 120, 160);

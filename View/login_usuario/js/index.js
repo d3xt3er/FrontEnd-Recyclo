@@ -2,8 +2,11 @@ $(document).ready(function() {
     $("#form").submit(function(event) {
         Swal.fire({
             title: 'Aguarde',
-            html: 'Verificando...',
+            html: '<img src="./Gif-Recyclo.gif" alt="description of gif" style="display: block;  margin-left: auto;margin-right: auto;" width="600" height="600" /> ',
+            //lembrar que tira o click do fundo 
             allowOutsideClick: false,
+            showCancelButton: false,
+            showConfirmButton: false,
             onBeforeOpen: () => {
                 Swal.showLoading()
             },
@@ -25,9 +28,7 @@ $(document).ready(function() {
                 var json = (request.responseText);
                
                 if(json == 'Usuario encontrado!'){
-                 // Função loader sweetalert
-                
-                    alert(json)
+                    window.location.replace("../mapa/index.html");       
                 }
 
                 else if(json == 'Usuario não existente'){
