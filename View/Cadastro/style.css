@@ -61,6 +61,7 @@ a:hover {
     background-color: #35d786;
     transition: 1s;
     cursor: pointer;
+    border-radius:5px;
 }
 
 form {
