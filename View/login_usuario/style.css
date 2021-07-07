@@ -30,7 +30,7 @@ p {
     font-size: 4vw;
     color: white;
     width: 70%;
-    text-align: center;
+    text-align: left;
     font-weight: bolder;
     margin-left: 3.5vw;
 }
@@ -95,13 +95,13 @@ input {
     margin-bottom: 15px;
     border: 0;
     border-radius: 5px;
-    background-color: rgba(14, 108, 216, 0.8);
+    background-color: rgba(41, 120, 160, 0.8);
     font-size: larger;
     font-weight: 500;
     display: inline-block;
 }
 #btnCadastrar:hover{
-    background-color: rgb(14, 108, 216);
+    background-color: rgb(41, 120, 160);
     transition: 1s;
 }
 
@@ -140,6 +140,6 @@ input {
     #btnCadastrar{
        height:40px ;
        margin-top: 0;
-       background-color: rgb(14, 108, 216);
+       background-color: rgb(41, 120, 160);
     }
 }

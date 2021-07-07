@@ -1,3 +1,10 @@
+/*  PALETA 
+- azuzin (41, 120, 160)
+- verde (90, 190, 65 )
+- cinzaClaro (195, 201, 233) 
+- cinzaEscuro (27, 32, 33)
+*/
+
 *{
     margin: 0;
     padding: 0;
@@ -5,16 +12,14 @@
 }
 body{
     background-color: whitesmoke;
+    display: inline-flex;
 }
-.Divs{
-    height: 40vw;
-}
-
 .btn{
     width: 17vw;
     height: 65px;
     background-color:rgba(90, 190, 65, 0.8);
     border: 0;  
+    border-radius: 5px;
     letter-spacing: 2px;
     font-size: 20px;
     font-weight: 900;
@@ -24,15 +29,28 @@ body{
     transition: 1s;
     background-color:rgb(90, 190, 65) ;
 }
+h3{
+    font-size: 3em;
+    letter-spacing: 1px;
+}
 
+h1{
+    text-shadow: 3px 3px 7px #000;
+    color: white;
+    font-size: 50px;
+    letter-spacing: 1px;
+    font-weight: 800;
+}
+/*-- nav --*/
 ul {
     list-style-type: none;
     margin: 0;
     padding: 5px;
     overflow: hidden;
-    background-color: rgba(90, 190, 65, 0.8);
-    box-shadow: 0px 10px rgba(0, 0, 0, 0.158);
+    background-color: rgba(90, 190, 65);
+    box-shadow: -7px 4px 16px #000;
 }
+
 #logo{
     height: 40px;
     width: 50px;
@@ -61,78 +79,141 @@ li {
     background-color: #111;
     border-radius: 10px;
 }
+
+/*--divHome --*/
 /* -- Imagem provisoria 
         retirada da unsplash --*/
 #Home{
-    background: url("https://images.unsplash.com/photo-1533027052290-2b4ece075c42?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80") no-repeat;
-    background-size: cover;
-    background-position-y: center;
     height: 50vw;
     text-align: center;
+    background-color:  rgba(41, 120, 160, 0.1);
 }
 
-#mask{
-    background: rgba(0, 0, 0, 0.25);
-}
-
-h2{
-    margin-top: 10px;
-    font-size: 50px;
-    color: white;
-}
-#listaFuncionalidades{
-    margin-left: 20px;
-    margin-top: 20px;
-    width: 50%;
-    color: white;
-
-}
-#listaFuncionalidades li{
-    text-align: left;
-    margin-top: 20px;
-    font-size: 30px;
-    font-weight: 700;
-    list-style-type: none;
-}
-
-#Conta{
-    background: url("img/login.jpg") no-repeat;
-    background-position-y: center;
+#content{
+    background: url("img/a.jpg") no-repeat;
     background-size: cover;
-    padding: 30px;
-    display: flex;
-    margin-top: 20px;
+    background-position-y: center;
+    padding: 20px;
+    height: 45vw;
 }
-#Conta p{
-    font-family: sans-serif;
+#content h3{
+    margin-top: 2px;
     color: white;
-    font-weight: 1000;
-    font-size: 50px;
-    width: 50vw;
-    margin-top: 50px;
+    font-size: 35px;
+    font-weight: 700;
+}
+#dvSeparador{
+    display: flex;
+}
+.esquerda{
+    margin-top: 10px;
+    width: 35%;
+    padding: 10px;
+}
+.esquerda p{
+    margin-top: 10px;
+    text-align: left;
+    font-size: 30px;
+    color: white;
+
+}
+.direita{
+   width: 65%;
+}
+.direita img{/* imagem provisoria*/
+    margin-top: 30px;
+    height: 25vw;
+    width: 25vw;
     opacity: 0.8;
-}
-
-#Entrar_Login{
-    text-align: center;
-    width: 50%;
-    white-space: pre-wrap;
-    background-color:rgba(255, 255, 255, 0.2);
-    border-radius: 15px;
-    padding: 50px;
-}
-#Entrar_Login button{
-    margin-top: 15px;
-}
-
-#imgPerfil{
-    margin-top: 20px;
-    height: 130px;
-    opacity: 0.9;
+    border-radius: 10px;
     border-style: solid;
-    border-radius: 30px;
+    border-width: 5px;
+    border-color: rgba(0, 0, 0,0.3);
+}
+#direita img:hover{
+    transition: 1s;
+    opacity: 1;
 }
 
+/*-- Conta --*/
+#conta{
+    background: whitesmoke;
+    height: 45vw;
+}
+#contaBox{
+    background: white;
+    text-align: center;
+    height: 43vw;
+    padding: 30px;
+}
+#sep{
+    display: flex;
+}
+#contaBox .direita{
+    padding: 25px;
+    text-align: left;
+}
+#contaBox .direita p{
+    font-size: 30px;
+    margin-top: 5px;
+    font-weight: 700;
+    color: black;
+}
+#contaBox .esquerda{
+    border-radius: 20px;
+    box-shadow:5px 7px rgba(90, 190, 65, 0.3);
+}
+#contaBox .esquerda img{
+    width: 20vw;
+}
+#contaBox .esquerda button{
+    background:transparent;
+    border-style: solid;
+    border-width: 5px;
+    border-color:rgba(90, 190, 65, 0.8);
+}
+#contaBox .esquerda button:hover{
+    transform: 1s;
+    background: rgba(90, 190, 65);
+}
+
+/*-- Sobre --*/
+
+#sobre{
+    height: 30vw;
+    padding: 10% 50px 50px;
+    text-align: center;
+    background: url("../View/img/sobre.png") no-repeat;
+    background-size: cover;
+    background-position-y: center;
+}
+
+#sobre h3{
+    color:white
+}
+#sobre button{
+    color: whitesmoke;
+    background: transparent;
+    border-style: solid;
+    border-width: 5px;
+    border-color:rgba(90, 190, 65, 0.8);
+}
+#sobre button:hover{
+    background: rgba(90, 190, 65);
+    transform: 1s;
+}
+
+#box div{
+    font-size: 20px;
+}
+#box div p{
+    text-align: center;
+    color:white;
+    margin-top: 20px;
+    padding: 30px;
+    font-size: 25px;
+    font-weight: 700;
+}
 
 footer {
     padding: 20px;
@@ -145,3 +226,6 @@ footer {
 }
 
 /*-- mobile --*/
+@media only screen and (max-width:600px) {
+
+}

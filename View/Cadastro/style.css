@@ -27,7 +27,7 @@ p {
     font-size: 4vw;
     color: white;
     width: 70%;
-    text-align: center;
+    text-align: left;
     font-weight: bolder;
     margin-left: 3.5vw;
 }
@@ -53,6 +53,7 @@ p {
 }
 
 a{
+    border-radius: 4px;
     padding: 10px 7vw;
 }
 
@@ -74,13 +75,14 @@ input {
     margin-top: 15px;
     padding-left: 5px;
     border: 0;
+    border-radius: 10px;
 }
 
 .BtnOk {
     width: 48vw;
     height: 50px;
-    margin-top: 30px;
     border: 0;
+    border-radius: 10px;
     background-color:rgba(90, 190, 65, 0.8);
     font-size: larger;
     font-weight: 500;
@@ -98,10 +100,9 @@ input {
 #btnLogin {
     width: 48vw;
     height: 50px;
-    margin-top: 20px;
+    border-radius: 10px;
     margin-left: 20px;
     border: 0;
-
     background-color: rgba(14, 108, 216, 0.8);
     font-size: larger;
     font-weight: 500;
