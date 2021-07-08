@@ -87,12 +87,14 @@ li {
 /* -- Imagem provisoria 
         retirada da unsplash --*/
 #Home{
+    width: fit-content;
     height: 50vw;
     text-align: center;
     background-color:  rgba(41, 120, 160, 0.1);
 }
 
 #content{
+    width: fit-content;
     background: url("img/a.jpg") no-repeat;
     background-size: cover;
     background-position-y: center;
@@ -107,21 +109,24 @@ li {
 }
 #dvSeparador{
     display: flex;
+    height: fit-content;
 }
 .esquerda{
     margin-top: 10px;
-    width: 35%;
+    width: 55%;
+    height: fit-content;
     padding: 10px;
 }
 .esquerda p{
     margin-top: 10px;
     text-align: left;
     font-size: 30px;
+    height: -webkit-fill-available;
     color: white;
-
 }
 .direita{
-   width: 65%;
+   width: 40%;
+   height: fit-content;
 }
 .direita img{/* imagem provisoria*/
     margin-top: 30px;
@@ -140,10 +145,12 @@ li {
 
 /*-- Conta --*/
 #conta{
+    width: fit-content;
     background: whitesmoke;
     height: 45vw;
 }
 #contaBox{
+    width: fit-content;
     background: white;
     text-align: center;
     height: 43vw;
@@ -153,17 +160,20 @@ li {
     display: flex;
 }
 #contaBox .direita{
-    padding: 25px;
+    padding: 2px 0 0 20px;
     text-align: left;
+    width: 65%;
 }
 #contaBox .direita p{
-    font-size: 30px;
+    font-size: x-large;
     margin-top: 5px;
     font-weight: 700;
     color: black;
 }
 #contaBox .esquerda{
+    width: 35%;
     border-radius: 20px;
+    height: fit-content;
     box-shadow:5px 7px rgba(90, 190, 65, 0.3);
 }
 #contaBox .esquerda img{
@@ -183,6 +193,7 @@ li {
 /*-- Sobre --*/
 
 #sobre{
+    width: fit-content;
     height: 30vw;
     padding: 10% 50px 50px;
     text-align: center;
@@ -199,6 +210,7 @@ li {
     background: transparent;
     border-style: solid;
     border-width: 5px;
+    margin-top: 7px;
     border-color:rgba(90, 190, 65, 0.8);
 }
 #sobre button:hover{
@@ -213,7 +225,7 @@ li {
     text-align: center;
     color:white;
     margin-top: 20px;
-    padding: 30px;
+    padding: 26px 0  0 0;
     font-size: 25px;
     font-weight: 700;
 }
@@ -230,5 +242,70 @@ footer {
 
 /*-- mobile --*/
 @media only screen and (max-width:600px) {
-
+    .lia{/* -nav */
+        padding: 15px 6px;
+    }
+    .lia:active{
+        background-color: rgb(83, 83, 83);
+        border-radius: 5px;
+        transition: 1.2s;
+    }
+    h1{
+        font-size: 30px;
+    }
+    #Home{
+        height: 150vw;
+    }
+    #content{
+        height: 120vw;
+    }
+    #dvSeparador .esquerda{
+        width: 55%;
+    }
+    #dvSeparador h3{
+        display: none;
+    }
+    #dvSeparador p{
+        font-size: 20px;
+    }
+    #dvSeparador img{
+        margin-top: 50%;
+    }
+    #contaBox{
+        position: absolute;
+        height: 100vw;
+        padding: 0;
+    }
+    #contaBox h3{
+        font-size: 30px;
+        margin-top: 10px;
+    }
+    #sep{
+        margin-top: 7%;
+    }
+    .btn{
+        font-size: 10px;
+        height: 50px ;
+        width:130px;
+    }
+    .btn:active{
+        background: rgb(90, 190, 65);
+    }
+    #contaBox .direita p{
+        font-size: 15px;
+    }
+    #sobre{
+        height: 100vw;
+        padding: 10% 10px 50px;
+        margin-top: 50vw;
+        position: absolute;
+    }
+    #sobre h3{
+        font-size: 30px;
+    }
+    #box div p{
+        padding: 0;
+        font-size: 20px;
+        padding: 0%;
+    }
 }

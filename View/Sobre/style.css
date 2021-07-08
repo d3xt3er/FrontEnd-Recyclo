@@ -5,8 +5,7 @@
     font-family: Arial;
 }
 body{
-    background-color: whitesmoke;
-    display: inline-flex;
+    background-color: white;
 }
 
 ul {
@@ -45,4 +44,65 @@ li {
 .lia:hover {
     background-color: #111;
     border-radius: 10px;
+}
+#intro{
+    background:url("../img/sobre.png") no-repeat;
+    background-size: cover;
+    background-position-y: center;
+    height: 30vw;
+    text-align: center;
+}
+#logoTitulo{
+    height: 20vw;
+}
+h1{
+    text-shadow: 3px 3px 7px #000;
+    color: white;
+    font-size: 50px;
+    letter-spacing: 2px;
+    font-weight: 800;
+}
+
+#textSobre{
+    border-radius: 30px;
+    height: 60vw;
+    background: whitesmoke;
+    margin: 20px;
+    padding: 20px;
+}
+#textSobre p{
+    font-size: 25px;
+}
+#devs{
+    margin-top: 30px;
+    text-align: center;
+}
+h2{
+    font-size: 40px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+#Separador{
+    display: inline-flex;
+    width: 100%;
+    border-radius: 15px;
+    background: white;
+}
+
+.dev{
+    padding: 30px;
+    background: whitesmoke;
+    text-align: center;
+    width: -webkit-fill-available;
+}
+.imgDev{
+    height: 25vw;
+    border-radius: 60px;
+}
+.dev h3{
+    font-size: 30px;
+    font-weight: 800;
+}
+.link{
+    height: 10vw;
 }

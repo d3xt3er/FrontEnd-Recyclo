@@ -15,12 +15,15 @@ body{
     position: absolute;
 }
 
-img {
+#logoDesk {
     width: 15vw;
     height: 15vw;
     opacity: 0.8;
     margin-left: 12vw;
     cursor: pointer;
+}
+#logoMob{
+    display: none;
 }
 
 p {
@@ -125,6 +128,7 @@ input {
         background-color: white;
     }
     #direita{
+        border-radius: 10px;
         width: 80%;
         height: 90%;
         left: 10%;
@@ -143,4 +147,9 @@ input {
        margin-top: 0;
        background-color: rgb(41, 120, 160);
     }
+    #logoMob{
+        display: initial;
+        height: 20vw;
+    }
+
 }

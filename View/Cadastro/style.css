@@ -11,7 +11,9 @@
     height: 100%;
     position: absolute;
 }
-
+#logoMob{
+    display: none;
+}
 img {
     width: 15vw;
     height: 15vw;
@@ -156,5 +158,11 @@ input {
        height:40px ;
        margin-top: 0;
        background-color: rgb(14, 108, 216);
+    }
+    #logoMob{
+        display: initial;
+        height: 25vw;
+        width: 100px;
+        margin-left: 0;
     }
 }
