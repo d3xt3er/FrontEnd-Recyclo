@@ -1,7 +1,7 @@
 /* proximos passos do mapa
-* -infobox
-* -icones
-*/ 
+ * -infobox
+ * -icones
+ */
 
 function GetMap() {
     var map = new Microsoft.Maps.Map('#myMap');
@@ -22,6 +22,30 @@ function GetMap() {
 
 
 
-function alert(){
+function alert() {
 
 }
+
+
+var nome = localStorage.getItem('nome');
+var senha = localStorage.getItem('senha');
+
+
+fetch(`http://localhost:8080/usuario/user/${nome}/${senha}`, {
+        method: 'get'
+    })
+    .then((resp) => resp.json())
+    .then(function(data) {
+
+        // informações vindas da API
+        // document.getElementById("cpf").innerHTML = data.cd_cpf;
+        // document.getElementById("senha").innerHTML = data.cd_senha;
+        // document.getElementById("email").innerHTML = data.ds_email;
+
+        // Nomo do localstorage
+        // var x = localStorage.getItem('nome');
+        // document.getElementById("usuario").innerHTML = x;
+    })
+    .catch(function(err) {
+        console.error(err);
+    });
