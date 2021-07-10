@@ -31,7 +31,7 @@ var nome = localStorage.getItem('nome');
 var senha = localStorage.getItem('senha');
 
 
-fetch(`http://localhost:8080/usuario/user/${nome}/${senha}`, {
+fetch(`https://backend-recyclo.herokuapp.com/usuario/user/${nome}/${senha}`, {
         method: 'get'
     })
     .then((resp) => resp.json())

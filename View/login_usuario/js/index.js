@@ -17,8 +17,8 @@ $(document).ready(function() {
         var senha = document.getElementById("senha").value;
 
         var request = new XMLHttpRequest();
-        var url = "http://localhost:8080/usuario/login/" + nome + "/" + senha + "";
-        // var url = "https://backend-recyclo.herokuapp.com/usuario/login/" + nome + "/" + senha + "";
+        // var url = "http://localhost:8080/usuario/login/" + nome + "/" + senha + "";
+        var url = "https://backend-recyclo.herokuapp.com/usuario/login/" + nome + "/" + senha + "";
 
         request.open("GET", url, true);
         request.setRequestHeader("Content-Type", "application/json");
