@@ -1,16 +1,16 @@
 $(document).ready(function() {
     $("#form").submit(function(event) {
-        // Swal.fire({
-        //     title: 'Aguarde',
-        //     html: '<img src="./Gif-Recyclo.gif" alt="description of gif" style="display: block;  margin-left: auto;margin-right: auto;" width="600" height="600" /> ',
-        //     //lembrar que tira o click do fundo 
-        //     allowOutsideClick: false,
-        //     showCancelButton: false,
-        //     showConfirmButton: false,
-        //     onBeforeOpen: () => {
-        //         Swal.showLoading()
-        //     },
-        // });
+        Swal.fire({
+            title: 'Aguarde',
+            html: '<img src="./Gif-Recyclo.gif" alt="description of gif" style="display: block;  margin-left: auto;margin-right: auto;" width="600" height="600" /> ',
+            //lembrar que tira o click do fundo 
+            allowOutsideClick: false,
+            showCancelButton: false,
+            showConfirmButton: false,
+            onBeforeOpen: () => {
+                Swal.showLoading()
+            },
+        });
         event.preventDefault();
 
         var nome = document.getElementById("nome").value;
@@ -31,14 +31,13 @@ $(document).ready(function() {
 
                 if (json == 'Usuario encontrado!') {
                     window.location.replace("../mapa/index.html");
-                    console.log(json);
-                    // Utilizando localStorage capturando nome
+
+                    // Utilizando localStorage para setar nome e senha
                     localStorage.setItem('nome', nome);
                     localStorage.setItem('senha', senha);
 
                     localStorage['nome'] = nome;
                     localStorage['senha'] = senha;
-
 
                 } else if (json == 'Usuario não existente') {
                     Swal.fire({
