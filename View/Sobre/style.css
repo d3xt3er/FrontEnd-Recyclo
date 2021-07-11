@@ -64,14 +64,14 @@ h1{
 }
 
 #textSobre{
-    border-radius: 30px;
-    height: 60vw;
+    border-radius: 20px;
     background: whitesmoke;
     margin: 20px;
     padding: 20px;
 }
 #textSobre p{
     font-size: 25px;
+    text-align: justify;
 }
 #devs{
     margin-top: 30px;
@@ -83,21 +83,29 @@ h2{
     letter-spacing: 2px;
 }
 #Separador{
-    display: inline-flex;
-    width: 100%;
     border-radius: 15px;
+    display: table;
+    content: " ";
+    clear: both;
     background: white;
+    width: 100%;
 }
 
 .dev{
-    padding: 30px;
+    padding: 20px;
     background: whitesmoke;
     text-align: center;
-    width: -webkit-fill-available;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+    max-width: 500px;
+    margin: 5px 10vw 10px 10vw;
+    float: left;
+    text-align: center;
+    font-family: arial;
+    width: 18vw;
 }
 .imgDev{
-    height: 25vw;
-    border-radius: 60px;
+    height:200px;
+    border-radius: 6px;
 }
 .dev h3{
     font-size: 30px;
@@ -105,4 +113,69 @@ h2{
 }
 .link{
     height: 10vw;
+}
+
+.dev button{
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+}
+.dev button:hover{
+    background: rgba(90, 190, 65,0.8);
+    transform: 1s;
+}
+.dev a img {
+    height: 60px;
+    width: 60px;
+}
+
+footer {
+    padding: 20px;
+    margin: 0 auto;
+    left: 0;
+    bottom: 0;
+    background-color: rgb(90, 190, 65);
+    color: white;
+    text-align: center; 
+}
+
+/*-- mobile --*/
+@media only screen and (max-width:600px) {
+    .lia{/* -nav */
+        padding: 15px 6px;
+    }
+    .lia:active{
+        background-color: rgb(83, 83, 83);
+        border-radius: 5px;
+        transition: 1.2s;
+    }
+    #intro{
+        height: 70vw;
+    }
+    #textSobre p{
+        font-size: 15px;
+    }
+    h2{
+        font-size: 25px;
+    }
+    #Separador{
+        display: inline-grid;
+    }
+    .dev{
+        width: auto;
+        margin: 0;
+    }
+    .imgDev{
+        height: 150px;
+    }
+    .dev h3{
+        font-size: 20px;
+    }
 }

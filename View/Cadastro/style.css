@@ -132,7 +132,7 @@ input {
 
     #direita{
         width: 80%;
-        height: 90%;
+        height: fit-content;
         left: 10%;
         display: inline-block;
         border-radius: 10px;
@@ -157,6 +157,7 @@ input {
     #btnLogin{
        height:40px ;
        margin-top: 0;
+       margin-bottom: 15px;
        background-color: rgb(14, 108, 216);
     }
     #logoMob{

@@ -116,6 +116,9 @@ input {
         padding: 20px;
         background-color: whitesmoke;
     }
+    #quadrado{
+        margin-left: 0;
+    }
     #esquerda{
         display: none;
     }

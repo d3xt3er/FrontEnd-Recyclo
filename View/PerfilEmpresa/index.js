@@ -1,0 +1,7 @@
+
+function EditarInfo(){
+  
+}
+function AdicionarPonto(){
+  
+}

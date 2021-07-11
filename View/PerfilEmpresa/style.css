@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+    scroll-behavior: smooth;
+}
+body{
+    background: whitesmoke;
+}
+#home{
+    text-align: center;
+}
+#info{
+    background: white;
+    margin: 30px;
+    padding: 30px;
+    border-radius: 15px;
+}
+#info ul{
+    list-style: none;
+}
+#info ul li{
+
+}
