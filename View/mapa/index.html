@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,19 +12,27 @@
     <script src="index.js"></script>
     <title>Map</title>
 </head>
+
 <body onload="GetMap()">
-    
+
     <!-- navbar -->
     <ul>
         <li><a class="lia" href="../login_usuario/index.html">Entrar</a></li>
-        <li><a class="lia" href="../Sobre/index.html">Sobre</a></li>
+
+        <li><a class="lia" href="#contact">Sobre</a></li>
+        <li id="usuario"></li>
+
+        <p id="senha"></p>
+        <p id="cpf"></p>
+        <p id="email"></p>
         <li style="float:left" onclick="location.replace('../index.html');"><img id="logo" src="../img/LogoRecycloV1.png"></li>
-        <li id="titulo" style="float:left"><a >Recyclo</a></li>
+        <li id="titulo" style="float:left"><a>Recyclo</a></li>
     </ul>
 
     <!-- Mapa -->
     <div id="myMap" style="height: 100%; position: absolute ">
-        
+
     </div>
 </body>
+
 </html>
