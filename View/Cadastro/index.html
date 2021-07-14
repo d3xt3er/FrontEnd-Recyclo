@@ -21,15 +21,14 @@
 <body>
 
     <div id="esquerda">
-        <img src="../img/LogoRecycloV1.png" onclick="location.replace('../index.html');">
+        <img src="../img/LogoRecycloV1.png">
         <!-- Div com mesagem generica sobre o meio ambiente-->
         <p> Nos ajude a tonar um mundo um lugar mais ecológico</p>
     </div>
-
     <Div id="direita">
         <!-- Selecao de cadastro-->
         <div id="quadrado">
-            <img id="logoMob" onclick="location.replace('../index.html');"src="../img/LogoRecycloV1.png" >
+            <img id="logoMob" src="../img/LogoRecycloV1.png">
             <!--Aplicar hover e transformar em divs -->
             <div id="selecao">
 
@@ -41,6 +40,7 @@
             <div id="formUsuario">
                 <form id="formUser" method="POST">
                     <h3>Cadastro</h3>
+                    <i class="fas fa-seedling"></i>
 
                     <input class="input" required type="text" placeholder="Nome:" id="nome" name="nome">
                     <input class="input" required type="email" placeholder="Email: example@.com" id="email" name="email">
@@ -68,7 +68,11 @@
 
         </div>
         <button id="btnLogin" onclick=" window.location.assign('../login_usuario/index.html');"> Ja tem uma conta? </button>
+        <br>
+
+        <img class="home" src="../img/casa.png" alt="" onclick=" window.location.assign('../../View/index.html');">
     </div>
+
     <script src="index.js"></script>
 </body>
 

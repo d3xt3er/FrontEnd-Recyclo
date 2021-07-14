@@ -1,10 +1,11 @@
-
-*{
+* {
     margin: 0;
     padding: 0;
-    font-family: Arial;
+    /* font-family: Arial; */
+    font-family: 'Roboto', sans-serif;
 }
-body{
+
+body {
     background-color: white;
 }
 
@@ -17,45 +18,51 @@ ul {
     box-shadow: -7px 4px 16px #000;
 }
 
-#logo{
-    height: 40px;
-    width: 50px;
+#logo {
+    height: 45px;
+    width: 47px;
 }
-#titulo{
+
+#titulo {
     display: block;
     color: white;
     text-align: center;
     padding: 14px 16px;
     letter-spacing: 2px;
-    font-weight: 900;
-  }
+    font-weight: 300;
+}
 
 li {
     float: right;
-  }
+}
 
-.lia{
+.lia {
     display: block;
     color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-  }
-.lia:hover {
-    background-color: #111;
-    border-radius: 10px;
 }
-#intro{
-    background:url("../img/sobre.png") no-repeat;
+
+.lia:hover {
+    background-color: rgb(83, 83, 83);
+    border-radius: 5px;
+    transition: 1.2s;
+}
+
+#intro {
+    background: url("../img/sobre.png") no-repeat;
     background-size: cover;
     background-position-y: center;
     height: 30vw;
     text-align: center;
 }
-#logoTitulo{
+
+#logoTitulo {
     height: 20vw;
 }
-h1{
+
+h1 {
     text-shadow: 3px 3px 7px #000;
     color: white;
     font-size: 50px;
@@ -63,26 +70,30 @@ h1{
     font-weight: 800;
 }
 
-#textSobre{
+#textSobre {
     border-radius: 20px;
     background: whitesmoke;
     margin: 20px;
     padding: 20px;
 }
-#textSobre p{
+
+#textSobre p {
     font-size: 25px;
     text-align: justify;
 }
-#devs{
+
+#devs {
     margin-top: 30px;
     text-align: center;
 }
-h2{
+
+h2 {
     font-size: 40px;
     font-weight: 800;
     letter-spacing: 2px;
 }
-#Separador{
+
+#Separador {
     border-radius: 15px;
     display: table;
     content: " ";
@@ -91,7 +102,7 @@ h2{
     width: 100%;
 }
 
-.dev{
+.dev {
     padding: 20px;
     background: whitesmoke;
     text-align: center;
@@ -103,19 +114,22 @@ h2{
     font-family: arial;
     width: 18vw;
 }
-.imgDev{
-    height:200px;
+
+.imgDev {
+    height: 200px;
     border-radius: 6px;
 }
-.dev h3{
+
+.dev h3 {
     font-size: 30px;
     font-weight: 800;
 }
-.link{
+
+.link {
     height: 10vw;
 }
 
-.dev button{
+.dev button {
     border: none;
     outline: 0;
     display: inline-block;
@@ -127,10 +141,12 @@ h2{
     width: 100%;
     font-size: 18px;
 }
-.dev button:hover{
-    background: rgba(90, 190, 65,0.8);
+
+.dev button:hover {
+    background: rgba(90, 190, 65, 0.8);
     transform: 1s;
 }
+
 .dev a img {
     height: 60px;
     width: 60px;
@@ -143,39 +159,42 @@ footer {
     bottom: 0;
     background-color: rgb(90, 190, 65);
     color: white;
-    text-align: center; 
+    text-align: center;
 }
 
+
 /*-- mobile --*/
+
 @media only screen and (max-width:600px) {
-    .lia{/* -nav */
+    .lia {
+        /* -nav */
         padding: 15px 6px;
     }
-    .lia:active{
+    .lia:active {
         background-color: rgb(83, 83, 83);
         border-radius: 5px;
         transition: 1.2s;
     }
-    #intro{
+    #intro {
         height: 70vw;
     }
-    #textSobre p{
+    #textSobre p {
         font-size: 15px;
     }
-    h2{
+    h2 {
         font-size: 25px;
     }
-    #Separador{
+    #Separador {
         display: inline-grid;
     }
-    .dev{
+    .dev {
         width: auto;
         margin: 0;
     }
-    .imgDev{
+    .imgDev {
         height: 150px;
     }
-    .dev h3{
+    .dev h3 {
         font-size: 20px;
     }
 }
