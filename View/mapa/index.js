@@ -31,8 +31,9 @@ function Logout() {
 
 
 function GetMap() {
+    // $(document).ready(() => {
+    //     $("body").load(() => {
     var map = new Microsoft.Maps.Map('#myMap');
-
 
     var center = map.getCenter();
 
@@ -42,14 +43,9 @@ function GetMap() {
         anchor: new Microsoft.Maps.Point(12, 39)
     });
 
-    //Add the pushpin to the map
     map.entities.push(pin);
-    //Add your post map load code here.
-}
-
-
-
-function alert() {
+    //     })
+    // })
 
 }
 

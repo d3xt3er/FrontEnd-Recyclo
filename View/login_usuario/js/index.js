@@ -1,7 +1,7 @@
-$(document).ready(function() {
-    $("#form").submit(function(event) {
+$(document).ready(() => {
+    $("#form").submit((event) => {
         Swal.fire({
-            title: 'Aguarde',
+            title: 'Aguarde...',
             html: '<img src="./Gif-Recyclo.gif" alt="description of gif" style="display: block;  margin-left: auto;margin-right: auto;" width="200" height="200" /> ',
             //lembrar que tira o click do fundo 
             allowOutsideClick: false,
