@@ -5,20 +5,182 @@
     scroll-behavior: smooth;
 }
 body{
-    background: whitesmoke;
+    background: url("../img/homeNext.jpg") no-repeat;
+    background-size: cover;
+}
+/*-- navbar --*/
+#nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 5px;
+    overflow: hidden;
+    background-color: rgba(90, 190, 65);
+    box-shadow: -7px 4px 16px #000;
+}
+li {
+    float: right;
+  }
+
+.lia{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+.lia:hover {
+    background-color: #111;
+    border-radius: 10px;
+}
+#logoTitulo{
+    height: 20vw;
+}
+
+#logo{
+    height: 40px;
+    width: 50px;
+}
+#titulo{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    letter-spacing: 2px;
+    font-weight: 900;
+}
+h1{
 }
 #home{
     text-align: center;
+    margin-top: 10px;
 }
 #info{
-    background: white;
+    background: rgba(255, 255, 255, 0.8);
     margin: 30px;
     padding: 30px;
     border-radius: 15px;
+    text-align: center;
 }
 #info ul{
     list-style: none;
+    width: 100%;
+    display: flow-root;
 }
 #info ul li{
+    margin-top: 10px;
+    margin-left: 2px;
+    float: left;
+    font-size: 20px; 
+}
+
+#btnEditar{
+    height: 40px;
+    width: 150px;
+    float: right;
+    font-size: 15px;
+    background: rgb(90, 190, 65 );
+    border-radius: 5px;
+    border: 0;
+    margin-top: 5px;
+}
+.infoTipo{
+    font-style: normal;
+}
+h2{
+    margin-top: 20px;
+}
+
+/*-- EditarInfo --*/
+#EditarInformacao{
+}
+.txtEditar{
+    margin-top: 10px;
+    height: 35px;
+    width: 300px;
+    padding: 3px;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+#pontoColeta{
+    padding: 30px;
+    margin-top: 20px;
+    height: 40vw;
+}
+#pontos{
+    padding: 10px;
+    border-radius: 15px;
+    overflow: auto;
+    height: 30vw;
+    overflow-x: hidden;
+    background: whitesmoke;
+}
+h2{}
+.ponto{
+    padding-right: 5px;
+
+}
+.ponto:hover{
+    background:rgb(90, 190, 65 ,0.8);
+    border-radius: 5px;
+}
+.ponto li{
+    float: left;
+}
+.PontoIcone{
+    height: 30px;
+    border-radius: 3px;
+    margin-right: 5px;
+}
+.PontoIcone:hover{
+    background: rgb(195, 201, 233) ;
+    transition: 1s;
+}
+#btnAddPonto{
+    height: 50px;
+    width: 150px;
+    border: 0;
+    font-size: 15px;
+    border-radius: 5px;
+    background: rgb(90, 190, 65 );
+    margin-top: 5px;
+    float: right;
+}
+/*-- Mobile --*/
+@media only screen and (max-width:600px) {
+    .lia{/* -nav */
+        padding: 15px 6px;
+    }
+    .lia:active{
+        background-color: rgb(83, 83, 83);
+        border-radius: 5px;
+        transition: 1.2s;
+    }
+    body{
+        background: whitesmoke;
+    }
+    h1{
+        margin-top: 15px;
+    }
+    #info{
+        margin: 0px 5px 0px 5px;
+        border-radius: 0;
+        padding: 5px;
+    }
+    #info ul{
+        margin-top: 10px;
+    }
+    #info ul li{
+        font-size: 15px;
+    }
+    #pontos{
+        height: 70vw;
+    }
+    #pontoColeta{
+        height: 100vw;
+        padding: 10px;
+        margin-top: 50px;
+    }
+
 
 }

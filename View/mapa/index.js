@@ -1,30 +1,18 @@
-/* proximos passos do mapa
- * -infobox
- * -icones
- */
-
+// mapa
 function GetMap() {
     var map = new Microsoft.Maps.Map('#myMap');
 
+    navigator.geolocation.getCurrentPosition(function(position){
+        var loc = new Microsoft.Maps.Location(
+            position.coords.latitude,
+            position.coords.longitude);
 
-    var center = map.getCenter();
-
-    //Create custom Pushpin
-    var pin = new Microsoft.Maps.Pushpin(center, {
-        icon: 'LogoRecycloV1-mapa-icon.png',
-        anchor: new Microsoft.Maps.Point(12, 39)
+        map.setView({center:loc,zoom:17});
     });
-
-    //Add the pushpin to the map
-    map.entities.push(pin);
-    //Add your post map load code here.
 }
 
 
 
-function alert() {
-
-}
 
 
 var nome = localStorage.getItem('nome');
