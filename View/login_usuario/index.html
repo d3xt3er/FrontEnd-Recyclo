@@ -18,7 +18,7 @@
 <body onload="test()">
 
     <div id="esquerda">
-        <img id="logoDesk" src="../img/LogoRecycloV1.png" onclick="location.replace('../index.html');">
+        <img id="logoDesk" src="../img/LogoRecycloV1.png">
         <!-- Div com mesagem generica sobre o meio ambiente-->
         <p>Ajude a tornar o mundo mais consciente</p>
     </div>
@@ -29,7 +29,7 @@
 
             <!-- cadastro de Usuarios -->
             <div id="formUsuario">
-                <img id="logoMob" onclick="window.location.assign('../index.html');" src="../img/LogoRecycloV1.png" alt="">
+                <img id="logoMob" src="../img/LogoRecycloV1.png" alt="">
                 <form id="form" method="POST">
                     <h2>Login</h2>
                     <input class="input" required type="text" placeholder="Email: example@example.com" id="nome" name="nome">
@@ -39,7 +39,10 @@
 
             </div>
             <button id="btnCadastrar" onclick="window.location.assign('../Cadastro/index.html');"> Não tem uma conta? </button>
+
         </div>
+
+        <img class="home" src="../img/casa.png" alt="" onclick=" window.location.assign('../../View/index.html');">
         <script src="js/index.js"></script>
 </body>
 

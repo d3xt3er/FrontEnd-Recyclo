@@ -4,43 +4,47 @@
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
 }
-body{
-  overflow: hidden;
+
+body {
+    overflow: hidden;
 }
+
 ul {
     list-style-type: none;
     margin: 0;
     padding: 5px;
     overflow: hidden;
     background-color: rgba(90, 190, 65);
+}
 
+#logo {
+    height: 45px;
+    width: 47px;
 }
-#logo{
-    height: 40px;
-    width: 50px;
-}
-#titulo{
+
+#titulo {
     display: block;
     color: white;
     text-align: center;
     padding: 14px 16px;
     letter-spacing: 2px;
-    font-weight: 900;
-  }
+}
 
 li {
     float: right;
-  }
+}
 
-.lia{
-
+.lia {
     display: block;
     color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-  }
+    cursor: pointer;
+}
+
 .lia:hover {
-    background-color: #111;
-    border-radius: 10px;
+    background-color: rgb(83, 83, 83);
+    border-radius: 5px;
+    transition: 1.2s;
 }

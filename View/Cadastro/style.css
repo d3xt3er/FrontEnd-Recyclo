@@ -11,15 +11,24 @@
     height: 100%;
     position: absolute;
 }
-#logoMob{
+
+#logoMob {
     display: none;
 }
+
+.home {
+    width: 30px;
+    height: 30px;
+    margin-left: 819px;
+    margin-top: 103px;
+    cursor: pointer;
+}
+
 img {
     width: 15vw;
     height: 15vw;
     opacity: 0.8;
     margin-left: 12vw;
-    cursor: pointer;
 }
 
 p {
@@ -29,7 +38,7 @@ p {
     font-size: 4vw;
     color: white;
     width: 70%;
-    text-align: left;
+    text-align: center;
     font-weight: bolder;
     margin-left: 3.5vw;
 }
@@ -54,17 +63,16 @@ p {
     margin-top: 15px;
 }
 
-a{
+a {
     border-radius: 4px;
     padding: 10px 7vw;
 }
-
 
 a:hover {
     background-color: #35d786;
     transition: 1s;
     cursor: pointer;
-    border-radius:5px;
+    border-radius: 5px;
 }
 
 form {
@@ -86,20 +94,18 @@ input {
     height: 50px;
     border: 0;
     border-radius: 10px;
-    background-color:rgba(90, 190, 65, 0.8);
+    background-color: rgba(90, 190, 65, 0.8);
     font-size: larger;
     font-weight: 500;
     display: inline-block;
     opacity: 6;
     cursor: pointer;
     border-radius: 5px;
-
 }
 
-    .BtnOk:hover {
+.BtnOk:hover {
     transition: 1s;
-    background-color:rgb(90, 190, 65) ;
-
+    background-color: rgb(90, 190, 65);
 }
 
 #btnLogin {
@@ -109,61 +115,65 @@ input {
     border: 0;
     border-radius: 5px;
     cursor: pointer;
-    background-color: rgba(14, 108, 216, 0.8);
+    background-color: rgb(41, 120, 160);
     font-size: larger;
     font-weight: 500;
     display: inline-block;
 }
-#btnLogin:hover{
+
+#btnLogin:hover {
     background-color: rgb(14, 108, 216);
     transition: 1s;
 }
 
+
 /*-- Mobile --*/
 
 @media only screen and (max-width:600px) {
-    body{
+    body {
         padding: 20px;
         background-color: whitesmoke;
     }
-    #esquerda{
+    .home {
+        width: 30px;
+        height: 30px;
+        margin-left: 10px;
+        margin: 2px;
+        cursor: pointer;
+    }
+    #esquerda {
         display: none;
     }
-
-    #direita{
+    #direita {
         width: 80%;
         height: fit-content;
         left: 10%;
         display: inline-block;
         border-radius: 10px;
     }
-
-    #selecao{
+    #selecao {
         display: inline-flex;
     }
-    
-    a{
-        
-        padding: 5px 7vw; 
+    a {
+        padding: 5px 7vw;
     }
-
-    input{
-        height:40px ;
+    input {
+        height: 40px;
     }
-    .BtnOk{
-        height:40px ; 
-        background-color:rgb(90, 190, 65) ;
+    .BtnOk {
+        height: 40px;
+        background-color: rgb(90, 190, 65);
     }
-    #btnLogin{
-       height:40px ;
-       margin-top: 0;
-       margin-bottom: 15px;
-       background-color: rgb(14, 108, 216);
+    #btnLogin {
+        height: 40px;
+        margin-top: 0;
+        margin-bottom: 15px;
+        background-color: rgb(14, 108, 216);
     }
-    #logoMob{
+    #logoMob {
         display: initial;
-        height: 25vw;
-        width: 100px;
+        height: 23vw;
+        width: 82px;
         margin-left: 0;
     }
 }

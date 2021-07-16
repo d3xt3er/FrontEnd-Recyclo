@@ -29,11 +29,11 @@ function SwitchForm(op) {
 
 // Código JS Back-End - Cadastro Usuario
 
-$(document).ready(function() {
+$(document).ready(() => {
 
     $("#cpf").mask("999.999.999-99");
 
-    $("#formUser").submit(function(event) {
+    $("#formUser").submit((event) => {
 
 
         event.preventDefault();
@@ -47,7 +47,7 @@ $(document).ready(function() {
         if (senha != "" && ConfirmSenha != "" && senha === ConfirmSenha) {
 
             Swal.fire({
-                title: 'Aguarde',
+                title: 'Aguarde...',
                 html: '<img src="./Gif-Recyclo.gif" alt="description of gif" style="display: block;  margin-left: auto;margin-right: auto;" width="600" height="600" /> ',
                 //lembrar que tira o click do fundo 
                 allowOutsideClick: false,
@@ -105,12 +105,12 @@ $(document).ready(function() {
 
 // Código JS Back-End - Cadastro Empresa
 
-$(document).ready(function() {
+$(document).ready(() => {
 
     $("#cnpj").mask("99.999.999/9999-99");
     $("#tel").mask("(00) 0000-0000");
 
-    $("#formCompany").submit(function(event) {
+    $("#formCompany").submit((event) => {
 
         event.preventDefault();
 
@@ -124,7 +124,7 @@ $(document).ready(function() {
         if (senha != "" && ConfirmaSenha != "" && senha === ConfirmaSenha) {
 
             Swal.fire({
-                title: 'Aguarde',
+                title: 'Aguarde...',
                 html: '<img src="./Gif-Recyclo.gif" alt="description of gif" style="display: block;  margin-left: auto;margin-right: auto;" width="600" height="600" /> ',
                 //lembrar que tira o click do fundo 
                 allowOutsideClick: false,

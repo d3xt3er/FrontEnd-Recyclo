@@ -5,21 +5,24 @@
 - cinzaEscuro (27, 32, 33)
 */
 
-*{
+* {
     margin: 0;
     padding: 0;
-    font-family: Arial;
+    /* font-family: Arial; */
+    font-family: 'Roboto', sans-serif;
     scroll-behavior: smooth;
 }
-body{
+
+body {
     background-color: whitesmoke;
     display: inline-flex;
 }
-.btn{
+
+.btn {
     width: 17vw;
     height: 65px;
-    background-color:rgba(90, 190, 65, 0.8);
-    border: 0;  
+    background-color: rgba(90, 190, 65, 0.8);
+    border: 0;
     border-radius: 5px;
     letter-spacing: 2px;
     font-size: 20px;
@@ -27,23 +30,28 @@ body{
     cursor: pointer;
 }
 
-.btn:hover{
+.btn:hover {
     transition: 1s;
-    background-color:rgb(90, 190, 65) ;
+    background-color: rgb(90, 190, 65);
 }
-h3{
+
+h3 {
     font-size: 3em;
     letter-spacing: 1px;
 }
 
-h1{
-    text-shadow: 3px 3px 7px #000;
+h1 {
+    text-shadow: 2px 2px 5px #5e5e5ef3;
     color: white;
     font-size: 50px;
     letter-spacing: 1px;
     font-weight: 800;
+    font-family: 'Open Sans', sans-serif;
 }
+
+
 /*-- nav --*/
+
 ul {
     list-style-type: none;
     margin: 0;
@@ -53,47 +61,54 @@ ul {
     box-shadow: -7px 4px 16px #000;
 }
 
-#logo{
+#logo {
     height: 45px;
     width: 47px;
 }
-#titulo{
+
+#titulo {
     display: block;
     color: white;
     text-align: center;
     padding: 14px 16px;
     letter-spacing: 2px;
     font-weight: 900;
-  }
+}
 
 li {
     float: right;
-  }
+}
 
-.lia{
+.lia {
     display: block;
     color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-  }
+    font-family: 'Open Sans', sans-serif;
+}
+
 .lia:hover {
     background-color: rgb(83, 83, 83);
     border-radius: 5px;
     transition: 1.2s;
 }
 
+
 /*--divHome --*/
+
+
 /* -- Imagem provisoria 
         retirada da unsplash --*/
-#Home{
+
+#Home {
     width: fit-content;
     height: 50vw;
     text-align: center;
-    background-color:  rgba(41, 120, 160, 0.1);
+    background-color: rgba(41, 120, 160, 0.1);
 }
 
-#content{
+#content {
     width: fit-content;
     background: url("img/a.jpg") no-repeat;
     background-size: cover;
@@ -101,98 +116,119 @@ li {
     padding: 20px;
     height: 45vw;
 }
-#content h3{
+
+#content h3 {
     margin-top: 2px;
     color: white;
     font-size: 35px;
     font-weight: 700;
 }
-#dvSeparador{
+
+#dvSeparador {
     display: flex;
     height: fit-content;
+    font-family: 'Open Sans', sans-serif;
 }
-.esquerda{
+
+.esquerda {
     margin-top: 10px;
     width: 55%;
     height: fit-content;
     padding: 10px;
 }
-.esquerda p{
+
+.esquerda p {
     margin-top: 10px;
     text-align: left;
     font-size: 30px;
     height: -webkit-fill-available;
     color: white;
+    font-weight: 600;
+    text-shadow: 2px 2px 5px #ccc;
 }
-.direita{
-   width: 40%;
-   height: fit-content;
+
+.direita {
+    width: 40%;
+    height: fit-content;
 }
-.direita img{/* imagem provisoria*/
-    margin-top: 30px;
-    height: 25vw;
-    width: 25vw;
+
+.direita img {
+    margin-top: 75px;
+    /* height: 25vw; */
+    width: 34vw;
     opacity: 0.8;
     border-radius: 10px;
     border-style: solid;
     border-width: 5px;
-    border-color: rgba(0, 0, 0,0.3);
+    border-color: rgba(0, 0, 0, 0.3);
 }
-#direita img:hover{
+
+#direita img:hover {
     transition: 1s;
     opacity: 1;
 }
 
+
 /*-- Conta --*/
-#conta{
+
+#conta {
     width: fit-content;
     background: whitesmoke;
     height: 45vw;
 }
-#contaBox{
+
+#contaBox {
     width: fit-content;
     background: white;
     text-align: center;
     height: 43vw;
     padding: 30px;
 }
-#sep{
+
+#sep {
     display: flex;
 }
-#contaBox .direita{
+
+#contaBox .direita {
     padding: 2px 0 0 20px;
     text-align: left;
     width: 65%;
 }
-#contaBox .direita p{
+
+#contaBox .direita p {
     font-size: x-large;
     margin-top: 5px;
     font-weight: 700;
     color: black;
 }
-#contaBox .esquerda{
+
+#contaBox .esquerda {
     width: 35%;
     border-radius: 20px;
     height: fit-content;
-    box-shadow:5px 7px rgba(90, 190, 65, 0.3);
+    box-shadow: 5px 7px rgba(90, 190, 65, 0.3);
 }
-#contaBox .esquerda img{
+
+#contaBox .esquerda img {
     width: 20vw;
 }
-#contaBox .esquerda button{
-    background:transparent;
+
+#contaBox .esquerda button {
+    background: transparent;
     border-style: solid;
     border-width: 5px;
-    border-color:rgba(90, 190, 65, 0.8);
+    border-color: rgba(90, 190, 65, 0.8);
 }
-#contaBox .esquerda button:hover{
+
+#contaBox .esquerda button:hover {
     transform: 1s;
     background: rgba(90, 190, 65);
 }
 
+
 /*-- Sobre --*/
 
-#sobre{
+#sobre {
     width: fit-content;
     height: 30vw;
     padding: 10% 50px 50px;
@@ -202,32 +238,35 @@ li {
     background-position-y: center;
 }
 
-#sobre h3{
-    color:white
+#sobre h3 {
+    color: white
 }
-#sobre button{
+
+#sobre button {
     color: whitesmoke;
     background: transparent;
     border-style: solid;
     border-width: 5px;
-    margin-top: 7px;
-    border-color:rgba(90, 190, 65, 0.8);
+    margin-top: 17px;
+    border-color: rgba(90, 190, 65, 0.8);
 }
-#sobre button:hover{
+
+#sobre button:hover {
     background: rgba(90, 190, 65);
     transform: 1s;
 }
 
-#box div{
+#box div {
     font-size: 20px;
 }
-#box div p{
+
+#box div p {
     text-align: center;
-    color:white;
-    margin-top: 20px;
-    padding: 26px 0  0 0;
+    color: white;
+    /* margin-top: 20px; */
+    padding: 26px 0 0 0;
     font-size: 25px;
-    font-weight: 700;
+    font-weight: 600;
 }
 
 footer {
@@ -237,79 +276,83 @@ footer {
     bottom: 0;
     background-color: rgb(90, 190, 65);
     color: white;
-    text-align: center; 
+    text-align: center;
 }
 
+
 /*-- mobile --*/
+
 @media only screen and (max-width:600px) {
-    .lia{/* -nav */
+    .lia {
+        /* -nav */
         padding: 15px 6px;
     }
-    .lia:active{
+    .lia:active {
         background-color: rgb(83, 83, 83);
         border-radius: 5px;
         transition: 1.2s;
     }
-    h1{
+    h1 {
         font-size: 30px;
     }
-    #Home{
+    #Home {
         height: 150vw;
     }
-    #content{
+    #content {
         height: 120vw;
     }
-    #dvSeparador .esquerda{
+    #dvSeparador .esquerda {
         width: 55%;
     }
-    #dvSeparador h3{
+    #dvSeparador h3 {
         display: none;
     }
-    #dvSeparador p{
+    #dvSeparador p {
         font-size: 20px;
     }
-    #dvSeparador img{
+    #dvSeparador img {
         margin-top: 50%;
     }
-    #contaBox{
+    #contaBox {
         position: absolute;
         height: 100vw;
         padding: 0;
     }
-    #contaBox h3{
+    #contaBox h3 {
         font-size: 30px;
         margin-top: 10px;
     }
-    #sep{
+    #sep {
         margin-top: 7%;
     }
-    .btn{
+    .btn {
         font-size: 10px;
-        height: 50px ;
-        width:130px;
+        height: 42px;
+        width: 129px;
+        margin-top: 9px;
     }
-    .btn:active{
+    .btn:active {
         background: rgb(90, 190, 65);
     }
-    #contaBox .direita p{
+    #contaBox .direita p {
         font-size: 15px;
     }
-    #sobre{
+    #sobre {
         height: 100vw;
         padding: 10% 10px 50px;
         margin-top: 50vw;
         position: absolute;
     }
-    #sobre h3{
+    #sobre h3 {
         font-size: 30px;
     }
-    #box div p{
+    #box div p {
         padding: 0;
         font-size: 20px;
         padding: 0%;
     }
-    footer{
+    footer {
         position: relative;
-        bottom:-110%
+        bottom: -110%
     }
 }

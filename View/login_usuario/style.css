@@ -1,11 +1,14 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    /* font-family: Arial, Helvetica, sans-serif; */
+    font-family: 'Roboto', sans-serif;
 }
-body{
+
+body {
     background: white;
 }
+
 #esquerda {
     background: url("../img/login.jpg") no-repeat;
     background-size: cover;
@@ -22,7 +25,8 @@ body{
     margin-left: 12vw;
     cursor: pointer;
 }
-#logoMob{
+
+#logoMob {
     display: none;
 }
 
@@ -33,13 +37,13 @@ p {
     font-size: 4vw;
     color: white;
     width: 70%;
-    text-align: left;
+    text-align: center;
     font-weight: bolder;
     margin-left: 3.5vw;
 }
 
 #direita {
-    background:white;
+    background: white;
     width: 55%;
     height: 100%;
     position: absolute;
@@ -53,15 +57,24 @@ p {
     margin-top: 15%;
 }
 
+.home {
+    width: 30px;
+    height: 30px;
+    margin-right: -843px;
+    margin-top: 231px;
+    cursor: pointer;
+}
+
 form {
     margin-top: 2vw;
     padding: 10px;
 }
 
-h2{
+h2 {
     letter-spacing: 10px;
-    font-weight: 900;
-    font-size: 3vw;
+    /* font-weight: 900; */
+    font-size: 2.5vw;
+    text-transform: uppercase;
 }
 
 input {
@@ -79,7 +92,7 @@ input {
     margin-top: 30px;
     border-radius: 5px;
     border: 0;
-    background-color:rgba(90, 190, 65, 0.8);
+    background-color: rgba(90, 190, 65, 0.8);
     font-size: larger;
     font-weight: 500;
     display: inline-block;
@@ -89,7 +102,7 @@ input {
 
 .BtnOk:hover {
     transition: 1s;
-    background-color:rgb(90, 190, 65) ;
+    background-color: rgb(90, 190, 65);
 }
 
 #btnCadastrar {
@@ -104,33 +117,41 @@ input {
     display: inline-block;
     cursor: pointer;
 }
-#btnCadastrar:hover{
+
+#btnCadastrar:hover {
     background-color: rgb(41, 120, 160);
     transition: 1s;
 }
 
+
 /*-- Mobile --*/
 
 @media only screen and (max-width:600px) {
-    body{
+    body {
         padding: 20px;
         background-color: whitesmoke;
     }
-    #quadrado{
+    .home {
+        width: 30px;
+        height: 30px;
+        margin-right: 0px;
+        margin-top: 46px;
+        cursor: pointer;
+    }
+    #quadrado {
         margin-left: 0;
     }
-    #esquerda{
+    #esquerda {
         display: none;
     }
-
-    h2{
+    h2 {
         font-size: xx-large;
     }
-    #formUsuario{
+    #formUsuario {
         border-radius: 15px;
         background-color: white;
     }
-    #direita{
+    #direita {
         border-radius: 10px;
         width: 80%;
         height: 90%;
@@ -138,21 +159,20 @@ input {
         display: inline-block;
         margin-top: 7%;
     }
-    input{
-        height:40px ;
+    input {
+        height: 40px;
     }
-    .BtnOk{
-        height:40px ; 
-        background-color:rgb(90, 190, 65) ;
+    .BtnOk {
+        height: 40px;
+        background-color: rgb(90, 190, 65);
     }
-    #btnCadastrar{
-       height:40px ;
-       margin-top: 0;
-       background-color: rgb(41, 120, 160);
+    #btnCadastrar {
+        /* height: 40px; */
+        margin-top: 0;
+        background-color: rgb(41, 120, 160);
     }
-    #logoMob{
+    #logoMob {
         display: initial;
         height: 20vw;
     }
-
 }
