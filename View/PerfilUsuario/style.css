@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    /* font-family: Arial; */
+    font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: whitesmoke;
+}
+
+/*--navbar --*/
+#nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 5px;
+    overflow: hidden;
+    background-color: rgba(90, 190, 65);
+    box-shadow: -7px 4px 16px #000;
+}
+#nav li {
+    float: right;
+  }
+
+.lia{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+.lia:hover {
+    background-color: #111;
+    border-radius: 10px;
+}
+#logoTitulo{
+    height: 20vw;
+}
+
+#logo{
+    height: 40px;
+    width: 50px;
+}
+#titulo{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    letter-spacing: 2px;
+    font-weight: 900;
+}
+
+#home{
+    text-align: center;
+    background: white;
+    padding: 20px;
+    margin: 50px;
+    border-radius: 15px;
+}
+#info{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+#info ul{
+    list-style: none;
+    width: 100%;
+    display: flow-root;
+}
+#info ul li{
+    margin-top: 10px;
+    margin-left: 3px;
+    float: left;
+    font-size: 20px; 
+}
+
+.btn{
+    margin-top: 20px;
+    height: 50px;
+    width: 120px;
+    border: 0;
+    font-size: 15px;
+    border-radius: 5px;
+}
+#btnEditar{
+    background:rgba(90, 190, 65,0.8);
+    margin-left: 5px;
+}
+#btnEditar:hover{
+    background:rgba(90, 190, 65);
+    transition: 1s;
+}
+#btnExcluir{
+    background: rgba(255, 44, 44, 0.8);
+}
+#btnExcluir:hover{
+    transition: 1s;
+    background: rgba(255, 44, 44)
+}
+.txtEditar{
+    margin-top: 10px;
+    height: 35px;
+    width: 300px;
+    padding: 3px;
+    font-size: 20px;
+    border-radius: 5px;
+}
