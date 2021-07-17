@@ -1,48 +1,57 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="../sweetalert.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&family=Roboto:wght@100&display=swap" rel="stylesheet">
     <title>Recyclo - Perfil</title>
 </head>
-<body>    
-<!--
+
+<body>
+    <!--
     tela provisoria
 -->
-<ul id="nav">
-    <li><a class="lia" onclick="sair()">Sair</a></li>
-    <li><a class="lia" href="../Sobre/index.html">Sobre</a></li>
-    <li><a class="lia" href="../mapa/index.html">Mapa</a></li>
-    <li style="float:left"><img id="logo"onclick="location.replace('../index.html');" src="../img/LogoRecycloV1.png" alt=""></li>
-    <li id="titulo" style="float:left"><a>Recyclo</a></li>
-</ul>
+    <ul id="nav">
+        <li><a class="lia" onclick="sair()">Sair</a></li>
+        <li><a class="lia" href="../Sobre/index.html">Sobre</a></li>
+        <li><a class="lia" href="../mapa/index.html">Mapa</a></li>
+        <li style="float:left"><img id="logo" onclick="location.replace('../index.html');" src="../img/LogoRecycloV1.png" alt=""></li>
+        <li id="titulo" style="float:left"><a>Recyclo</a></li>
+    </ul>
     <div id="home">
-        <h1>Bem vindo(a), Oliver</h1>
-        <div id="info" >
+        <h1>Bem vindo(a),
+            <p id="title"></p>
+        </h1>
+        <div id="info">
             <!-- testando display de informacoes-->
             <ul>
                 <li>Nome:</li>
-                <li id="nome">aaaaaaaaaaaa</li>
-                <li style="float: right;"id="telefone">565442124514</li>
+                <input id="id_usuario" type="hidden">
+                <li id="nome"></li>
+                <li style="float: right;" id="telefone"></li>
                 <li style="float: right;">Telefone:</li>
             </ul>
             <ul>
                 <li>Email:</li>
-                <li id="email">oliver@gmail.com</li>
+                <li id="email"></li>
             </ul>
             <ul>
-                <li >Cpf:</li>
-                <li  id="cpf">562356342515</li>
+                <li>CPF:</li>
+                <li id="cpf"></li>
             </ul>
 
             <button id="btnExcluir" class="btn" onclick="excluirConta()">Excluir Conta</button>
-            <button id="btnEditar"  class="btn" onclick="alterarConta()">Editar Conta</button>
-            
+            <button id="btnEditar" class="btn" onclick="alterarConta()">Editar Conta</button>
+
         </div>
     </div>
     <script src="index.js"></script>
 </body>
+
 </html>

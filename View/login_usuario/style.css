@@ -23,7 +23,6 @@ body {
     height: 15vw;
     opacity: 0.8;
     margin-left: 12vw;
-    cursor: pointer;
 }
 
 #logoMob {
@@ -84,6 +83,7 @@ input {
     padding-left: 5px;
     border: 0;
     border-radius: 5px;
+    font-weight: bold;
 }
 
 .BtnOk {
@@ -98,6 +98,7 @@ input {
     display: inline-block;
     opacity: 6;
     cursor: pointer;
+    font-weight: bold;
 }
 
 .BtnOk:hover {
@@ -116,6 +117,7 @@ input {
     font-weight: 500;
     display: inline-block;
     cursor: pointer;
+    font-weight: bold;
 }
 
 #btnCadastrar:hover {
