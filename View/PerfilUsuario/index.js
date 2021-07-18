@@ -1,7 +1,7 @@
 function alterarConta() {
     Swal.fire({
         title: "Editar informações",
-        html: '<form id="EditarInformacao">' +
+        html: '<form id="EditarInformacao" method="PUT">' +
             '<input id="FormNome" placeholder="Nome:" class="txtEditar" type="text">' +
             '<input id="formCpf" placeholder="CPF:"class="txtEditar" type="text">' +
             '<input id="formTelefone" placeholder="Telefone:" class="txtEditar" type="text">' +
@@ -11,8 +11,50 @@ function alterarConta() {
         showDenyButton: true,
         showCancelButton: true,
         confirmButtonText: `Salvar`,
-        denyButtonText: `Don't save`,
-    });
+        denyButtonText: `Cancelar`,
+    }).then((result) => {
+        if (result.isConfirmed) {
+
+            //ALTERAR - Usuario
+            var id = document.getElementById("id_usuario").textContent;
+            var nome = document.getElementById("FormNome").value;
+            var telefone = document.getElementById("formTelefone").value;
+            var cpf = document.getElementById("formCpf").value;
+            var senha = document.getElementById("formSenha").value;
+
+            var user = JSON.stringify({
+                "id": id,
+                "nome": nome,
+                "telefone": telefone,
+                "cpf": cpf,
+                "senha": senha,
+            })
+
+            var url = "http://localhost:8080/usuario/alterar";
+
+            var request = new XMLHttpRequest();
+            request.open("PUT", url);
+
+            request.setRequestHeader("Accept", "application/json");
+            request.setRequestHeader("Content-Type", "application/json");
+
+            request.onreadystatechange = function() {
+                if (request.readyState === 4) {
+                    console.log(request.status);
+                    console.log(request.responseText);
+                }
+            };
+
+            request.send(user);
+
+
+            Swal.fire(
+                'Alterado com sucesso!',
+                '',
+                'success'
+            )
+        }
+    })
 }
 
 function excluirConta() {
@@ -26,21 +68,46 @@ function excluirConta() {
         confirmButtonText: 'Sim'
     }).then((result) => {
         if (result.isConfirmed) {
-            //funcao deletar
+            //DELETAR - Usuario
+
+            var _id = document.getElementById("id_usuario").textContent;
+
+            var usuario = JSON.stringify({
+                "id": _id
+            })
+
+            var url = "http://localhost:8080/usuario/deletar";
+
+            var request = new XMLHttpRequest();
+            request.open("DELETE", url);
+
+            request.setRequestHeader("Accept", "application/json");
+            request.setRequestHeader("Content-Type", "application/json");
+
+            request.onreadystatechange = function() {
+                if (request.readyState === 4) {
+                    console.log(request.status);
+                    console.log(request.responseText);
+                }
+            };
+
+            request.send(usuario);
+
             Swal.fire(
                 'Conta excluida com sucesso',
                 '',
                 'success'
             )
+
+            // location.replace("../../View/index.html")
         }
     })
 }
 
 
-
-
 var nome = localStorage.getItem('nome');
 var senha = localStorage.getItem('senha');
+var id = localStorage.getItem('id');
 
 fetch(`https://backend-recyclo.herokuapp.com/usuario/user/${nome}/${senha}`, {
         method: 'get'
@@ -63,3 +130,30 @@ fetch(`https://backend-recyclo.herokuapp.com/usuario/user/${nome}/${senha}`, {
     .catch(function(err) {
         console.log(err);
     });
+
+
+function Logout() {
+    const swalWithBootstrapButtons = Swal.mixin({
+        customClass: {
+            confirmButton: 'btn btn-success',
+            cancelButton: 'btn btn-danger'
+        },
+        buttonsStyling: false
+    })
+
+    swalWithBootstrapButtons.fire({
+        title: 'Tem certeza que deseja sair?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Sim',
+        cancelButtonText: 'Não',
+        reverseButtons: true
+    }).then((result) => {
+        if (result.isConfirmed) {
+            window.location.replace("../login_usuario/index.html");
+            window.localStorage.removeItem('nome');
+            window.localStorage.removeItem('senha');
+
+        }
+    })
+}
