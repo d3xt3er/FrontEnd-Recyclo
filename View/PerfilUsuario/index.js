@@ -30,7 +30,7 @@ function alterarConta() {
                 "senha": senha,
             })
 
-            var url = "http://localhost:8080/usuario/alterar";
+            var url = "https://backend-recyclo.herokuapp.com/usuario/alterar";
 
             var request = new XMLHttpRequest();
             request.open("PUT", url);
@@ -76,7 +76,7 @@ function excluirConta() {
                 "id": _id
             })
 
-            var url = "http://localhost:8080/usuario/deletar";
+            var url = "https://backend-recyclo.herokuapp.com/usuario/deletar";
 
             var request = new XMLHttpRequest();
             request.open("DELETE", url);
