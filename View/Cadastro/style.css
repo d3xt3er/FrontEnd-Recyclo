@@ -1,7 +1,8 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    /* font-family: Arial, Helvetica, sans-serif; */
+    font-family: 'Roboto', sans-serif;
 }
 
 #esquerda {
@@ -66,6 +67,7 @@ p {
 a {
     border-radius: 4px;
     padding: 10px 7vw;
+    font-weight: bold;
 }
 
 a:hover {
@@ -87,6 +89,7 @@ input {
     padding-left: 5px;
     border: 0;
     border-radius: 10px;
+    font-weight: bold;
 }
 
 .BtnOk {
@@ -101,6 +104,7 @@ input {
     opacity: 6;
     cursor: pointer;
     border-radius: 5px;
+    font-weight: bold;
 }
 
 .BtnOk:hover {
@@ -119,6 +123,7 @@ input {
     font-size: larger;
     font-weight: 500;
     display: inline-block;
+    font-weight: bold;
 }
 
 #btnLogin:hover {

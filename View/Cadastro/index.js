@@ -40,6 +40,7 @@ $(document).ready(() => {
 
         var nome = document.getElementById("nome").value;
         var email = document.getElementById("email").value;
+        var celular = document.getElementById("celular").value;
         var cpf = document.getElementById("cpf").value;
         var senha = document.getElementById("senha").value;
         var ConfirmSenha = document.getElementById("ConfirmarSsenha").value;

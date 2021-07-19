@@ -31,10 +31,11 @@ function GetMap() {
     //     $("body").load(() => {
      map = new Microsoft.Maps.Map('#myMap');
 
-    navigator.geolocation.getCurrentPosition(function(position){
+    navigator.geolocation.getCurrentPosition(function(position) {
         var loc = new Microsoft.Maps.Location(
             position.coords.latitude,
             position.coords.longitude);
+
         map.setView({center:loc,zoom:17});
     });
     // teste de icone
@@ -94,3 +95,4 @@ fetch(`https://backend-recyclo.herokuapp.com/usuario/user/${nome}/${senha}`, {
     .catch(function(err) {
         console.log(err);
     });
+
