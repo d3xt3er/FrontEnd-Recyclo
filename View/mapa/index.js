@@ -1,8 +1,3 @@
-// mapa
-/* proximos passos do mapa
- * -infobox
- * -icones
- */
 
 function Logout() {
     const swalWithBootstrapButtons = Swal.mixin({
@@ -30,21 +25,50 @@ function Logout() {
     })
 }
 
+let map;
 function GetMap() {
     // $(document).ready(() => {
     //     $("body").load(() => {
-    var map = new Microsoft.Maps.Map('#myMap');
+     map = new Microsoft.Maps.Map('#myMap');
 
     navigator.geolocation.getCurrentPosition(function(position){
         var loc = new Microsoft.Maps.Location(
             position.coords.latitude,
             position.coords.longitude);
-
         map.setView({center:loc,zoom:17});
     });
+    // teste de icone
+    var pushpin = new Microsoft.Maps.Pushpin(map.getCenter());
+        map.entities.push(pushpin);
+
+        //Add mouse events to the pushpin.
+        Microsoft.Maps.Events.addHandler(pushpin, 'click',pushingClicked);
+    
 }
 
+/*
+function mapClicked(e){
+    Microsoft.Maps.Events.addHandler(currentPishing,"click",pushingClicked);
+    document.getElementById('infoMaps').style.display=" ";
+}
+*/
 
+function fecharinfo(){
+    document.getElementById('infoMaps').style.display="none";
+}
+
+function changeInfo(nome,telefone,dtcriacao,empresa,email){
+    document.getElementById("nmEmpresa").innerText = empresa;
+    document.getElementById("telefone").innerText = telefone;
+    document.getElementById("dCriacao").innerText=dtcriacao;
+    document.getElementsById("tituloEmp").innerText =nome; 
+    document.getElementById("emailEmpresa").innerText= email;
+    console.log(nome+'\n'+telefone+'\n'+dtcriacao+'\n'+empresa+'\n'+email);
+}
+
+function pushingClicked(e){
+    document.getElementById('infoMaps').style.display="inherit";
+}
 
 
 

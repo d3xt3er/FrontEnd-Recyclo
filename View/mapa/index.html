@@ -18,7 +18,7 @@
 <body onload="GetMap()">
 
     <!-- navbar -->
-    <ul>
+    <ul id="nav">
         <li onclick="Logout()"><a class="lia">Sair</a></li>
 
         <li><a class="lia" href="../Sobre/index.html">Sobre</a></li>
@@ -27,13 +27,38 @@
         <p id="senha"></p>
         <p id="cpf"></p>
         <p id="email"></p>
-        <li style="float:left"><img id="logo" src="../img/LogoRecycloV1.png"></li>
+        <li style="float:left"><img title="Inicio" id="logo" src="../img/LogoRecycloV1.png"></li>
         <li id="titulo" style="float:left"><a>Recyclo</a></li>
     </ul>
-
+    
     <!-- Mapa -->
     <div id="myMap" style="height: 100%; position: absolute ">
-
+    </div>
+    <!-- informacoes ao clicar em algum icone do mapa -->
+    <div id="infoMaps">
+        <button id="btnFechar" onclick="fecharinfo()" title="fechar">X</button>
+        <div id="image">
+        </div>
+        <h2 id="tituloEmp">aaaaaaaaaa</h2>
+        <div id="infoPonto">
+            <ul id="ulPonto">
+                <li>E-mail:</li>
+                <li id="emailEmpresa"></li>
+            </ul>
+            <ul id="ulPonto">
+                <li>Telefone:</li>
+                <li id="telefone"></li>
+            </ul>
+            <ul id="ulPonto">
+                <li>Empresa:</li>
+                <li id="nmEmpresa"></li>
+            </ul>
+            <ul id="ulPonto">
+                <li>data de cadastro:</li>
+                <li id="dtCriacao"></li>
+            </ul>
+        </div>
+        
     </div>
 </body>
 
