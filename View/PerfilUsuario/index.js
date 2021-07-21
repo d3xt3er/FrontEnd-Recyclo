@@ -102,7 +102,6 @@ function alterarConta() {
                 'Alterado com sucesso!',
                 '',
                 'success',
-                location.reload()
             )
         }
     })
