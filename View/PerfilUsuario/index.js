@@ -1,15 +1,63 @@
+var nome = localStorage.getItem('nome');
+var senha = localStorage.getItem('senha');
+var id = localStorage.getItem('id');
+
+// VARIAVEIS PARA O FORMULARIO DE EDIÇÃO
+var nameUser;
+var cfpUser;
+var emailUser;
+var telefoneUser;
+
+fetch(`https://backend-recyclo.herokuapp.com/usuario/user/${nome}/${senha}`, {
+        method: 'get'
+    })
+    .then((resp) => resp.json())
+    .then(function(data) {
+
+        // Nome do localstorage
+        var name = localStorage.getItem('nome');
+        document.getElementById("title").innerHTML = name;
+
+        // informações vindas da API
+        document.getElementById("id_usuario").innerHTML = data.cd_usuario;
+        nameUser = document.getElementById("nome").innerHTML = data.nm_usuario;
+        cpfUser = document.getElementById("cpf").innerHTML = data.cd_cpf;
+        emailUser = document.getElementById("email").innerHTML = data.ds_email;
+        telefoneUser = document.getElementById("telefone").innerHTML = data.cd_telefone;
+    })
+    .catch(function(err) {
+        console.log(err);
+    });
+
+
+function hiddenPassword() {
+    var pass = document.getElementById("formSenha");
+    if (pass.type == "password") {
+        pass.type = "text";
+    } else {
+        pass.type = "password";
+    }
+}
+
 function alterarConta() {
+
+
     Swal.fire({
         title: "Editar informações",
         html: '<form id="EditarInformacao" method="PUT">' +
-            '<input id="FormNome" placeholder="Nome:" class="txtEditar" type="text">' +
-            '<input id="formCpf" placeholder="CPF:"class="txtEditar" type="text">' +
-            '<input id="formTelefone" placeholder="Telefone:" class="txtEditar" type="text">' +
-            '<input id="formSenha" placeholder="Senha:" type="password"class="txtEditar" type="text">' +
-            '<input id="formConfirmar"placeholder="Confirmar nova senha:" type="password" class="txtEditar" type="text">' +
+            `<input id="FormNome" style="font-weight: 700;" placeholder="Nome:" class="txtEditar" type="text" value="${nameUser}">` +
+            `<input id="formCpf" style="font-weight: 700;" placeholder="CPF:"class="txtEditar" type="text" value="${cpfUser}">` +
+            `<input id="formTelefone" style="font-weight: 700;" placeholder="Telefone:" class="txtEditar" type="text" value="${telefoneUser}">` +
+            `<input id="formSenha" 
+                placeholder="Sua senha:"    
+                type="password"     
+                class="txtEditar img"   
+                onclick="hiddenPassword()"  
+                value="${senha}">` +
+            '<input id="formConfirmar" placeholder="Sua nova senha:" type="password" class="txtEditar" type="text">' +
             '</form>',
         showDenyButton: true,
-        showCancelButton: true,
+        showCancelButton: false,
         confirmButtonText: `Salvar`,
         denyButtonText: `Cancelar`,
     }).then((result) => {
@@ -20,7 +68,7 @@ function alterarConta() {
             var nome = document.getElementById("FormNome").value;
             var telefone = document.getElementById("formTelefone").value;
             var cpf = document.getElementById("formCpf").value;
-            var senha = document.getElementById("formSenha").value;
+            var senha = document.getElementById("formConfirmar").value;
 
             var user = JSON.stringify({
                 "id": id,
@@ -29,6 +77,8 @@ function alterarConta() {
                 "cpf": cpf,
                 "senha": senha,
             })
+
+            // var url = "http://localhost:8080/usuario/alterar";
 
             var url = "https://backend-recyclo.herokuapp.com/usuario/alterar";
 
@@ -51,7 +101,8 @@ function alterarConta() {
             Swal.fire(
                 'Alterado com sucesso!',
                 '',
-                'success'
+                'success',
+                location.reload()
             )
         }
     })
@@ -76,6 +127,8 @@ function excluirConta() {
                 "id": _id
             })
 
+            // var url = "http://localhost:8080/usuario/deletar";
+
             var url = "https://backend-recyclo.herokuapp.com/usuario/deletar";
 
             var request = new XMLHttpRequest();
@@ -94,66 +147,30 @@ function excluirConta() {
             request.send(usuario);
 
             Swal.fire(
-                'Conta excluida com sucesso',
-                '',
-                'success'
-            )
+                    'Conta excluida com sucesso',
+                    '',
+                    'success',
+                )
+                // location.replace("../../View/index.html")
 
-            // location.replace("../../View/index.html")
         }
     })
 }
 
-
-var nome = localStorage.getItem('nome');
-var senha = localStorage.getItem('senha');
-var id = localStorage.getItem('id');
-
-fetch(`https://backend-recyclo.herokuapp.com/usuario/user/${nome}/${senha}`, {
-        method: 'get'
-    })
-    .then((resp) => resp.json())
-    .then(function(data) {
-
-        // Nome do localstorage
-        var name = localStorage.getItem('nome');
-        document.getElementById("title").innerHTML = name;
-
-        // informações vindas da API
-        document.getElementById("id_usuario").innerHTML = data.cd_usuario;
-        document.getElementById("nome").innerHTML = data.nm_usuario;
-        document.getElementById("cpf").innerHTML = data.cd_cpf;
-        document.getElementById("email").innerHTML = data.ds_email;
-        // document.getElementById("senha").innerHTML = data.cd_senha;
-
-    })
-    .catch(function(err) {
-        console.log(err);
-    });
-
-
 function Logout() {
-    const swalWithBootstrapButtons = Swal.mixin({
-        customClass: {
-            confirmButton: 'btn btn-success',
-            cancelButton: 'btn btn-danger'
-        },
-        buttonsStyling: false
-    })
-
-    swalWithBootstrapButtons.fire({
+    Swal.fire({
         title: 'Tem certeza que deseja sair?',
         icon: 'warning',
         showCancelButton: true,
-        confirmButtonText: 'Sim',
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
         cancelButtonText: 'Não',
-        reverseButtons: true
+        confirmButtonText: 'Sim'
     }).then((result) => {
         if (result.isConfirmed) {
             window.location.replace("../login_usuario/index.html");
             window.localStorage.removeItem('nome');
             window.localStorage.removeItem('senha');
-
         }
     })
 }

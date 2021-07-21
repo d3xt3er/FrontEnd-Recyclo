@@ -211,3 +211,8 @@ h2 {}
         margin-top: 50px;
     }
 }
+
+.img {
+    background: url(../img/icones/view.png) no-repeat scroll 273px 10px;
+    cursor: pointer;
+}

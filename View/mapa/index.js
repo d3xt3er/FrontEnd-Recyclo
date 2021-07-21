@@ -1,50 +1,41 @@
-
 function Logout() {
-    const swalWithBootstrapButtons = Swal.mixin({
-        customClass: {
-            confirmButton: 'btn btn-success',
-            cancelButton: 'btn btn-danger'
-        },
-        buttonsStyling: false
-    })
-
-    swalWithBootstrapButtons.fire({
+    Swal.fire({
         title: 'Tem certeza que deseja sair?',
         icon: 'warning',
         showCancelButton: true,
-        confirmButtonText: 'Sim',
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
         cancelButtonText: 'Não',
-        reverseButtons: true
+        confirmButtonText: 'Sim'
     }).then((result) => {
         if (result.isConfirmed) {
             window.location.replace("../login_usuario/index.html");
             window.localStorage.removeItem('nome');
             window.localStorage.removeItem('senha');
-
         }
     })
 }
 
 let map;
+
 function GetMap() {
-    // $(document).ready(() => {
-    //     $("body").load(() => {
-     map = new Microsoft.Maps.Map('#myMap');
+
+    map = new Microsoft.Maps.Map('#myMap');
 
     navigator.geolocation.getCurrentPosition(function(position) {
         var loc = new Microsoft.Maps.Location(
             position.coords.latitude,
             position.coords.longitude);
 
-        map.setView({center:loc,zoom:17});
+        map.setView({ center: loc, zoom: 14 });
     });
     // teste de icone
     var pushpin = new Microsoft.Maps.Pushpin(map.getCenter());
-        map.entities.push(pushpin);
+    map.entities.push(pushpin);
 
-        //Add mouse events to the pushpin.
-        Microsoft.Maps.Events.addHandler(pushpin, 'click',pushingClicked);
-    
+    //Add mouse events to the pushpin.
+    Microsoft.Maps.Events.addHandler(pushpin, 'click', pushingClicked);
+
 }
 
 /*
@@ -54,21 +45,21 @@ function mapClicked(e){
 }
 */
 
-function fecharinfo(){
-    document.getElementById('infoMaps').style.display="none";
+function fecharinfo() {
+    document.getElementById('infoMaps').style.display = "none";
 }
 
-function changeInfo(nome,telefone,dtcriacao,empresa,email){
+function changeInfo(nome, telefone, dtcriacao, empresa, email) {
     document.getElementById("nmEmpresa").innerText = empresa;
     document.getElementById("telefone").innerText = telefone;
-    document.getElementById("dCriacao").innerText=dtcriacao;
-    document.getElementsById("tituloEmp").innerText =nome; 
-    document.getElementById("emailEmpresa").innerText= email;
-    console.log(nome+'\n'+telefone+'\n'+dtcriacao+'\n'+empresa+'\n'+email);
+    document.getElementById("dCriacao").innerText = dtcriacao;
+    document.getElementsById("tituloEmp").innerText = nome;
+    document.getElementById("emailEmpresa").innerText = email;
+    console.log(nome + '\n' + telefone + '\n' + dtcriacao + '\n' + empresa + '\n' + email);
 }
 
-function pushingClicked(e){
-    document.getElementById('infoMaps').style.display="inherit";
+function pushingClicked(e) {
+    document.getElementById('infoMaps').style.display = "inherit";
 }
 
 
@@ -95,4 +86,3 @@ fetch(`https://backend-recyclo.herokuapp.com/usuario/user/${nome}/${senha}`, {
     .catch(function(err) {
         console.log(err);
     });
-

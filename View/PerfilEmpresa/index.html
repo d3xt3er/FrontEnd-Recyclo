@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,44 +10,48 @@
     <link rel="icon" href="../img/LogoRecycloV1.png">
     <title>Recyclo - Empresa</title>
 </head>
-<body><!-- ainda em desenvolvimento-->
+
+<body>
+    <!-- ainda em desenvolvimento-->
     <ul id="nav">
         <li><a class="lia" href="../Sobre/index.html">Sobre</a></li>
         <li><a class="lia" href="../mapa/index.html">Mapa</a></li>
-        <li style="float:left"><img id="logo"onclick="location.replace('../index.html');" src="../img/LogoRecycloV1.png" alt=""></li>
+        <li style="float:left"><img id="logo" onclick="location.replace('../index.html');" src="../img/LogoRecycloV1.png" alt=""></li>
         <li id="titulo" style="float:left"><a>Recyclo</a></li>
     </ul>
-    
+
     <div id="info">
         <h1>Casa do cachorro</h1>
         <ul>
             <li class="infoTipo">Nome: </li>
+            <input id="id_empresa" type="hidden">
             <li id="nomeEmpresa"></li>
-            <li style="float: right;"id="dtCricao"> 30/04/2001</li>
+            <li style="float: right;" id="dtCricao"> 30/04/2001</li>
             <li class="infoTipo" style="float: right;">Data de criação: </li>
         </ul>
         <ul>
             <li class="infoTipo">Cnpj: </li>
             <li id="cnpj"></li>
-            <li style="float: right;" id="telefone"> (55)55555555</li>
+            <li style="float: right;" id="telefone"></li>
             <li class="infoTipo" style="float: right;" class="infoTipo">Telefone: </li>
         </ul>
         <button id="btnEditar" onclick="EditarInfo()">Editar</button>
-       
+
         <div id="pontoColeta">
             <h2>Pontos de coleta</h2>
             <div id="pontos">
                 <ul class="ponto">
                     <li>nome Ponto</li>
                     <li>Telefone ponto</li>
-                
-                    <li style="float:right;" ><img title="Deletar" onclick="deletarPonto()" class="PontoIcone" src="../img/icones/deletar.png"></li>
-                    <li style="float:right" ><img title="Editar" onclick="editarPonto()" class="PontoIcone" src="../img/icones/editar.png"></li>
-                </ul>  
+
+                    <li style="float:right;"><img title="Deletar" onclick="deletarPonto()" class="PontoIcone" src="../img/icones/deletar.png"></li>
+                    <li style="float:right"><img title="Editar" onclick="editarPonto()" class="PontoIcone" src="../img/icones/editar.png"></li>
+                </ul>
             </div>
             <button id="btnAddPonto" onclick="adicionarPonto()">Adicionar Ponto</button>
         </div>
     </div>
     <script src="index.js"></script>
 </body>
+
 </html>

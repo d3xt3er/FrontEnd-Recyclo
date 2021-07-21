@@ -124,3 +124,8 @@ body {
     font-size: 20px;
     border-radius: 5px;
 }
+
+.img {
+    background: url(../img/icones/view.png) no-repeat scroll 273px 10px;
+    cursor: pointer;
+}
