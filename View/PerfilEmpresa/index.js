@@ -63,7 +63,7 @@ getPoints().then(res => {
 
 function getPoints() {
     //http://localhost:8080/empresa/ponto/${nome}/${senha} || https://backend-recyclo.herokuapp.com/empresa/ponto/${nome}/${senha}
-    return fetch(`http://localhost:8080/empresa/ponto/${nome}/${senha}`).then(res =>
+    return fetch(`https://backend-recyclo.herokuapp.com/empresa/ponto/${nome}/${senha}`).then(res =>
         res.json()
     );
 }
