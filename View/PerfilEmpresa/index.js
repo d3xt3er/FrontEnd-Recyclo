@@ -35,23 +35,24 @@ fetch(`https://backend-recyclo.herokuapp.com/empresa/company/${nome}/${senha}`, 
 // Função exibe os pontos
 const app = document.getElementById("pontos");
 
-const pointList = document.createElement("ul");
+const pointList = document.createElement("ol");
 pointList.className = "ponto";
 
 getPoints().then(res => {
     const users = res.forEach(point => {
         /* Create list item */
         const li = document.createElement("li");
+
         li.className = "point";
         li.id = `${point.cd_ponto_coleta}`;
-        li.innerHTML = "<p>" + point.nm_ponto + "</p>";
+        li.innerHTML = "<p>" + point.nm_ponto + "</p>" + point.nm_logradouro;
 
         /* Create point name */
         const name = document.createElement("p");
         name.className = "point-name";
-        name.innerHTML = "<b>" + point.nm_logradouro + "</b>";
+        // name.innerHTML = "<b>" + point.nm_logradouro + "</b>";
 
-        li.appendChild(name);
+        // li.appendChild(name);
 
         /* Append element to list */
         pointList.appendChild(li);
@@ -61,8 +62,8 @@ getPoints().then(res => {
 });
 
 function getPoints() {
-    //http://localhost:8080/empresa/ponto/${nome}/${senha} https://backend-recyclo.herokuapp.com/empresa/ponto/${nome}/${senha}
-    return fetch(`https://backend-recyclo.herokuapp.com/empresa/ponto/${nome}/${senha}`).then(res =>
+    //http://localhost:8080/empresa/ponto/${nome}/${senha} || https://backend-recyclo.herokuapp.com/empresa/ponto/${nome}/${senha}
+    return fetch(`http://localhost:8080/empresa/ponto/${nome}/${senha}`).then(res =>
         res.json()
     );
 }
@@ -114,7 +115,7 @@ function EditarInfo() {
                 "id": id,
                 "nome": nome,
                 "telefone": telefone,
-                "cpf": cnpj,
+                "cnpj": cnpj,
                 "senha": senha,
             })
 
@@ -182,7 +183,7 @@ function adicionarPonto() {
         title: "Adicionar Ponto de Coleta",
         html: '<form id="EditarInformacao">' +
             '<input id="nmPonto" placeholder="Nome do Ponto:" class="txtEditar" type="text">' +
-            '<input id="pontoTelefone" placeholder="telefone do Ponto:" class="txtEditar" type="text">' +
+            '<input id="pontoEndereco" placeholder="Endereço do Ponto:" class="txtEditar" type="text">' +
             '</form>',
         showDenyButton: true,
         showCancelButton: false,
@@ -190,6 +191,16 @@ function adicionarPonto() {
         denyButtonText: `Cancelar`,
     }).then((result) => {
         if (result.isConfirmed) {
+
+            var _id = document.getElementById("id_empresa").textContent;
+            var nmPonto = document.getElementById("nmPonto").value;
+            var pontoEndereco = document.getElementById("pontoEndereco").value;
+
+            var Points = JSON.stringify({
+                "id": _id,
+                "nome": nmPonto,
+                "endereco": pontoEndereco
+            })
 
         }
     })
