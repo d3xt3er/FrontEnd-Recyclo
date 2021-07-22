@@ -32,6 +32,54 @@ fetch(`https://backend-recyclo.herokuapp.com/empresa/company/${nome}/${senha}`, 
     });
 
 
+// Função exibe os pontos
+const app = document.getElementById("pontos");
+
+const pointList = document.createElement("ul");
+pointList.className = "ponto";
+
+getPoints().then(res => {
+    const users = res.forEach(point => {
+        /* Create list item */
+        const li = document.createElement("li");
+        li.className = "point";
+        li.id = `${point.cd_ponto_coleta}`;
+        li.innerHTML = "<p>" + point.nm_ponto + "</p>";
+
+        /* Create point name */
+        const name = document.createElement("p");
+        name.className = "point-name";
+        name.innerHTML = "<b>" + point.nm_logradouro + "</b>";
+
+        li.appendChild(name);
+
+        /* Append element to list */
+        pointList.appendChild(li);
+    });
+
+    app.appendChild(pointList);
+});
+
+function getPoints() {
+    //http://localhost:8080/empresa/ponto/${nome}/${senha} https://backend-recyclo.herokuapp.com/empresa/ponto/${nome}/${senha}
+    return fetch(`https://backend-recyclo.herokuapp.com/empresa/ponto/${nome}/${senha}`).then(res =>
+        res.json()
+    );
+}
+
+// function a() {
+//     var novoPonto = '<ul class="ponto">' +
+//         '<li>nome Ponto</li>' +
+//         '<li>Telefone ponto</li>' +
+//         '<li style="float:right;" ><img title="Deletar" onclick="deletarPonto()" class="PontoIcone" src="../img/icones/deletar.png"></li>' +
+//         '<li style="float:right" ><img title="Editar" class="PontoIcone" src="../img/icones/editar.png"></li>' +
+//         '</ul> ';
+//     var d = 0;
+//     document.getElementById("pontos").innerHTML += novoPonto;
+
+// }
+
+
 function EditarInfo() {
 
     Swal.fire({
@@ -70,9 +118,9 @@ function EditarInfo() {
                 "senha": senha,
             })
 
-            var url = "http://localhost:8080/empresa/alterar";
+            // var url = "http://localhost:8080/empresa/alterar";
 
-            // var url = "https://backend-recyclo.herokuapp.com/empresa/alterar";
+            var url = "https://backend-recyclo.herokuapp.com/empresa/alterar";
 
             var request = new XMLHttpRequest();
             request.open("PUT", url);
@@ -140,7 +188,11 @@ function adicionarPonto() {
         showCancelButton: false,
         confirmButtonText: `Adicionar`,
         denyButtonText: `Cancelar`,
-    });
+    }).then((result) => {
+        if (result.isConfirmed) {
+
+        }
+    })
 }
 
 function editarPonto() {
@@ -155,16 +207,4 @@ function editarPonto() {
         confirmButtonText: `Adicionar`,
         denyButtonText: `Cancelar`,
     });
-}
-
-function a() {
-    var novoPonto = '<ul class="ponto">' +
-        '<li>nome Ponto</li>' +
-        '<li>Telefone ponto</li>' +
-        '<li style="float:right;" ><img title="Deletar" onclick="deletarPonto()" class="PontoIcone" src="../img/icones/deletar.png"></li>' +
-        '<li style="float:right" ><img title="Editar" class="PontoIcone" src="../img/icones/editar.png"></li>' +
-        '</ul> ';
-    var d = 0;
-    document.getElementById("pontos").innerHTML += novoPonto;
-
 }
