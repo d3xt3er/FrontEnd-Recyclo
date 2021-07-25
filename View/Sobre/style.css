@@ -42,6 +42,7 @@ li {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .lia:hover {
@@ -79,6 +80,7 @@ h1 {
 
 #textSobre p {
     font-size: 25px;
+    font-family: sans-serif;
     text-align: justify;
 }
 

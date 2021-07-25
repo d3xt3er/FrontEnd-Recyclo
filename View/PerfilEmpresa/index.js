@@ -40,25 +40,45 @@ pointList.className = "ponto";
 
 getPoints().then(res => {
     const users = res.forEach(point => {
-        /* Create list item */
-        const li = document.createElement("li");
-
-        li.className = "point";
-        li.id = `${point.cd_ponto_coleta}`;
-        li.innerHTML = "<p>" + point.nm_ponto + "</p>" + point.nm_logradouro;
-
-        /* Create point name */
-        const name = document.createElement("p");
-        name.className = "point-name";
-        // name.innerHTML = "<b>" + point.nm_logradouro + "</b>";
-
-        // li.appendChild(name);
-
-        /* Append element to list */
-        pointList.appendChild(li);
+        
+        const ul = document.createElement('ul');
+        ul.className="ponto";
+        
+        const linome = document.createElement('li');
+        const txt = document.createElement('a');
+        txt.innerText= point.nmPonto;
+        linome.appendChild(txt);
+        ul.appendChild(linome);
+    
+        const logra = document.createElement('li');
+        txt.innerText=point.nm_logradouro;
+        logra.appendChild(txt);
+        ul.appendChild(logra);
+    
+    
+        // buttons 
+        for(var i=0;i<2;i++){
+            const btn=document.createElement("img");;
+            const li = document.createElement("li"); 
+            btn.className = "PontoIcone";
+            li.style = "float:right";
+        
+            if(i==0){// Deletar
+                btn.src="../img/icones/deletar.png";
+                btn.title="Deletar Ponto";
+                li.appendChild(btn);
+            }
+            else {// editar
+                btn.src="../img/icones/editar.png";
+                btn.title="Editar Ponto";
+                li.appendChild(btn);
+            }
+            ul.appendChild(li); 
+        }
+        document.getElementById("pontos").appendChild(ul);
     });
 
-    app.appendChild(pointList);
+    
 });
 
 function getPoints() {

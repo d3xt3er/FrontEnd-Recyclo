@@ -28,7 +28,7 @@
         <p id="senha"></p>
         <p id="cpf"></p>
         <p id="email"></p>
-        <li style="float:left"><img title="Inicio" id="logo" src="../img/LogoRecycloV1.png"></li>
+        <li style="float:left"><img title="Inicio" onclick="window.location.assign('../index.html')" id="logo" src="../img/LogoRecycloV1.png"></li>
 
         <li id="titulo" style="float:left"><a>Recyclo</a></li>
     </ul>
@@ -39,10 +39,11 @@
     <!-- informacoes ao clicar em algum icone do mapa -->
     <div id="infoMaps">
         <button id="btnFechar" onclick="fecharinfo()" title="fechar">X</button>
-        <div id="image">
-        </div>
-        <h2 id="tituloEmp">aaaaaaaaaa</h2>
+        
         <div id="infoPonto">
+            <div id="image">
+            </div>
+            <h2 id="tituloEmp">aaaaaaaaaa</h2>
             <ul id="ulPonto">
                 <li>E-mail:</li>
                 <li id="emailEmpresa"></li>
@@ -60,6 +61,17 @@
                 <li id="dtCriacao"></li>
             </ul>
         </div>
+              <!-- Gerar Denucnia -->
+            <div id="boxDenuncia">
+                <form id="frmDenuncia" action="" >
+                    <h2>Gerar Denucnia</h2>
+                    <input type="text">
+                    <input type="date" name="" id="">
+                    <input id="btnConfirm" class="btn" type="button" value="Gerar Denuncia ">
+                </form>
+            <button id="btnCancelar" class="btn" onclick="cancelarDenuncia()" >Cancelar</button>
+                
+            </div>
 
     </div>
 </body>

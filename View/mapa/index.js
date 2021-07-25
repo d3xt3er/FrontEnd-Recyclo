@@ -28,6 +28,7 @@ function GetMap() {
             position.coords.longitude);
 
         map.setView({ center: loc, zoom: 14 });
+        Microsoft.Maps.Events.addHandler(map, 'click', mapClicked);
     });
     // teste de icone
     var pushpin = new Microsoft.Maps.Pushpin(map.getCenter());
@@ -38,12 +39,11 @@ function GetMap() {
 
 }
 
-/*
 function mapClicked(e){
-    Microsoft.Maps.Events.addHandler(currentPishing,"click",pushingClicked);
-    document.getElementById('infoMaps').style.display=" ";
+    console.log(e.location);// pegando a localizacao
+    
 }
-*/
+
 
 function fecharinfo() {
     document.getElementById('infoMaps').style.display = "none";

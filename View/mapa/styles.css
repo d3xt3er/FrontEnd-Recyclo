@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Roboto', sans-serif;
     text-align: center;
 }
 
@@ -41,6 +41,7 @@ li {
     padding: 14px 16px;
     text-decoration: none;
     cursor: pointer;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .lia:hover {
@@ -107,4 +108,41 @@ li {
 #ulPonto li{
     font-size: 20px;
     float: left;
+}
+#boxDenuncia{
+    display: none;
+}
+#frmDenuncia{
+    margin-top: 50px;
+}
+#frmDenuncia h2{
+    margin-top: 20px;
+}
+input{
+    width: 250px;
+    height: 30px;
+    margin-top: 5px;
+}
+.btn{
+    width: 250px;
+    height: 30px;
+    border: 0;
+    font-family: Roboto;
+    font-size: 15px;
+    border-radius: 5px;
+}
+#btnConfirm{
+    background: rgba(90, 190, 65,0.8);
+}
+#btnConfirm:hover {
+    background: rgba(90, 190, 65);
+    transition: 1s;
+}
+#btnCancelar{
+    margin-top: 10px;
+    background: rgba(255, 44, 44, 0.8);
+}
+#btnCancelar:hover {
+    transition: 1s;
+    background: rgba(255, 44, 44)
 }

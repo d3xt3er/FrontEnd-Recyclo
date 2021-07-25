@@ -52,6 +52,7 @@ p {
     left: 40%;
     align-items: center;
     text-align: center;
+    overflow: hidden;
 }
 
 #quadrado {
