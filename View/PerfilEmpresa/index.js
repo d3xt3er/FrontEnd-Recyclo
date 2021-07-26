@@ -40,45 +40,45 @@ pointList.className = "ponto";
 
 getPoints().then(res => {
     const users = res.forEach(point => {
-        
+
         const ul = document.createElement('ul');
-        ul.className="ponto";
-        
+        ul.className = "ponto";
+
         const linome = document.createElement('li');
         const txt = document.createElement('a');
-        txt.innerText= point.nmPonto;
+        txt.innerText = point.nmPonto;
         linome.appendChild(txt);
         ul.appendChild(linome);
-    
+
         const logra = document.createElement('li');
-        txt.innerText=point.nm_logradouro;
+        logra.id = `${point.cd_ponto_coleta}`;
+        txt.innerText = point.nm_logradouro;
         logra.appendChild(txt);
         ul.appendChild(logra);
-    
-    
+
+
         // buttons 
-        for(var i=0;i<2;i++){
-            const btn=document.createElement("img");;
-            const li = document.createElement("li"); 
+        for (var i = 0; i < 2; i++) {
+            const btn = document.createElement("img");;
+            const li = document.createElement("li");
             btn.className = "PontoIcone";
             li.style = "float:right";
-        
-            if(i==0){// Deletar
-                btn.src="../img/icones/deletar.png";
-                btn.title="Deletar Ponto";
+
+            if (i == 0) { // Deletar
+                btn.src = "../img/icones/deletar.png";
+                btn.title = "Deletar Ponto";
+                li.appendChild(btn);
+            } else { // editar
+                btn.src = "../img/icones/editar.png";
+                btn.title = "Editar Ponto";
                 li.appendChild(btn);
             }
-            else {// editar
-                btn.src="../img/icones/editar.png";
-                btn.title="Editar Ponto";
-                li.appendChild(btn);
-            }
-            ul.appendChild(li); 
+            ul.appendChild(li);
         }
         document.getElementById("pontos").appendChild(ul);
     });
 
-    
+
 });
 
 function getPoints() {
@@ -134,9 +134,9 @@ function EditarInfo() {
             var company = JSON.stringify({
                 "id": id,
                 "nome": nome,
-                "telefone": telefone,
-                "cnpj": cnpj,
                 "senha": senha,
+                "cnpj": cnpj,
+                "telefone": telefone,
             })
 
             // var url = "http://localhost:8080/empresa/alterar";
@@ -158,12 +158,26 @@ function EditarInfo() {
 
             request.send(company);
 
+            let timerInterval
+            Swal.fire({
+                icon: "success",
+                html: "Alterado com sucesso!",
+                timer: 1000,
+                didOpen: () => {
+                    timerInterval = setInterval(() => {
+                        const content = Swal.getHtmlContainer()
 
-            Swal.fire(
-                'Alterado com sucesso!',
-                '',
-                'success'
-            )
+                    }, 100)
+                },
+                willClose: () => {
+                    clearInterval(timerInterval)
+
+                }
+            }).then((result) => {
+                if (result.dismiss === Swal.DismissReason.timer) {
+                    window.location.assign("../login_usuario/index.html");
+                }
+            })
         }
     })
 }
@@ -217,11 +231,28 @@ function adicionarPonto() {
             var pontoEndereco = document.getElementById("pontoEndereco").value;
 
             var Points = JSON.stringify({
+                "id_ponto": 1,
                 "id": _id,
                 "nome": nmPonto,
                 "endereco": pontoEndereco
             })
 
+            var url = "https://backend-recyclo.herokuapp.com/empresa/ponto/criar";
+
+            var request = new XMLHttpRequest();
+            request.open("POST", url);
+
+            request.setRequestHeader("Accept", "application/json");
+            request.setRequestHeader("Content-Type", "application/json");
+
+            request.onreadystatechange = function() {
+                if (request.readyState === 4) {
+                    console.log(request.status);
+                    console.log(request.responseText);
+                }
+            };
+
+            request.send(Points);
         }
     })
 }

@@ -97,12 +97,27 @@ function alterarConta() {
 
             request.send(user);
 
+            let timerInterval
+            Swal.fire({
+                icon: "success",
+                html: "Alterado com sucesso!",
+                timer: 1000,
+                didOpen: () => {
+                    timerInterval = setInterval(() => {
+                        const content = Swal.getHtmlContainer()
 
-            Swal.fire(
-                'Alterado com sucesso!',
-                '',
-                'success',
-            )
+                    }, 100)
+                },
+                willClose: () => {
+                    clearInterval(timerInterval)
+
+                }
+            }).then((result) => {
+                if (result.dismiss === Swal.DismissReason.timer) {
+                    location.reload()
+                    window.location.assign("../login_usuario/index.html");
+                }
+            })
         }
     })
 }
@@ -145,12 +160,27 @@ function excluirConta() {
 
             request.send(usuario);
 
-            Swal.fire(
-                    'Conta excluida com sucesso',
-                    '',
-                    'success',
-                )
-                // location.replace("../../View/index.html")
+            let timerInterval
+            Swal.fire({
+                icon: "success",
+                html: "Sua conta foi excluida!",
+                timer: 1000,
+                didOpen: () => {
+                    timerInterval = setInterval(() => {
+                        const content = Swal.getHtmlContainer()
+
+                    }, 100)
+                },
+                willClose: () => {
+                    clearInterval(timerInterval)
+
+                }
+            }).then((result) => {
+                if (result.dismiss === Swal.DismissReason.timer) {
+                    location.reload()
+                    window.location.assign("../login_usuario/index.html");
+                }
+            })
 
         }
     })

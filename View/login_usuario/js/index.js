@@ -33,9 +33,11 @@ $(document).ready(() => {
                     window.location.replace("../mapa/index.html");
 
                     // Utilizando localStorage para setar nome e senha
+                    // localStorage.setItem('id', id);
                     localStorage.setItem('nome', nome);
                     localStorage.setItem('senha', senha);
 
+                    // localStorage['id'] = id;
                     localStorage['nome'] = nome;
                     localStorage['senha'] = senha;
 
