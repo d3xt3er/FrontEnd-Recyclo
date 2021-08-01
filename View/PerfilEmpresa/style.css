@@ -33,11 +33,14 @@ li {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    cursor: pointer;
+    font-weight: bold;
 }
 
 .lia:hover {
-    background-color: #111;
-    border-radius: 10px;
+    background-color: rgb(83, 83, 83);
+    border-radius: 5px;
+    transition: 1.2s;
 }
 
 #logoTitulo {
@@ -45,8 +48,8 @@ li {
 }
 
 #logo {
-    height: 40px;
-    width: 50px;
+    height: 45px;
+    width: 47px;
 }
 
 #titulo {
@@ -77,6 +80,7 @@ h1 {}
     list-style: none;
     width: 100%;
     display: flow-root;
+    font-weight: bold;
 }
 
 #info ul li {
