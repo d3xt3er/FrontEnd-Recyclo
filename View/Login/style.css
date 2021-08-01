@@ -172,6 +172,10 @@ input {
         border-radius: 15px;
         background-color: white;
     }
+    #formEmpresa {
+        border-radius: 15px;
+        background-color: white;
+    }
     #direita {
         border-radius: 10px;
         width: 80%;
@@ -193,6 +197,7 @@ input {
         background-color: rgb(41, 120, 160);
     }
     #logoMob {
+        margin-top: 10%;
         display: initial;
         height: 20vw;
     }

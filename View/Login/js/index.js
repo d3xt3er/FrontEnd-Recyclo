@@ -31,7 +31,7 @@ function SwitchForm(op) {
 
 // Login - Usuario
 $(document).ready(() => {
-    $("#form").submit((event) => {
+    $("#formUsuario").submit((event) => {
         Swal.fire({
             title: 'Aguarde...',
             html: '<img src="./Gif-Recyclo.gif" alt="description of gif" style="display: block;  margin-left: auto;margin-right: auto;" width="200" height="200" /> ',

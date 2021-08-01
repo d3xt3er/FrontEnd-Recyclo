@@ -63,6 +63,7 @@ $(document).ready(() => {
             var obj = JSON.stringify({
                 "nome": nome,
                 "email": email,
+                "telefone": celular,
                 "cpf": cpf,
                 "senha": senha,
             })

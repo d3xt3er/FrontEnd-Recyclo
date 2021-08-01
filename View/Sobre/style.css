@@ -21,6 +21,7 @@ ul {
 #logo {
     height: 45px;
     width: 47px;
+    cursor: pointer;
 }
 
 #titulo {

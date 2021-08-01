@@ -20,6 +20,7 @@ body {
 #logo {
     height: 45px;
     width: 47px;
+    cursor: pointer;
 }
 
 #titulo {
@@ -50,16 +51,18 @@ li {
     transition: 1.2s;
 }
 
+
 /*-- map config --*/
-.infobox{
+
+.infobox {
     text-align: center;
     border-radius: 5px;
-    background:rgb(195, 201, 233,0.5);
+    background: rgb(195, 201, 233, 0.5);
     border-color: rgba(90, 190, 65);
     border-width: 5px;
 }
 
-#infoMaps{
+#infoMaps {
     display: none;
     height: 100%;
     width: 30vw;
@@ -70,7 +73,8 @@ li {
     border-radius: 20px;
     margin-left: 5px;
 }
-#image{
+
+#image {
     margin-top: 25px;
     width: 100%;
     height: 300px;
@@ -78,52 +82,62 @@ li {
     background: url(../img/homeNext.jpg) no-repeat;
     background-size: cover;
 }
-#btnFechar{
+
+#btnFechar {
     height: 20px;
     width: 20px;
     float: right;
     border-radius: 10px;
     border: 0;
-    background: rgba(27, 32, 33) ;
+    background: rgba(27, 32, 33);
     color: white;
 }
-#btnFechar:hover{
+
+#btnFechar:hover {
     background: white;
     color: black;
     transition: 1s;
 }
-#infoPonto{
+
+#infoPonto {
     padding: 20px 2px 2px 20px;
     background: whitesmoke;
     border-radius: 15px;
     height: 300px;
     margin-top: 20px;
 }
-#ulPonto{
+
+#ulPonto {
     width: 100%;
     list-style: none;
-    display:flow-root;
+    display: flow-root;
     margin-top: 3px;
 }
-#ulPonto li{
+
+#ulPonto li {
     font-size: 20px;
     float: left;
 }
-#boxDenuncia{
+
+#boxDenuncia {
     display: none;
 }
-#frmDenuncia{
+
+#frmDenuncia {
     margin-top: 50px;
 }
-#frmDenuncia h2{
+
+#frmDenuncia h2 {
     margin-top: 20px;
 }
-input{
+
+input {
     width: 250px;
     height: 30px;
     margin-top: 5px;
 }
-.btn{
+
+.btn {
     width: 250px;
     height: 30px;
     border: 0;
@@ -131,17 +145,21 @@ input{
     font-size: 15px;
     border-radius: 5px;
 }
-#btnConfirm{
-    background: rgba(90, 190, 65,0.8);
+
+#btnConfirm {
+    background: rgba(90, 190, 65, 0.8);
 }
+
 #btnConfirm:hover {
     background: rgba(90, 190, 65);
     transition: 1s;
 }
-#btnCancelar{
+
+#btnCancelar {
     margin-top: 10px;
     background: rgba(255, 44, 44, 0.8);
 }
+
 #btnCancelar:hover {
     transition: 1s;
     background: rgba(255, 44, 44)

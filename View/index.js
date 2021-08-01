@@ -1,5 +1,5 @@
 function goMapa() {
-    window.location.assign("mapa_pricipal/index.html");
+    window.location.assign("mapa_principal/index.html");
 }
 
 function goSobre() {

@@ -64,6 +64,7 @@ h1 {
 #logo {
     height: 45px;
     width: 47px;
+    cursor: pointer;
 }
 
 #titulo {
@@ -197,14 +198,19 @@ li {
 
 #contaBox .direita p {
     font-size: x-large;
-    margin-top: 16px;
+    margin-top: 5%;
     font-weight: 700;
+    margin-left: 19%;
+    margin-right: -29%;
+    float: left;
     color: black;
-    text-align: justify;
+    text-align: center;
 }
 
 #contaBox .esquerda {
     width: 29%;
+    margin-left: 32%;
+    margin-right: auto;
     border-radius: 20px;
     height: fit-content;
     box-shadow: 5px 7px rgb(90 190 65 / 30%);
