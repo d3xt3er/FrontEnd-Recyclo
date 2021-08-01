@@ -36,7 +36,7 @@ body {
 }
 
 h3 {
-    font-size: 3em;
+    font-size: 35px;
     letter-spacing: 1px;
 }
 
@@ -181,8 +181,8 @@ li {
     width: fit-content;
     background: white;
     text-align: center;
-    height: 43vw;
-    padding: 30px;
+    height: 41vw;
+    padding: 84px;
 }
 
 #sep {
@@ -197,20 +197,21 @@ li {
 
 #contaBox .direita p {
     font-size: x-large;
-    margin-top: 5px;
+    margin-top: 16px;
     font-weight: 700;
     color: black;
+    text-align: justify;
 }
 
 #contaBox .esquerda {
-    width: 35%;
+    width: 29%;
     border-radius: 20px;
     height: fit-content;
-    box-shadow: 5px 7px rgba(90, 190, 65, 0.3);
+    box-shadow: 5px 7px rgb(90 190 65 / 30%);
 }
 
 #contaBox .esquerda img {
-    width: 20vw;
+    width: 14vw;
 }
 
 #contaBox .esquerda button {
@@ -283,6 +284,15 @@ footer {
 /*-- mobile --*/
 
 @media only screen and (max-width:600px) {
+    #contaBox .esquerda {
+        margin-left: auto;
+        margin-right: 31%;
+        width: 36%;
+        border-radius: 20px;
+        margin-top: -5%;
+        height: fit-content;
+        box-shadow: 5px 7px rgb(90 190 65 / 30%);
+    }
     .lia {
         /* -nav */
         padding: 15px 6px;
@@ -315,7 +325,7 @@ footer {
     }
     #contaBox {
         position: absolute;
-        height: 100vw;
+        height: 103vw;
         padding: 0;
     }
     #contaBox h3 {
@@ -336,6 +346,10 @@ footer {
     }
     #contaBox .direita p {
         font-size: 15px;
+        margin-top: 4%;
+        margin-left: auto;
+        margin-right: -40%;
+        text-align: center;
     }
     #sobre {
         height: 100vw;

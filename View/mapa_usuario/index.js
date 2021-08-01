@@ -9,7 +9,7 @@ function Logout() {
         confirmButtonText: 'Sim'
     }).then((result) => {
         if (result.isConfirmed) {
-            window.location.replace("../login_usuario/index.html");
+            window.location.replace("../Login/index.html");
             window.localStorage.removeItem('nome');
             window.localStorage.removeItem('senha');
         }
@@ -39,9 +39,9 @@ function GetMap() {
 
 }
 
-function mapClicked(e){
-    console.log(e.location);// pegando a localizacao
-    
+function mapClicked(e) {
+    console.log(e.location); // pegando a localizacao
+
 }
 
 

@@ -1,15 +1,15 @@
-
-function goMapa(){
-    window.location.assign("mapa/index.html");
+function goMapa() {
+    window.location.assign("mapa_pricipal/index.html");
 }
 
-function goSobre(){
+function goSobre() {
     window.location.assign("Sobre/index.html");
 }
 
-function gologin(){
-    window.location.assign("login_usuario/index.html");
+function gologin() {
+    window.location.assign("Login/index.html");
 }
-function goCadastro(){
+
+function goCadastro() {
     window.location.assign("Cadastro/index.html");
 }

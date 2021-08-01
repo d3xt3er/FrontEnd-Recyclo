@@ -20,24 +20,34 @@
 
     <div id="esquerda">
         <img id="logoDesk" onclick="window.location.assign('../index.html')" title="Home" src="../img/LogoRecycloV1.png">
-        <!-- Div com mesagem generica sobre o meio ambiente-->
         <p>Ajude a tornar o mundo mais consciente</p>
     </div>
 
-    <Div id="direita">
-        <!-- Selecao de cadastro-->
+    <div id="direita">
         <div id="quadrado">
+            <div id="selecao">
+                <a id="changeU" onclick="SwitchForm(false)">Usuario</a>
+                <a id="changeE" onclick="SwitchForm(true)">Empresa</a>
+            </div>
 
-            <!-- cadastro de Usuarios -->
             <div id="formUsuario">
-                <img id="logoMob" src="../img/LogoRecycloV1.png"onclick="window.location.assign('../index.html')"  alt="">
+                <img id="logoMob" src="../img/LogoRecycloV1.png" onclick="window.location.assign('../index.html')" alt="">
                 <form id="form" method="POST">
                     <h2>Login</h2>
-                    <input class="input" required type="text" placeholder="Email: example@example.com" id="nome" name="nome">
+                    <input class="input" required type="text" placeholder="Email: usuario@example.com" id="nome" name="nome">
                     <input class="input" required type="password" id="senha" placeholder="Senha:" name="senha">
                     <input id="btnLogin" class="BtnOk" type="submit" value="Entrar">
                 </form>
+            </div>
 
+            <div id="formEmpresa">
+                <img id="logoMob" src="../img/LogoRecycloV1.png" onclick="window.location.assign('../index.html')" alt="">
+                <form id="formCompany" method="POST">
+                    <h2>Login</h2>
+                    <input class="input" required type="text" placeholder="Email: empresa@email.com" id="razao" name="razao">
+                    <input class="input" required type="password" id="senhaEmpresa" placeholder="Senha:" name="senhaEmpresa">
+                    <input id="btnLogin" class="BtnOk" type="submit" value="Entrar">
+                </form>
             </div>
             <button id="btnCadastrar" onclick="window.location.assign('../Cadastro/index.html');"> Não tem uma conta? </button>
 

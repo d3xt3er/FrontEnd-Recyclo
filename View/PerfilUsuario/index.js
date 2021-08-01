@@ -115,7 +115,7 @@ function alterarConta() {
             }).then((result) => {
                 if (result.dismiss === Swal.DismissReason.timer) {
                     location.reload()
-                    window.location.assign("../login_usuario/index.html");
+                    window.location.assign("../Login/index.html");
                 }
             })
         }
@@ -178,7 +178,7 @@ function excluirConta() {
             }).then((result) => {
                 if (result.dismiss === Swal.DismissReason.timer) {
                     location.reload()
-                    window.location.assign("../login_usuario/index.html");
+                    window.location.assign("../Login/index.html");
                 }
             })
 
@@ -197,7 +197,7 @@ function Logout() {
         confirmButtonText: 'Sim'
     }).then((result) => {
         if (result.isConfirmed) {
-            window.location.replace("../login_usuario/index.html");
+            window.location.replace("../Login/index.html");
             window.localStorage.removeItem('nome');
             window.localStorage.removeItem('senha');
         }

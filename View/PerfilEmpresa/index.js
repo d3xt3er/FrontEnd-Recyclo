@@ -1,9 +1,8 @@
 // invoca form para a edicao das 
 // informacoes do estabecimento
 
-// VARIAVEIS ESTÁTICAS ATÉ O LOGIN EMPRESA ESTAR FINALIZADO
-var nome = "Paulo LTDA"
-var senha = "1234";
+var nome = localStorage.getItem('nome');
+var senha = localStorage.getItem('senha');
 
 // VARIAVEIS PARA O FORMULARIO DE EDIÇÃO
 var nameCompany;
@@ -175,7 +174,7 @@ function EditarInfo() {
                 }
             }).then((result) => {
                 if (result.dismiss === Swal.DismissReason.timer) {
-                    window.location.assign("../login_usuario/index.html");
+                    window.location.assign("../Login/index.html");
                 }
             })
         }
