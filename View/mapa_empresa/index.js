@@ -20,7 +20,11 @@ let map, searchManager;
 
 function GetMap() {
 
-    map = new Microsoft.Maps.Map('#myMap');
+    // map = new Microsoft.Maps.Map('#myMap');
+    map = new Microsoft.Maps.Map('#myMap', {
+        zoom: 15,
+        mapTypeId: Microsoft.Maps.MapTypeId.road
+    });
 
     navigator.geolocation.getCurrentPosition(function(position) {
         var loc = new Microsoft.Maps.Location(
