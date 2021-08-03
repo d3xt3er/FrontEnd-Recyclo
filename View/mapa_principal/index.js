@@ -8,6 +8,11 @@ function GetMap() {
 
     map = new Microsoft.Maps.Map('#myMap');
 
+    // map = new Microsoft.Maps.Map('#myMap', {
+    //     zoom: 15,
+    //     mapTypeId: Microsoft.Maps.MapTypeId.aerial
+    // });
+
     navigator.geolocation.getCurrentPosition(function(position) {
         var loc = new Microsoft.Maps.Location(
             position.coords.latitude,
