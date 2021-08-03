@@ -13,7 +13,7 @@ function GetMap() {
             position.coords.latitude,
             position.coords.longitude);
 
-        map.setView({ center: loc, zoom: 14 });
+        map.setView({ center: loc, zoom: 12 });
         Microsoft.Maps.Events.addHandler(map, 'click', mapClicked);
     });
     // teste de icone
