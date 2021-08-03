@@ -6,19 +6,19 @@ let map;
 
 function GetMap() {
 
-    map = new Microsoft.Maps.Map('#myMap');
+    // map = new Microsoft.Maps.Map('#myMap');
 
-    // map = new Microsoft.Maps.Map('#myMap', {
-    //     zoom: 15,
-    //     mapTypeId: Microsoft.Maps.MapTypeId.aerial
-    // });
+    map = new Microsoft.Maps.Map('#myMap', {
+        zoom: 15,
+        mapTypeId: Microsoft.Maps.MapTypeId.aerial
+    });
 
     navigator.geolocation.getCurrentPosition(function(position) {
         var loc = new Microsoft.Maps.Location(
             position.coords.latitude,
             position.coords.longitude);
 
-        map.setView({ center: loc, zoom: 12 });
+        // map.setView({ center: loc, zoom: 12 });
         Microsoft.Maps.Events.addHandler(map, 'click', mapClicked);
     });
     // teste de icone
