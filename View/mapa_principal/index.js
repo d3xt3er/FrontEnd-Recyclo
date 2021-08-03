@@ -10,7 +10,7 @@ function GetMap() {
 
     map = new Microsoft.Maps.Map('#myMap', {
         zoom: 15,
-        mapTypeId: Microsoft.Maps.MapTypeId.aerial
+        mapTypeId: Microsoft.Maps.MapTypeId.road
     });
 
     navigator.geolocation.getCurrentPosition(function(position) {
@@ -18,7 +18,7 @@ function GetMap() {
             position.coords.latitude,
             position.coords.longitude);
 
-        // map.setView({ center: loc, zoom: 12 });
+        map.setView({ center: loc, zoom: 12 });
         Microsoft.Maps.Events.addHandler(map, 'click', mapClicked);
     });
     // teste de icone
