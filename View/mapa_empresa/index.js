@@ -45,10 +45,16 @@ function GetMap() {
 // pegando a localizacao, latitude e longitude
 function mapClicked(e) {
     // console.log(e.location);
-    // var latitude = e.location.latitude;
-    // var longitude = e.location.longitude;
-    // console.log(latitude, longitude);
+
+    var locations = JSON.stringify({
+        "latitude": e.location.latitude,
+        "longitude": e.location.longitude,
+    })
+
+    console.log(locations);
 }
+
+
 
 // Função pesquisa do mapa
 function Search() {
@@ -74,9 +80,9 @@ function geocodeQuery(query) {
             if (r && r.results && r.results.length > 0) {
                 let pin, pins = [],
                     locs = [],
-                    output = 'Resultado:<br/>';
+                    output = 'Resultado: ';
                 for (let i = 0; i < r.results.length; i++) {
-                    //Create a pushpin for each result.
+                    //Cria um marker por resultado.
                     pin = new Microsoft.Maps.Pushpin(r.results[i].location, {
                         text: i + ''
                     });
@@ -84,10 +90,12 @@ function geocodeQuery(query) {
                     locs.push(r.results[i].location);
                     output += i + ') ' + r.results[i].name + '<br/>';
                 }
-                //Add the pins to the map
+                //Adiciona o marker no mapa
                 map.entities.push(pins);
-                //Display list of results
-                document.getElementById('output').innerHTML = output;
+
+                //Mostra o resultado em texto
+                // document.getElementById('output').innerHTML = output;
+
                 //Determine a bounding box to best view the results.
                 let bounds;
                 if (r.results.length == 1) {
@@ -102,7 +110,6 @@ function geocodeQuery(query) {
             }
         },
         errorCallback: function(e) {
-            //If there is an error, alert the user about it.
             alert("Nenhum resultado encontrado.");
         }
     };

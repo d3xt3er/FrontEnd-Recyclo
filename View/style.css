@@ -217,12 +217,15 @@ li {
 }
 
 #contaBox .esquerda img {
-    width: 14vw;
+    width: 13vw;
+    margin-right: 5%;
+    margin-left: auto;
 }
 
 #contaBox .esquerda button {
     background: transparent;
     border-style: solid;
+    margin-top: 13px;
     border-width: 5px;
     border-color: rgba(90, 190, 65, 0.8);
 }
@@ -342,9 +345,9 @@ footer {
         margin-top: 7%;
     }
     .btn {
-        font-size: 10px;
+        font-size: 14px;
         height: 42px;
-        width: 129px;
+        width: 100%;
         margin-top: 9px;
     }
     .btn:active {

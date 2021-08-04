@@ -7,10 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="../img/LogoRecycloV1.png">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <script src='https://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=AijOdUHzY5DvlON3_9lG2KYowiYa4tVQJEDyckIt6enyt7lxUK0yXzMBgLnhTHqV' async defer></script>
     <script src="../sweetalert.js"></script>
+
     <script src="index.js"></script>
     <title>Mapa</title>
 </head>
@@ -27,22 +29,26 @@
 
         <li id="titulo" style="float:left"><a>Recyclo</a></li>
 
+        <div class="searchBox">
+
+            <input autocomplete="off" class="searchInput" type="text" name="" id="from" placeholder="Search">
+            <button class="searchButton" onclick="pesquisa()" id="get">
+                <i class="material-icons">
+                    search
+                </i>
+            </button>
+            <div id='output'></div>
+        </div>
+
     </ul>
 
     <!-- Mapa -->
-    <!-- <div id="myMap" style="height: 100%; position: absolute ">
-    </div> -->
 
-    <div id="main">
-        <p>
-            <input type="text" id="from" value="" required>
-            <button onclick="pesquisa()" id="get">Search</button>
-            <div id='output'></div>
-        </p>
-        <div id="myMap" style="height: 100%; position: absolute ">
-        </div>
 
+    <div id="myMap" style="height: 100%; position: absolute ">
     </div>
+
+    <!-- </div> -->
     <!-- informacoes ao clicar em algum icone do mapa -->
     <div id="infoMaps">
         <button id="btnFechar" onclick="fecharinfo()" title="fechar">X</button>
