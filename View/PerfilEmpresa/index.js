@@ -32,14 +32,23 @@ fetch(`https://backend-recyclo.herokuapp.com/empresa/company/${nome}/${senha}`, 
 
 
 // Função exibe os pontos
+function getPoints() {
+    //http://localhost:8080/empresa/ponto/${nome}/${senha} || https://backend-recyclo.herokuapp.com/empresa/ponto/${nome}/${senha}
+    return fetch(`http://localhost:8080/empresa/ponto/${nome}/${senha}`).then(res =>
+        res.json()
+    );
+}
+
+
 const app = document.getElementById("pontos");
 
 const pointList = document.createElement("ol");
 pointList.className = "ponto";
 
-getPoints().then(res => {
-    const users = res.forEach(point => {
 
+getPoints().then(res => {
+
+    const users = res.forEach(point => {
         const ul = document.createElement('ul');
         ul.className = "ponto";
 
@@ -80,12 +89,6 @@ getPoints().then(res => {
 
 });
 
-function getPoints() {
-    //http://localhost:8080/empresa/ponto/${nome}/${senha} || https://backend-recyclo.herokuapp.com/empresa/ponto/${nome}/${senha}
-    return fetch(`https://backend-recyclo.herokuapp.com/empresa/ponto/${nome}/${senha}`).then(res =>
-        res.json()
-    );
-}
 
 // function a() {
 //     var novoPonto = '<ul class="ponto">' +

@@ -126,14 +126,14 @@ function fecharinfo() {
     document.getElementById('infoMaps').style.display = "none";
 }
 
-function changeInfo(nome, telefone, dtcriacao, empresa, email) {
-    document.getElementById("nmEmpresa").innerText = empresa;
-    document.getElementById("telefone").innerText = telefone;
-    document.getElementById("dCriacao").innerText = dtcriacao;
-    document.getElementsById("tituloEmp").innerText = nome;
-    document.getElementById("emailEmpresa").innerText = email;
-    console.log(nome + '\n' + telefone + '\n' + dtcriacao + '\n' + empresa + '\n' + email);
-}
+// function changeInfo(nome, telefone, dtcriacao, empresa, email) {
+//     document.getElementById("nmEmpresa").innerText = empresa;
+//     document.getElementById("telefone").innerText = telefone;
+//     document.getElementById("dCriacao").innerText = dtcriacao;
+//     document.getElementsById("tituloEmp").innerText = nome;
+//     document.getElementById("emailEmpresa").innerText = email;
+//     console.log(nome + '\n' + telefone + '\n' + dtcriacao + '\n' + empresa + '\n' + email);
+// }
 
 function pushingClicked(e) {
     document.getElementById('infoMaps').style.display = "inherit";
@@ -141,25 +141,21 @@ function pushingClicked(e) {
 
 
 
-// var nome = localStorage.getItem('nome');
-// var senha = localStorage.getItem('senha');
+var nome = localStorage.getItem('nome');
+var senha = localStorage.getItem('senha');
+//http://localhost:8080/empresa/ponto/${nome}/${senha} || https://backend-recyclo.herokuapp.com/empresa/ponto/${nome}/${senha}
+fetch(`https://backend-recyclo.herokuapp.com/empresa/ponto/${nome}/${senha}`, {
+        method: 'get'
+    })
+    .then((resp) => resp.json())
+    .then(function(data) {
+        data.forEach(location => {
+            document.getElementById("tituloEmp").innerHTML = location.nm_ponto;
+            document.getElementById("nmEmpresa").innerHTML = location.nm_empresa;
 
-// fetch(`https://backend-recyclo.herokuapp.com/empresa/company/${nome}/${senha}`, {
-//         method: 'get'
-//     })
-//     .then((resp) => resp.json())
-//     .then(function(data) {
+        });
 
-//         // Nome do localstorage
-//         // var x = localStorage.getItem('nome');
-//         // document.getElementById("usuario").innerHTML = x;
-
-//         // informações vindas da API
-//         document.getElementById("cpf").innerHTML = data.cd_cpf;
-//         document.getElementById("senha").innerHTML = data.cd_senha;
-//         document.getElementById("email").innerHTML = data.ds_email;
-
-//     })
-//     .catch(function(err) {
-//         console.log(err);
-//     });
+    })
+    .catch(function(err) {
+        console.log(err);
+    });
