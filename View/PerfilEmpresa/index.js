@@ -17,8 +17,8 @@ fetch(`https://backend-recyclo.herokuapp.com/empresa/company/${nome}/${senha}`, 
     .then(function(data) {
 
         // Nome do localstorage
-        // var name = localStorage.getItem('nome');
-        // document.getElementById("title").innerHTML = name;
+        var name = localStorage.getItem('nome');
+        document.getElementById("title").innerHTML = name;
 
         // informações vindas da API
         document.getElementById("id_empresa").innerHTML = data.cd_empresa;
@@ -105,16 +105,17 @@ function EditarInfo() {
     Swal.fire({
         title: "Editar informações",
         html: '<form id="EditarInformacao">' +
-            `<input id="FormNome" placeholder="Razão:" class="txtEditar" type="text" value="${nameCompany}">` +
-            `<input id="formCnpj" placeholder="CNPJ:" class="txtEditar" type="text" value="${cnpjCompany}">` +
-            `<input id="formTelefone" placeholder="Telefone:" class="txtEditar" type="text" value="${telefoneCompany}">` +
+            `<input id="FormNome" style="font-weight:bold;" placeholder="Razão:" class="txtEditar" type="text" value="${nameCompany}">` +
+            `<input id="formCnpj" placeholder="CNPJ:" style="font-weight:bold;" class="txtEditar" type="text" value="${cnpjCompany}">` +
+            `<input id="formTelefone" style="font-weight:bold;" placeholder="Telefone:" class="txtEditar" type="text" value="${telefoneCompany}">` +
             `<input id="formSenha" 
                 type="password" 
                 placeholder="Sua senha: "
                 class="txtEditar img" 
                 type="text" 
+                style="font-weight:bold;"
                 onclick="hiddenPassword()" value="${senha}">` +
-            `<input id="formConfirmar" placeholder="Sua nova senha:" type="password" class="txtEditar" type="text">` +
+            `<input id="formConfirmar" style="font-weight:bold;" placeholder="Sua nova senha:" type="password" class="txtEditar" type="text">` +
             '</form>',
         showDenyButton: true,
         showCancelButton: false,
@@ -230,12 +231,13 @@ function adicionarPonto() {
             var pontoEndereco = document.getElementById("pontoEndereco").value;
 
             var Points = JSON.stringify({
-                "id_ponto": 1,
+                "id_ponto": 7,
                 "id": _id,
                 "nome": nmPonto,
                 "endereco": pontoEndereco
             })
 
+            // var url = "http://localhost:8080/empresa/ponto/criar";
             var url = "https://backend-recyclo.herokuapp.com/empresa/ponto/criar";
 
             var request = new XMLHttpRequest();
@@ -252,6 +254,28 @@ function adicionarPonto() {
             };
 
             request.send(Points);
+
+
+            let timerInterval
+            Swal.fire({
+                icon: "success",
+                html: "Cadastrado com sucesso!",
+                timer: 1000,
+                didOpen: () => {
+                    timerInterval = setInterval(() => {
+                        const content = Swal.getHtmlContainer()
+
+                    }, 100)
+                },
+                willClose: () => {
+                    clearInterval(timerInterval)
+
+                }
+            }).then((result) => {
+                if (result.dismiss === Swal.DismissReason.timer) {
+                    location.reload()
+                }
+            })
         }
     })
 }
