@@ -16,11 +16,12 @@ function Logout() {
     })
 }
 
+
+// Função de pesquisa - mapa empresa
 let map, searchManager;
 
 function GetMap() {
 
-    // map = new Microsoft.Maps.Map('#myMap');
     map = new Microsoft.Maps.Map('#myMap', {
         zoom: 15,
         mapTypeId: Microsoft.Maps.MapTypeId.road
@@ -44,7 +45,6 @@ function GetMap() {
 
 // pegando a localizacao, latitude e longitude
 function mapClicked(e) {
-    // console.log(e.location);
 
     var locations = JSON.stringify({
         "latitude": e.location.latitude,
@@ -116,6 +116,7 @@ function geocodeQuery(query) {
     //Make the geocode request.
     searchManager.geocode(searchRequest);
 }
+
 //Botão de pesquisa
 function pesquisa() {
     var button = document.getElementById("get");

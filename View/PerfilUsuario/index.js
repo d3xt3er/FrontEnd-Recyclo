@@ -8,6 +8,7 @@ var cfpUser;
 var emailUser;
 var telefoneUser;
 
+// Função que captura as informações do usuario
 fetch(`https://backend-recyclo.herokuapp.com/usuario/user/${nome}/${senha}`, {
         method: 'get'
     })
@@ -39,8 +40,8 @@ function hiddenPassword() {
     }
 }
 
+// Função PUT do usuário
 function alterarConta() {
-
 
     Swal.fire({
         title: "Editar informações",
@@ -177,7 +178,6 @@ function excluirConta() {
                 }
             }).then((result) => {
                 if (result.dismiss === Swal.DismissReason.timer) {
-                    location.reload()
                     window.location.assign("../Login/index.html");
                 }
             })
