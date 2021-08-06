@@ -215,6 +215,7 @@ function deletarPonto() {
     })
 }
 
+// Função adicionar ponto
 function adicionarPonto() {
     Swal.fire({
         title: "Adicionar Ponto de Coleta",
@@ -234,7 +235,6 @@ function adicionarPonto() {
             var pontoEndereco = document.getElementById("pontoEndereco").value;
 
             var Points = JSON.stringify({
-                "id_ponto": 7,
                 "id": _id,
                 "nome": nmPonto,
                 "endereco": pontoEndereco
