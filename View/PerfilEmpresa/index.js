@@ -90,26 +90,12 @@ getPoints().then(res => {
 });
 
 
-// function a() {
-//     var novoPonto = '<ul class="ponto">' +
-//         '<li>nome Ponto</li>' +
-//         '<li>Telefone ponto</li>' +
-//         '<li style="float:right;" ><img title="Deletar" onclick="deletarPonto()" class="PontoIcone" src="../img/icones/deletar.png"></li>' +
-//         '<li style="float:right" ><img title="Editar" class="PontoIcone" src="../img/icones/editar.png"></li>' +
-//         '</ul> ';
-//     var d = 0;
-//     document.getElementById("pontos").innerHTML += novoPonto;
-
-// }
-
-
 function EditarInfo() {
 
     Swal.fire({
         title: "Editar informações",
         html: '<form id="EditarInformacao">' +
             `<input id="FormNome" style="font-weight:bold;" placeholder="Razão:" class="txtEditar" type="text" value="${nameCompany}">` +
-            `<input id="formCnpj" placeholder="CNPJ:" style="font-weight:bold;" class="txtEditar" type="text" value="${cnpjCompany}">` +
             `<input id="formTelefone" style="font-weight:bold;" placeholder="Telefone:" class="txtEditar" type="text" value="${telefoneCompany}">` +
             `<input id="formSenha" 
                 type="password" 
@@ -131,14 +117,12 @@ function EditarInfo() {
             var id = document.getElementById("id_empresa").textContent;
             var nome = document.getElementById("FormNome").value;
             var telefone = document.getElementById("formTelefone").value;
-            var cnpj = document.getElementById("formCnpj").value;
             var senha = document.getElementById("formConfirmar").value;
 
             var company = JSON.stringify({
                 "id": id,
                 "nome": nome,
                 "senha": senha,
-                "cnpj": cnpj,
                 "telefone": telefone,
             })
 
@@ -220,8 +204,8 @@ function adicionarPonto() {
     Swal.fire({
         title: "Adicionar Ponto de Coleta",
         html: '<form id="EditarInformacao">' +
-            '<input id="nmPonto" placeholder="Nome do Ponto:" class="txtEditar" type="text">' +
-            '<input id="pontoEndereco" placeholder="Endereço do Ponto:" class="txtEditar" type="text">' +
+            '<input id="nmPonto" placeholder="Nome do Ponto:" class="txtEditar" type="text" autocomplete="off">' +
+            '<input id="pontoEndereco" placeholder="Endereço do Ponto:" class="txtEditar" type="text" autocomplete="off">' +
             '</form>',
         showDenyButton: true,
         showCancelButton: false,
