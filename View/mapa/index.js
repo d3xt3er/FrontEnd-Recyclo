@@ -31,9 +31,13 @@ function GetMap() {
         Microsoft.Maps.Events.addHandler(map, 'click', mapClicked);
     });
     // teste de icone
-    var pushpin = new Microsoft.Maps.Pushpin(map.getCenter());
-    map.entities.push(pushpin);
+    // var pushpin = new Microsoft.Maps.Pushpin(map.getCenter());
+    
 
+    var pushpin = new Microsoft.Maps.Pushpin(map.getCenter(),{
+        anchor: new Microsoft.Maps.Point(12,39)
+    });
+    map.entities.push(pushpin)
     //Add mouse events to the pushpin.
     Microsoft.Maps.Events.addHandler(pushpin, 'click', pushingClicked);
 
@@ -48,14 +52,21 @@ function mapClicked(e){
 function fecharinfo() {
     document.getElementById('infoMaps').style.display = "none";
 }
+const ponto={nome:"casa do cachorro",
+    telefone:"13999999",
+    email:"aaaaaa@hotmail.com",
+    dtcriacao:"30/04/1995"}
 
-function changeInfo(nome, telefone, dtcriacao, empresa, email) {
-    document.getElementById("nmEmpresa").innerText = empresa;
-    document.getElementById("telefone").innerText = telefone;
-    document.getElementById("dCriacao").innerText = dtcriacao;
-    document.getElementsById("tituloEmp").innerText = nome;
-    document.getElementById("emailEmpresa").innerText = email;
-    console.log(nome + '\n' + telefone + '\n' + dtcriacao + '\n' + empresa + '\n' + email);
+
+function changeInfo() {
+
+    document.getElementById("nmEmpresa").innerHTML = ponto.nome;
+    document.getElementById("telefone").innerHTML = ponto.telefone;
+    document.getElementById("emailEmpresa").innerHTML = ponto.email;
+    // erro na data
+    //document.getElementById("dCriacao").innerHTML = ponto.dtcriacao;
+    console.log(document.getElementById("dtcriacao").innerText);
+    
 }
 
 function pushingClicked(e) {
