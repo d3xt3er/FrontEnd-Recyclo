@@ -1,9 +1,8 @@
 // invoca form para a edicao das 
 // informacoes do estabecimento
 
-// VARIAVEIS ESTÁTICAS ATÉ O LOGIN EMPRESA ESTAR FINALIZADO
-var nome = "Paulo LTDA"
-var senha = "1234";
+var nome = localStorage.getItem('nome');
+var senha = localStorage.getItem('senha');
 
 // VARIAVEIS PARA O FORMULARIO DE EDIÇÃO
 var nameCompany;
@@ -18,8 +17,8 @@ fetch(`https://backend-recyclo.herokuapp.com/empresa/company/${nome}/${senha}`, 
     .then(function(data) {
 
         // Nome do localstorage
-        // var name = localStorage.getItem('nome');
-        // document.getElementById("title").innerHTML = name;
+        var name = localStorage.getItem('nome');
+        document.getElementById("title").innerHTML = name;
 
         // informações vindas da API
         document.getElementById("id_empresa").innerHTML = data.cd_empresa;
@@ -33,14 +32,23 @@ fetch(`https://backend-recyclo.herokuapp.com/empresa/company/${nome}/${senha}`, 
 
 
 // Função exibe os pontos
+function getPoints() {
+    //http://localhost:8080/empresa/ponto/${nome}/${senha} || https://backend-recyclo.herokuapp.com/empresa/ponto/${nome}/${senha}
+    return fetch(`https://backend-recyclo.herokuapp.com/empresa/ponto/${nome}/${senha}`).then(res =>
+        res.json()
+    );
+}
+
+
 const app = document.getElementById("pontos");
 
 const pointList = document.createElement("ol");
 pointList.className = "ponto";
 
-getPoints().then(res => {
-    const users = res.forEach(point => {
 
+getPoints().then(res => {
+
+    const users = res.forEach(point => {
         const ul = document.createElement('ul');
         ul.className = "ponto";
 
@@ -81,41 +89,22 @@ getPoints().then(res => {
 
 });
 
-function getPoints() {
-    //http://localhost:8080/empresa/ponto/${nome}/${senha} || https://backend-recyclo.herokuapp.com/empresa/ponto/${nome}/${senha}
-    return fetch(`https://backend-recyclo.herokuapp.com/empresa/ponto/${nome}/${senha}`).then(res =>
-        res.json()
-    );
-}
-
-// function a() {
-//     var novoPonto = '<ul class="ponto">' +
-//         '<li>nome Ponto</li>' +
-//         '<li>Telefone ponto</li>' +
-//         '<li style="float:right;" ><img title="Deletar" onclick="deletarPonto()" class="PontoIcone" src="../img/icones/deletar.png"></li>' +
-//         '<li style="float:right" ><img title="Editar" class="PontoIcone" src="../img/icones/editar.png"></li>' +
-//         '</ul> ';
-//     var d = 0;
-//     document.getElementById("pontos").innerHTML += novoPonto;
-
-// }
-
 
 function EditarInfo() {
 
     Swal.fire({
         title: "Editar informações",
         html: '<form id="EditarInformacao">' +
-            `<input id="FormNome" placeholder="Razão:" class="txtEditar" type="text" value="${nameCompany}">` +
-            `<input id="formCnpj" placeholder="CNPJ:" class="txtEditar" type="text" value="${cnpjCompany}">` +
-            `<input id="formTelefone" placeholder="Telefone:" class="txtEditar" type="text" value="${telefoneCompany}">` +
+            `<input id="FormNome" style="font-weight:bold;" placeholder="Razão:" class="txtEditar" type="text" value="${nameCompany}">` +
+            `<input id="formTelefone" style="font-weight:bold;" placeholder="Telefone:" class="txtEditar" type="text" value="${telefoneCompany}">` +
             `<input id="formSenha" 
                 type="password" 
                 placeholder="Sua senha: "
                 class="txtEditar img" 
                 type="text" 
+                style="font-weight:bold;"
                 onclick="hiddenPassword()" value="${senha}">` +
-            `<input id="formConfirmar" placeholder="Sua nova senha:" type="password" class="txtEditar" type="text">` +
+            `<input id="formConfirmar" style="font-weight:bold;" placeholder="Sua nova senha:" type="password" class="txtEditar" type="text">` +
             '</form>',
         showDenyButton: true,
         showCancelButton: false,
@@ -128,14 +117,12 @@ function EditarInfo() {
             var id = document.getElementById("id_empresa").textContent;
             var nome = document.getElementById("FormNome").value;
             var telefone = document.getElementById("formTelefone").value;
-            var cnpj = document.getElementById("formCnpj").value;
             var senha = document.getElementById("formConfirmar").value;
 
             var company = JSON.stringify({
                 "id": id,
                 "nome": nome,
                 "senha": senha,
-                "cnpj": cnpj,
                 "telefone": telefone,
             })
 
@@ -175,7 +162,7 @@ function EditarInfo() {
                 }
             }).then((result) => {
                 if (result.dismiss === Swal.DismissReason.timer) {
-                    window.location.assign("../login_usuario/index.html");
+                    window.location.assign("../Login/index.html");
                 }
             })
         }
@@ -212,12 +199,13 @@ function deletarPonto() {
     })
 }
 
+// Função adicionar ponto
 function adicionarPonto() {
     Swal.fire({
         title: "Adicionar Ponto de Coleta",
         html: '<form id="EditarInformacao">' +
-            '<input id="nmPonto" placeholder="Nome do Ponto:" class="txtEditar" type="text">' +
-            '<input id="pontoEndereco" placeholder="Endereço do Ponto:" class="txtEditar" type="text">' +
+            '<input id="nmPonto" placeholder="Nome do Ponto:" class="txtEditar" type="text" autocomplete="off">' +
+            '<input id="pontoEndereco" placeholder="Endereço do Ponto:" class="txtEditar" type="text" autocomplete="off">' +
             '</form>',
         showDenyButton: true,
         showCancelButton: false,
@@ -231,12 +219,12 @@ function adicionarPonto() {
             var pontoEndereco = document.getElementById("pontoEndereco").value;
 
             var Points = JSON.stringify({
-                "id_ponto": 1,
                 "id": _id,
                 "nome": nmPonto,
                 "endereco": pontoEndereco
             })
 
+            // var url = "http://localhost:8080/empresa/ponto/criar";
             var url = "https://backend-recyclo.herokuapp.com/empresa/ponto/criar";
 
             var request = new XMLHttpRequest();
@@ -253,6 +241,28 @@ function adicionarPonto() {
             };
 
             request.send(Points);
+
+
+            let timerInterval
+            Swal.fire({
+                icon: "success",
+                html: "Cadastrado com sucesso!",
+                timer: 1000,
+                didOpen: () => {
+                    timerInterval = setInterval(() => {
+                        const content = Swal.getHtmlContainer()
+
+                    }, 100)
+                },
+                willClose: () => {
+                    clearInterval(timerInterval)
+
+                }
+            }).then((result) => {
+                if (result.dismiss === Swal.DismissReason.timer) {
+                    location.reload()
+                }
+            })
         }
     })
 }

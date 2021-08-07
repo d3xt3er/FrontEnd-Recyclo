@@ -9,7 +9,7 @@
     <link rel="icon" href="../img/LogoRecycloV1.png">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <script type='text/javascript' src='http://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=AijOdUHzY5DvlON3_9lG2KYowiYa4tVQJEDyckIt6enyt7lxUK0yXzMBgLnhTHqV' async defer></script>
+    <script src='https://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=AijOdUHzY5DvlON3_9lG2KYowiYa4tVQJEDyckIt6enyt7lxUK0yXzMBgLnhTHqV' async defer></script>
     <script src="../sweetalert.js"></script>
     <script src="index.js"></script>
     <title>Mapa</title>
@@ -21,14 +21,9 @@
     <ul id="nav">
         <li onclick="Logout()"><a class="lia">Sair</a></li>
 
-        <li><a class="lia" href="../Sobre/index.html">Sobre</a></li>
-        <li id="usuario"></li>
+        <li><a class="lia" href="../PerfilUsuario/index.html">Meu perfil</a></li>
 
-
-        <p id="senha"></p>
-        <p id="cpf"></p>
-        <p id="email"></p>
-        <li style="float:left"><img title="Inicio" onclick="window.location.assign('../index.html')" id="logo" src="../img/LogoRecycloV1.png"></li>
+        <li style="float:left"><img title="Inicio" id="logo" src="../img/LogoRecycloV1.png"></li>
 
         <li id="titulo" style="float:left"><a>Recyclo</a></li>
     </ul>
@@ -39,39 +34,40 @@
     <!-- informacoes ao clicar em algum icone do mapa -->
     <div id="infoMaps">
         <button id="btnFechar" onclick="fecharinfo()" title="fechar">X</button>
-        
+
         <div id="infoPonto">
             <div id="image">
             </div>
             <h2 id="tituloEmp">aaaaaaaaaa</h2>
             <ul id="ulPonto">
                 <li>E-mail:</li>
-                <li ><a id="emailEmpresa"></a></li>
+                <li id="emailEmpresa"></li>
             </ul>
             <ul id="ulPonto">
                 <li>Telefone:</li>
-                <li ><a id="telefone"></a></li>
+                <li id="telefone"></li>
             </ul>
             <ul id="ulPonto">
                 <li>Empresa:</li>
-                <li><a id="nmEmpresa"></a></li>
+                <li id="nmEmpresa"></li>
             </ul>
             <ul id="ulPonto">
                 <li>data de cadastro:</li>
-                <li> <a id="dtCriacao"></a></li>
+                <li id="dtCriacao"></li>
             </ul>
         </div>
-              <!-- Gerar Denucnia -->
-            <div id="boxDenuncia">
-                <form id="frmDenuncia" action="" >
-                    <h2>Gerar Denucnia</h2>
-                    <input type="text">
-                    <input type="date" name="" id="">
-                    <input id="btnConfirm" class="btn" type="button" value="Gerar Denuncia ">
-                </form>
-                <button id="btnCancelar" class="btn" onclick="cancelarDenuncia()" >Cancelar</button>
-            
-            </div>
+        <!-- Gerar Denucnia -->
+        <div id="boxDenuncia">
+            <form id="frmDenuncia" action="">
+                <h2>Gerar Denucnia</h2>
+                <input type="text">
+                <input type="date" name="" id="">
+                <input id="btnConfirm" class="btn" type="button" value="Gerar Denuncia ">
+            </form>
+            <button id="btnCancelar" class="btn" onclick="cancelarDenuncia()">Cancelar</button>
+
+        </div>
+
     </div>
 </body>
 

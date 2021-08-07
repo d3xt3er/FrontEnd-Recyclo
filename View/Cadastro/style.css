@@ -30,6 +30,7 @@ img {
     height: 15vw;
     opacity: 0.8;
     margin-left: 12vw;
+    cursor: pointer;
 }
 
 p {
@@ -98,7 +99,7 @@ input {
     height: 50px;
     border: 0;
     border-radius: 10px;
-    background-color: rgba(90, 190, 65, 0.8);
+    background-color: rgb(90, 190, 65);
     font-size: larger;
     font-weight: 500;
     display: inline-block;

@@ -23,6 +23,7 @@ body {
     height: 15vw;
     opacity: 0.8;
     margin-left: 12vw;
+    cursor: pointer;
 }
 
 #logoMob {
@@ -74,6 +75,24 @@ h2 {
     /* font-weight: 900; */
     font-size: 2.5vw;
     text-transform: uppercase;
+}
+
+#selecao {
+    display: inline-block;
+    margin-top: 15px;
+}
+
+a {
+    border-radius: 4px;
+    padding: 10px 7vw;
+    font-weight: bold;
+}
+
+a:hover {
+    background-color: #35d786;
+    transition: 1s;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
 input {
@@ -153,6 +172,10 @@ input {
         border-radius: 15px;
         background-color: white;
     }
+    #formEmpresa {
+        border-radius: 15px;
+        background-color: white;
+    }
     #direita {
         border-radius: 10px;
         width: 80%;
@@ -174,6 +197,7 @@ input {
         background-color: rgb(41, 120, 160);
     }
     #logoMob {
+        margin-top: 10%;
         display: initial;
         height: 20vw;
     }

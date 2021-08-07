@@ -21,6 +21,7 @@ ul {
 #logo {
     height: 45px;
     width: 47px;
+    cursor: pointer;
 }
 
 #titulo {
@@ -60,7 +61,8 @@ li {
 }
 
 #logoTitulo {
-    height: 20vw;
+    height: 18vw;
+    margin-top: 3%;
 }
 
 h1 {
@@ -72,14 +74,14 @@ h1 {
 }
 
 #textSobre {
-    border-radius: 20px;
+    border-radius: 9px;
     background: whitesmoke;
     margin: 20px;
     padding: 20px;
 }
 
 #textSobre p {
-    font-size: 25px;
+    font-size: 21px;
     font-family: sans-serif;
     text-align: justify;
 }
@@ -90,7 +92,7 @@ h1 {
 }
 
 h2 {
-    font-size: 40px;
+    font-size: 34px;
     font-weight: 800;
     letter-spacing: 2px;
 }
@@ -123,7 +125,7 @@ h2 {
 }
 
 .dev h3 {
-    font-size: 30px;
+    font-size: 26px;
     font-weight: 800;
 }
 
@@ -147,6 +149,7 @@ h2 {
 .dev button:hover {
     background: rgba(90, 190, 65, 0.8);
     transform: 1s;
+    transition: 1s;
 }
 
 .dev a img {
@@ -168,6 +171,14 @@ footer {
 /*-- mobile --*/
 
 @media only screen and (max-width:600px) {
+    #logoTitulo {
+        width: 20%;
+        height: 28%;
+        margin-top: 14%;
+    }
+    article p {
+        margin-left: 0 !important;
+    }
     .lia {
         /* -nav */
         padding: 15px 6px;
@@ -191,7 +202,8 @@ footer {
     }
     .dev {
         width: auto;
-        margin: 0;
+        margin: 2px;
+        border-radius: 1%;
     }
     .imgDev {
         height: 150px;

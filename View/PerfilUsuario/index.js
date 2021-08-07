@@ -8,6 +8,7 @@ var cfpUser;
 var emailUser;
 var telefoneUser;
 
+// Função que captura as informações do usuario
 fetch(`https://backend-recyclo.herokuapp.com/usuario/user/${nome}/${senha}`, {
         method: 'get'
     })
@@ -39,8 +40,8 @@ function hiddenPassword() {
     }
 }
 
+// Função PUT do usuário
 function alterarConta() {
-
 
     Swal.fire({
         title: "Editar informações",
@@ -115,7 +116,7 @@ function alterarConta() {
             }).then((result) => {
                 if (result.dismiss === Swal.DismissReason.timer) {
                     location.reload()
-                    window.location.assign("../login_usuario/index.html");
+                    window.location.assign("../Login/index.html");
                 }
             })
         }
@@ -177,8 +178,7 @@ function excluirConta() {
                 }
             }).then((result) => {
                 if (result.dismiss === Swal.DismissReason.timer) {
-                    location.reload()
-                    window.location.assign("../login_usuario/index.html");
+                    window.location.assign("../Login/index.html");
                 }
             })
 
@@ -197,7 +197,7 @@ function Logout() {
         confirmButtonText: 'Sim'
     }).then((result) => {
         if (result.isConfirmed) {
-            window.location.replace("../login_usuario/index.html");
+            window.location.replace("../Login/index.html");
             window.localStorage.removeItem('nome');
             window.localStorage.removeItem('senha');
         }

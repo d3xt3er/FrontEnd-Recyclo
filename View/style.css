@@ -36,7 +36,7 @@ body {
 }
 
 h3 {
-    font-size: 3em;
+    font-size: 35px;
     letter-spacing: 1px;
 }
 
@@ -64,6 +64,7 @@ h1 {
 #logo {
     height: 45px;
     width: 47px;
+    cursor: pointer;
 }
 
 #titulo {
@@ -181,8 +182,8 @@ li {
     width: fit-content;
     background: white;
     text-align: center;
-    height: 43vw;
-    padding: 30px;
+    height: 41vw;
+    padding: 84px;
 }
 
 #sep {
@@ -197,25 +198,34 @@ li {
 
 #contaBox .direita p {
     font-size: x-large;
-    margin-top: 5px;
+    margin-top: 5%;
     font-weight: 700;
+    margin-left: 19%;
+    margin-right: -29%;
+    float: left;
     color: black;
+    text-align: center;
 }
 
 #contaBox .esquerda {
-    width: 35%;
+    width: 29%;
+    margin-left: 32%;
+    margin-right: auto;
     border-radius: 20px;
     height: fit-content;
-    box-shadow: 5px 7px rgba(90, 190, 65, 0.3);
+    box-shadow: 5px 7px rgb(90 190 65 / 30%);
 }
 
 #contaBox .esquerda img {
-    width: 20vw;
+    width: 13vw;
+    margin-right: 5%;
+    margin-left: auto;
 }
 
 #contaBox .esquerda button {
     background: transparent;
     border-style: solid;
+    margin-top: 13px;
     border-width: 5px;
     border-color: rgba(90, 190, 65, 0.8);
 }
@@ -283,6 +293,15 @@ footer {
 /*-- mobile --*/
 
 @media only screen and (max-width:600px) {
+    #contaBox .esquerda {
+        margin-left: auto;
+        margin-right: 31%;
+        width: 36%;
+        border-radius: 20px;
+        margin-top: -5%;
+        height: fit-content;
+        box-shadow: 5px 7px rgb(90 190 65 / 30%);
+    }
     .lia {
         /* -nav */
         padding: 15px 6px;
@@ -315,7 +334,7 @@ footer {
     }
     #contaBox {
         position: absolute;
-        height: 100vw;
+        height: 103vw;
         padding: 0;
     }
     #contaBox h3 {
@@ -326,9 +345,9 @@ footer {
         margin-top: 7%;
     }
     .btn {
-        font-size: 10px;
+        font-size: 14px;
         height: 42px;
-        width: 129px;
+        width: 100%;
         margin-top: 9px;
     }
     .btn:active {
@@ -336,6 +355,10 @@ footer {
     }
     #contaBox .direita p {
         font-size: 15px;
+        margin-top: 4%;
+        margin-left: auto;
+        margin-right: -40%;
+        text-align: center;
     }
     #sobre {
         height: 100vw;
