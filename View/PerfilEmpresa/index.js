@@ -218,30 +218,34 @@ function adicionarPonto() {
             var nmPonto = document.getElementById("nmPonto").value;
             var pontoEndereco = document.getElementById("pontoEndereco").value;
 
-            var Points = JSON.stringify({
-                "id": _id,
-                "nome": nmPonto,
-                "endereco": pontoEndereco
-            })
 
-            // var url = "http://localhost:8080/empresa/ponto/criar";
-            var url = "https://backend-recyclo.herokuapp.com/empresa/ponto/criar";
-
-            var request = new XMLHttpRequest();
-            request.open("POST", url);
-
-            request.setRequestHeader("Accept", "application/json");
-            request.setRequestHeader("Content-Type", "application/json");
-
-            request.onreadystatechange = function() {
-                if (request.readyState === 4) {
-                    console.log(request.status);
-                    console.log(request.responseText);
-                }
-            };
-
-            request.send(Points);
-
+            fetch(`https://us1.locationiq.com/v1/search.php?key=5f817f15c518de&q=${pontoEndereco}&limit=1&countrycodes=Brasil&format=json`, {
+                    method: 'get'
+                })
+                .then((resp) => resp.json())
+                .then(function(data) {
+                    data.forEach(location => {
+                        $.ajax({
+                                method: "POST",
+                                url: "https://backend-recyclo.herokuapp.com/empresa/ponto/criar",
+                                data: {
+                                    "id": _id,
+                                    "nome": nmPonto,
+                                    "endereco": pontoEndereco,
+                                    "latitude": location.lat,
+                                    "longitude": location.lon
+                                }
+                            }).done(function(msg) {
+                                console.log("Cadastrado");
+                            })
+                            .fail(function(msg) {
+                                console.log(msg);
+                            });
+                    });
+                })
+                .catch(function(err) {
+                    console.log(err);
+                });
 
             let timerInterval
             Swal.fire({
