@@ -27,6 +27,12 @@ function GetMap() {
         mapTypeId: Microsoft.Maps.MapTypeId.road
     });
 
+    infobox = new Microsoft.Maps.Infobox(map.getCenter(), {
+        visible: false
+    });
+
+    infobox.setMap(map);
+
     navigator.geolocation.getCurrentPosition(function(position) {
         var loc = new Microsoft.Maps.Location(
             position.coords.latitude,
@@ -36,11 +42,42 @@ function GetMap() {
         Microsoft.Maps.Events.addHandler(map, 'click', mapClicked);
     });
     // teste de icone
-    var pushpin = new Microsoft.Maps.Pushpin(map.getCenter());
-    map.entities.push(pushpin);
 
-    //Add mouse events to the pushpin.
-    Microsoft.Maps.Events.addHandler(pushpin, 'click', pushingClicked);
+    fetch(`https://backend-recyclo.herokuapp.com/empresa/ponto/${nome}/${senha}`).then((resp) => resp.json())
+        .then(function(data) {
+
+            for (var i = 0, len = data.length; i < len; i++) {
+                var pushpin = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(data[i].cd_latitude_ponto, data[i].cd_longitude_ponto));
+
+                map.entities.push(pushpin);
+
+                pushpin.metadata = {
+                    title: data[i].nm_ponto,
+                    description: '<img src="../img/homeNext.jpg"  width="50" height="50"/>'
+                };
+
+
+                Microsoft.Maps.Events.addHandler(pushpin, 'click', pushingClicked);
+            }
+
+        })
+        .catch(function(err) {
+            console.log(err);
+        });
+}
+
+function pushingClicked(e) {
+    // document.getElementById('infoMaps').style.display = "inherit";
+
+    if (e.target.metadata) {
+        //Set the infobox options with the metadata of the pushpin.
+        infobox.setOptions({
+            location: e.target.getLocation(),
+            title: e.target.metadata.title,
+            description: e.target.metadata.description,
+            visible: true
+        });
+    }
 }
 
 // pegando a localizacao, latitude e longitude
@@ -136,9 +173,7 @@ function fecharinfo() {
 //     console.log(nome + '\n' + telefone + '\n' + dtcriacao + '\n' + empresa + '\n' + email);
 // }
 
-function pushingClicked(e) {
-    document.getElementById('infoMaps').style.display = "inherit";
-}
+
 
 
 
@@ -150,11 +185,11 @@ fetch(`https://backend-recyclo.herokuapp.com/empresa/ponto/${nome}/${senha}`, {
     })
     .then((resp) => resp.json())
     .then(function(data) {
-        data.forEach(location => {
-            document.getElementById("tituloEmp").innerHTML = location.nm_ponto;
-            document.getElementById("nmEmpresa").innerHTML = location.nm_empresa;
+        // data.forEach(location => {
+        //     document.getElementById("tituloEmp").innerHTML = location.nm_ponto;
+        //     document.getElementById("nmEmpresa").innerHTML = location.nm_empresa;
 
-        });
+        // });
 
     })
     .catch(function(err) {
