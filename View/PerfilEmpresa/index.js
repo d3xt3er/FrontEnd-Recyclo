@@ -145,21 +145,12 @@ function EditarInfo() {
 
             request.send(company);
 
-            let timerInterval
             Swal.fire({
-                icon: "success",
-                html: "Alterado com sucesso!",
-                timer: 1000,
-                didOpen: () => {
-                    timerInterval = setInterval(() => {
-                        const content = Swal.getHtmlContainer()
 
-                    }, 100)
-                },
-                willClose: () => {
-                    clearInterval(timerInterval)
-
-                }
+                icon: 'success',
+                title: 'Alterado com sucesso!',
+                showConfirmButton: false,
+                timer: 1500
             }).then((result) => {
                 if (result.dismiss === Swal.DismissReason.timer) {
                     window.location.assign("../Login/index.html");
@@ -247,24 +238,15 @@ function adicionarPonto() {
                     console.log(err);
                 });
 
-            let timerInterval
             Swal.fire({
-                icon: "success",
-                html: "Cadastrado com sucesso!",
-                timer: 1000,
-                didOpen: () => {
-                    timerInterval = setInterval(() => {
-                        const content = Swal.getHtmlContainer()
 
-                    }, 100)
-                },
-                willClose: () => {
-                    clearInterval(timerInterval)
-
-                }
+                icon: 'success',
+                title: 'Alterado com sucesso!',
+                showConfirmButton: false,
+                timer: 1500
             }).then((result) => {
                 if (result.dismiss === Swal.DismissReason.timer) {
-                    location.reload()
+                    location.reload();
                 }
             })
         }
