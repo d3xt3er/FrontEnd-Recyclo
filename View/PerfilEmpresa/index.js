@@ -135,7 +135,7 @@ getPoints().then(res => {
 
 
                     Swal.fire({
-                        title: "Adicionar Ponto de Coleta",
+                        title: "Alterar Ponto de Coleta",
                         html: '<form id="EditarInformacao">' +
                             `<input id="name_ponto" placeholder="Nome do Ponto:" class="txtEditar" type="text" autocomplete="off" value="${nome_ponto}">` +
                             `<input id="pontoE" placeholder="Endereço do Ponto:" class="txtEditar" type="text" autocomplete="off" value="${endereco_ponto}">` +
