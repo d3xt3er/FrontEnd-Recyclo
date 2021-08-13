@@ -26,7 +26,7 @@ function GetMap() {
         Microsoft.Maps.Events.addHandler(map, 'click');
     });
 
-    fetch(`http://backend-recyclo.herokuapp.com/empresa/ponto/`).then((resp) => resp.json())
+    fetch(`https://backend-recyclo.herokuapp.com/empresa/ponto/`).then((resp) => resp.json())
         .then(function(data) {
 
             for (var i = 0, len = data.length; i < len; i++) {
