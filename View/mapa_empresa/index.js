@@ -69,7 +69,10 @@ function GetMap() {
     .then(function(data) {
 
         for (var i = 0, len = data.length; i < len; i++) {
-            var pushpin = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(data[i].cd_latitude_ponto, data[i].cd_longitude_ponto));
+            var pushpin = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(data[i].cd_latitude_ponto, data[i].cd_longitude_ponto),{
+                icon:'../img/coleta.png',
+                acnchor:new Microsoft.Maps.Point(20,20)
+            });
 
             map.entities.push(pushpin);
 
