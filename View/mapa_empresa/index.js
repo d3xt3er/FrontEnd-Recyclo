@@ -65,35 +65,27 @@ function GetMap() {
     });
     // teste de icone
 
-fetch(`https://backend-recyclo.herokuapp.com/empresa/ponto/`).then((resp) => resp.json())
-        .then(function(data) {
-            // icon denuncias ilegal.png
-            for (var i = 0, len = data.length; i < len; i++) {
-                var pushpin = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(data[i].cd_latitude_ponto, data[i].cd_longitude_ponto),{
-                    icon:'../img/coleta.png',
-                    acnchor:new Microsoft.Maps.Point(20,20)
-                });
+    fetch(`https://backend-recyclo.herokuapp.com/empresa/ponto/${nome}/${senha}`).then((resp) => resp.json())
+    .then(function(data) {
 
-                map.entities.push(pushpin);
+        for (var i = 0, len = data.length; i < len; i++) {
+            var pushpin = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(data[i].cd_latitude_ponto, data[i].cd_longitude_ponto));
 
-                pushpin.metadata ={
-                    nmPonto:data[i].nm_ponto,
-                    empresa:data[i].nm_empresa,
-                    endereco:data[i].nm_logradouro
-                };
-               /* pushpin.metadata = {
-                    title: data[i].nm_ponto,
-                    description: '<b>Empresa: </b>' + data[i].nm_empresa + '<br>' + '<img src="../img/homeNext.jpg"  width="50" height="50"/><br>' + '<b>Endereço: </b>' + data[i].nm_logradouro
-                };
-                */
-                Microsoft.Maps.Events.addHandler(pushpin, 'click', pushingClicked);
-            }
+            map.entities.push(pushpin);
 
-        })
-        .catch(function(err) {
-            console.log(err);
-        });
+            pushpin.metadata ={
+                nmPonto:data[i].nm_ponto,
+                empresa:data[i].nm_empresa,
+                endereco:data[i].nm_logradouro
+            };
 
+            Microsoft.Maps.Events.addHandler(pushpin, 'click', pushingClicked);
+        }
+
+    })
+    .catch(function(err) {
+        console.log(err);
+    });
 }
 
 function pushingClicked(e) {
