@@ -218,3 +218,48 @@
         transition: 1s;
         background: rgba(255, 44, 44)
     }
+    #infobox{
+        padding-top: 15px;
+        padding-right: 5px;
+        padding-bottom: 5px;
+        padding-left: 5px;
+        border-radius: 50px;
+        border-bottom-left-radius: 0;
+        height: 180px;
+        width: 200px;
+        background: rgba(255, 255, 255, 0.9);
+    }
+    #infobox img{
+        width: 60px;
+        height: 40px;
+    }
+    #infobox button{
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        font-weight: 800;
+        background: transparent;
+        color: black;
+        border: 0;
+        width: 20px;
+        height: 20px;
+        border-radius: 50px;
+    }
+    
+    #infobox button:hover{
+        transition: 1s;
+        color: white;
+        background:black ;
+        
+    }
+    
+    #infobox h3{
+        font-size: 17px;
+    }
+    #infobox h4{
+        font-size: 15px;
+    }
+    #infobox p{
+        font-size: 14px;
+    }
+    
