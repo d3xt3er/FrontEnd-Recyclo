@@ -45,61 +45,65 @@ $(document).ready(() => {
         var senha = document.getElementById("senha").value;
         var ConfirmSenha = document.getElementById("ConfirmarSsenha").value;
 
-        if (senha != "" && ConfirmSenha != "" && senha === ConfirmSenha) {
-
-            Swal.fire({
-                title: 'Aguarde...',
-                html: '<img src="./Gif-Recyclo.gif" alt="description of gif" style="display: block;  margin-left: auto;margin-right: auto;" width="600" height="600" /> ',
-                //lembrar que tira o click do fundo 
-                allowOutsideClick: false,
-                showCancelButton: false,
-                showConfirmButton: false,
-                onBeforeOpen: () => {
-                    Swal.showLoading()
-                },
-            });
 
 
-            var obj = JSON.stringify({
-                "nome": nome,
-                "email": email,
-                "telefone": celular,
-                "cpf": cpf,
-                "senha": senha,
-            })
 
-            // var url = "http://localhost:8080/usuario/criar/";
-            var url = "https://backend-recyclo.herokuapp.com/usuario/criar/";
 
-            var request = new XMLHttpRequest();
-            request.open("POST", url);
+        // if (senha != "" && ConfirmSenha != "" && senha === ConfirmSenha) {
 
-            request.setRequestHeader("Accept", "application/json");
-            request.setRequestHeader("Content-Type", "application/json");
-            request.setRequestHeader('Access-Control-Allow-Origin', '*');
+        //     Swal.fire({
+        //         title: 'Aguarde...',
+        //         html: '<img src="./Gif-Recyclo.gif" alt="description of gif" style="display: block;  margin-left: auto;margin-right: auto;" width="600" height="600" /> ',
+        //         //lembrar que tira o click do fundo 
+        //         allowOutsideClick: false,
+        //         showCancelButton: false,
+        //         showConfirmButton: false,
+        //         onBeforeOpen: () => {
+        //             Swal.showLoading()
+        //         },
+        //     });
 
-            request.onreadystatechange = function() {
-                if (request.readyState === 4) {
-                    console.log(request.status);
-                    console.log(request.responseText);
-                }
-            };
 
-            request.send(obj);
+        //     var obj = JSON.stringify({
+        //         "nome": nome,
+        //         "email": email,
+        //         "telefone": celular,
+        //         "cpf": cpf,
+        //         "senha": senha,
+        //     })
 
-            Swal.fire(
-                'Parabéns!',
-                'Cadastrado com sucesso!',
-                'success'
-            )
+        //     // var url = "http://localhost:8080/usuario/criar/";
+        //     var url = "https://backend-recyclo.herokuapp.com/usuario/criar/";
 
-        } else {
-            Swal.fire({
-                icon: 'error',
-                title: 'Opa,',
-                text: 'Revise sua informações!',
-            })
-        }
+        //     var request = new XMLHttpRequest();
+        //     request.open("POST", url);
+
+        //     request.setRequestHeader("Accept", "application/json");
+        //     request.setRequestHeader("Content-Type", "application/json");
+        //     request.setRequestHeader('Access-Control-Allow-Origin', '*');
+
+        //     request.onreadystatechange = function() {
+        //         if (request.readyState === 4) {
+        //             console.log(request.status);
+        //             console.log(request.responseText);
+        //         }
+        //     };
+
+        //     request.send(obj);
+
+        //     Swal.fire(
+        //         'Parabéns!',
+        //         'Cadastrado com sucesso!',
+        //         'success'
+        //     )
+
+        // } else {
+        //     Swal.fire({
+        //         icon: 'error',
+        //         title: 'Opa,',
+        //         text: 'Revise sua informações!',
+        //     })
+        // }
 
     });
 });

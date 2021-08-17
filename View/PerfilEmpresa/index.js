@@ -1,7 +1,7 @@
 // invoca form para a edicao das 
 // informacoes do estabecimento
 
-var nome = localStorage.getItem('nome');
+var email = localStorage.getItem('email');
 var senha = localStorage.getItem('senha');
 
 // VARIAVEIS PARA O FORMULARIO DE EDIÇÃO
@@ -9,16 +9,16 @@ var id_company;
 var nameCompany;
 var cnpjCompany;
 var telefoneCompany;
-
-fetch(`https://backend-recyclo.herokuapp.com/empresa/company/${nome}/${senha}`, {
+// https://backend-recyclo.herokuapp.com
+fetch(`http://localhost:8080/empresa/company/${email}/${senha}`, {
         method: 'get'
     })
     .then((resp) => resp.json())
     .then(function(data) {
 
         // Nome do localstorage
-        var name = localStorage.getItem('nome');
-        document.getElementById("title").innerHTML = name;
+        // var name = localStorage.getItem('email');
+        // document.getElementById("title").innerHTML = name;
 
         // informações vindas da API
         document.getElementById("id_empresa").innerHTML = data.cd_empresa;
@@ -33,8 +33,8 @@ fetch(`https://backend-recyclo.herokuapp.com/empresa/company/${nome}/${senha}`, 
 
 // Função exibe os pontos
 function getPoints() {
-    //http://localhost:8080/empresa/ponto/${nome}/${senha} || https://backend-recyclo.herokuapp.com/empresa/ponto/${nome}/${senha}
-    return fetch(`https://backend-recyclo.herokuapp.com/empresa/ponto/${nome}/${senha}`).then(res =>
+    //http://localhost:8080/empresa/ponto/${email}/${senha} || https://backend-recyclo.herokuapp.com/empresa/ponto/${email}/${senha}
+    return fetch(`https://backend-recyclo.herokuapp.com/empresa/ponto/${email}/${senha}`).then(res =>
         res.json()
     );
 }

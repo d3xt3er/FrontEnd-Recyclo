@@ -45,12 +45,12 @@ $(document).ready(() => {
         });
         event.preventDefault();
 
-        var nome = document.getElementById("nome").value;
+        var email = document.getElementById("email").value;
         var senha = document.getElementById("senha").value;
 
         var request = new XMLHttpRequest();
-        // var url = "http://localhost:8080/usuario/login/" + nome + "/" + senha + "";
-        var url = "https://backend-recyclo.herokuapp.com/usuario/login/" + nome + "/" + senha + "";
+        // var url = "http://localhost:8080/usuario/login/" + email + "/" + senha + "";
+        var url = "https://backend-recyclo.herokuapp.com/usuario/login/" + email + "/" + senha + "";
 
         request.open("GET", url, true);
         request.setRequestHeader("Content-Type", "application/json");
@@ -64,11 +64,11 @@ $(document).ready(() => {
                 if (json == 'Usuario encontrado!') {
                     window.location.replace("../mapa_usuario/index.html");
 
-                    // Utilizando localStorage para setar nome e senha
-                    localStorage.setItem('nome', nome);
+                    // Utilizando localStorage para setar email e senha
+                    localStorage.setItem('email', email);
                     localStorage.setItem('senha', senha);
 
-                    localStorage['nome'] = nome;
+                    localStorage['email'] = email;
                     localStorage['senha'] = senha;
 
                 } else if (json == 'Usuario não existente') {
@@ -87,6 +87,8 @@ $(document).ready(() => {
 
 // Login - Empresa
 $(document).ready(() => {
+
+
     $("#formCompany").submit((event) => {
         Swal.fire({
             title: 'Aguarde...',
@@ -121,10 +123,10 @@ $(document).ready(() => {
                     window.location.replace("../mapa_empresa/index.html");
 
                     // Utilizando localStorage para setar nome e senha
-                    localStorage.setItem('nome', razao);
+                    localStorage.setItem('email', razao);
                     localStorage.setItem('senha', senha);
 
-                    localStorage['nome'] = razao;
+                    localStorage['email'] = razao;
                     localStorage['senha'] = senha;
 
                 } else if (json == 'Usuario não existente') {
