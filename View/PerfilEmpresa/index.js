@@ -10,7 +10,7 @@ var nameCompany;
 var cnpjCompany;
 var telefoneCompany;
 // https://backend-recyclo.herokuapp.com
-fetch(`http://localhost:8080/empresa/company/${email}/${senha}`, {
+fetch(`https://backend-recyclo.herokuapp.com/empresa/company/${email}/${senha}`, {
         method: 'get'
     })
     .then((resp) => resp.json())
