@@ -45,40 +45,51 @@ $(document).ready(() => {
         var senha = document.getElementById("senha").value;
         var ConfirmSenha = document.getElementById("ConfirmarSsenha").value;
 
-        $.ajax({
-                method: "POST",
-                url: "https://backend-recyclo.herokuapp.com/usuario/criar/",
-                data: { nome: nome, email: email, celular: celular, cpf: cpf, senha: senha, confSenha: ConfirmSenha },
-                beforeSend: function() {
-                    Swal.fire({
-                        title: 'Aguarde...',
-                        html: '<img src="../img/Gif-Recyclo.gif" alt="description of gif" style="display: block;  margin-left: auto;margin-right: auto;" width="600" height="600" /> ',
-                        //lembrar que tira o click do fundo 
-                        allowOutsideClick: false,
-                        showCancelButton: false,
-                        showConfirmButton: false,
-                        onBeforeOpen: () => {
-                            Swal.showLoading()
-                        },
-                    });
-                }
-            }).done(function(msg) {
-                Swal.fire(
-                    'Parabéns!',
-                    'Cadastrado com sucesso!',
-                    'success'
-                )
-
+        if (senha != ConfirmSenha) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Desculpe,',
+                text: 'Senhas são diferentes!',
             })
-            .fail(function(msg) {
-                if (msg.responseText == 'Usuário já cadastrado') {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Desculpe,',
-                        text: 'Este E-mail ou CPF de usuário ja existe!',
-                    })
-                }
-            });
+            return false;
+        } else {
+            $.ajax({
+                    method: "POST",
+                    // https://backend-recyclo.herokuapp.com/usuario/criar/
+                    url: "https://backend-recyclo.herokuapp.com/usuario/criar/",
+                    data: { nome: nome, email: email, celular: celular, cpf: cpf, senha: senha, confSenha: ConfirmSenha },
+                    beforeSend: function() {
+                        Swal.fire({
+                            title: 'Aguarde...',
+                            html: '<img src="../img/Gif-Recyclo.gif" alt="description of gif" style="display: block;  margin-left: auto;margin-right: auto;" width="600" height="600" /> ',
+                            //lembrar que tira o click do fundo 
+                            allowOutsideClick: false,
+                            showCancelButton: false,
+                            showConfirmButton: false,
+                            onBeforeOpen: () => {
+                                Swal.showLoading()
+                            },
+                        });
+                    }
+                }).done(function(msg) {
+                    Swal.fire(
+                        'Parabéns!',
+                        'Cadastrado com sucesso!',
+                        'success'
+                    )
+
+                })
+                .fail(function(msg) {
+                    if (msg.responseText == 'Usuário já cadastrado') {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Desculpe,',
+                            text: 'Este E-mail ou CPF de usuário ja existe!',
+                        })
+                    }
+                });
+        }
+
     });
 });
 
@@ -104,39 +115,48 @@ $(document).ready(() => {
         // var url = "http://localhost:8080/empresa/criar/";
         // var url = "https://backend-recyclo.herokuapp.com/empresa/criar/";
 
-        $.ajax({
-                method: "POST",
-                url: "https://backend-recyclo.herokuapp.com/empresa/criar/",
-                data: { nome: razao, email: email, telefone: telefone, cnpj: cnpj, senha: senha, confSenha: ConfirmaSenha },
-                beforeSend: function() {
-                    Swal.fire({
-                        title: 'Aguarde...',
-                        html: '<img src="../img/Gif-Recyclo.gif" alt="description of gif" style="display: block;  margin-left: auto;margin-right: auto;" width="600" height="600" /> ',
-                        //lembrar que tira o click do fundo 
-                        allowOutsideClick: false,
-                        showCancelButton: false,
-                        showConfirmButton: false,
-                        onBeforeOpen: () => {
-                            Swal.showLoading()
-                        },
-                    });
-                }
-            }).done(function(msg) {
-                Swal.fire(
-                    'Parabéns!',
-                    'Cadastrado com sucesso!',
-                    'success'
-                )
-
+        if (senha != ConfirmaSenha) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Desculpe,',
+                text: 'Senhas são diferentes!',
             })
-            .fail(function(msg) {
-                if (msg.responseText == 'Empresa já cadastrada') {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Desculpe,',
-                        text: 'Este E-mail ou CNPJ de usuário ja existe!',
-                    })
-                }
-            });
+            return false;
+        } else {
+            $.ajax({
+                    method: "POST",
+                    url: "https://backend-recyclo.herokuapp.com/empresa/criar/",
+                    data: { nome: razao, email: email, telefone: telefone, cnpj: cnpj, senha: senha, confSenha: ConfirmaSenha },
+                    beforeSend: function() {
+                        Swal.fire({
+                            title: 'Aguarde...',
+                            html: '<img src="../img/Gif-Recyclo.gif" alt="description of gif" style="display: block;  margin-left: auto;margin-right: auto;" width="600" height="600" /> ',
+                            //lembrar que tira o click do fundo 
+                            allowOutsideClick: false,
+                            showCancelButton: false,
+                            showConfirmButton: false,
+                            onBeforeOpen: () => {
+                                Swal.showLoading()
+                            },
+                        });
+                    }
+                }).done(function(msg) {
+                    Swal.fire(
+                        'Parabéns!',
+                        'Cadastrado com sucesso!',
+                        'success'
+                    )
+                })
+                .fail(function(msg) {
+                    if (msg.responseText == 'Empresa já cadastrada') {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Desculpe,',
+                            text: 'Este E-mail ou CNPJ de usuário ja existe!',
+                        })
+                    }
+                });
+        }
+
     });
 });
