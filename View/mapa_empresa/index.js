@@ -10,7 +10,7 @@ function Logout() {
     }).then((result) => {
         if (result.isConfirmed) {
             window.location.replace("../Login/index.html");
-            window.localStorage.removeItem('nome');
+            window.localStorage.removeItem('email');
             window.localStorage.removeItem('senha');
         }
     })
@@ -26,7 +26,7 @@ function GetMap() {
         zoom: 15,
         mapTypeId: Microsoft.Maps.MapTypeId.road,
         disableStreetside: true,
-        customMapStyle: {// mudanca de cores = +identidade
+        customMapStyle: { // mudanca de cores = +identidade
             elements: {
                 area: { fillColor: '#72ec89' },
                 water: { fillColor: '#2bb5e8' },
@@ -42,16 +42,16 @@ function GetMap() {
         }
     });
 
-    var infoboxTemplate ='<div id="infobox">'+
-        '<h3 id="ponto">{ponto}</h3>'+
-        '<img src="../img/homeNext.jpg">'+
-        '<h4>Endereço:</h4>'+
-        '<p id="logra">{endereco}</p>'+
-        '<button onclick="fecharInfobox()" >X</button>'+
+    var infoboxTemplate = '<div id="infobox">' +
+        '<h3 id="ponto">{ponto}</h3>' +
+        '<img src="../img/homeNext.jpg">' +
+        '<h4>Endereço:</h4>' +
+        '<p id="logra">{endereco}</p>' +
+        '<button onclick="fecharInfobox()" >X</button>' +
         '</div>';
     infobox = new Microsoft.Maps.Infobox(map.getCenter(), {
         htmlContent: infoboxTemplate.replace(
-            '{ponto}','nmPonto').replace('{endereco}','endereco')
+            '{ponto}', 'nmPonto').replace('{endereco}', 'endereco')
     });
     infobox.setMap(map);
     fecharInfobox();
@@ -74,39 +74,40 @@ function GetMap() {
                 acnchor:new Microsoft.Maps.Point(20,20)
             });
 
-            map.entities.push(pushpin);
 
-            pushpin.metadata ={
-                nmPonto:data[i].nm_ponto,
-                empresa:data[i].nm_empresa,
-                endereco:data[i].nm_logradouro
-            };
+                map.entities.push(pushpin);
 
-            Microsoft.Maps.Events.addHandler(pushpin, 'click', pushingClicked);
-        }
+                pushpin.metadata = {
+                    nmPonto: data[i].nm_ponto,
+                    empresa: data[i].nm_empresa,
+                    endereco: data[i].nm_logradouro
+                };
 
-    })
-    .catch(function(err) {
-        console.log(err);
-    });
+                Microsoft.Maps.Events.addHandler(pushpin, 'click', pushingClicked);
+            }
+
+        })
+        .catch(function(err) {
+            console.log(err);
+        });
 }
 
 function pushingClicked(e) {
-    var h3= document.getElementById('ponto');
-    var p= document.getElementById('logra');
+    var h3 = document.getElementById('ponto');
+    var p = document.getElementById('logra');
     if (e.target.metadata) {
         h3.innerText = e.target.metadata.nmPonto;
         p.innerText = e.target.metadata.endereco;
         infobox.setOptions({
-            visible:true,
-            location:e.location
-        });   
+            visible: true,
+            location: e.location
+        });
     }
 }
 
-function fecharInfobox(){
+function fecharInfobox() {
     infobox.setOptions({
-        visible:false
+        visible: false
     });
 }
 
@@ -204,13 +205,10 @@ function fecharinfo() {
 // }
 
 
-
-
-
-var nome = localStorage.getItem('nome');
+var email = localStorage.getItem('email');
 var senha = localStorage.getItem('senha');
-//http://localhost:8080/empresa/ponto/${nome}/${senha} || https://backend-recyclo.herokuapp.com/empresa/ponto/${nome}/${senha}
-fetch(`https://backend-recyclo.herokuapp.com/empresa/ponto/${nome}/${senha}`, {
+//http://localhost:8080/empresa/ponto/${email}/${senha} || https://backend-recyclo.herokuapp.com/empresa/ponto/${email}/${senha}
+fetch(`https://backend-recyclo.herokuapp.com/empresa/ponto/${email}/${senha}`, {
         method: 'get'
     })
     .then((resp) => resp.json())

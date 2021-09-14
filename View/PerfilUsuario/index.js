@@ -1,4 +1,4 @@
-var nome = localStorage.getItem('nome');
+var email = localStorage.getItem('email');
 var senha = localStorage.getItem('senha');
 var id = localStorage.getItem('id');
 
@@ -8,16 +8,16 @@ var cfpUser;
 var emailUser;
 var telefoneUser;
 
-// Função que captura as informações do usuario
-fetch(`https://backend-recyclo.herokuapp.com/usuario/user/${nome}/${senha}`, {
+//https://backend-recyclo.herokuapp.com Função que captura as informações do usuario
+fetch(`https://backend-recyclo.herokuapp.com/usuario/user/${email}/${senha}`, {
         method: 'get'
     })
     .then((resp) => resp.json())
     .then(function(data) {
 
         // Nome do localstorage
-        var name = localStorage.getItem('nome');
-        document.getElementById("title").innerHTML = name;
+        // var name = localStorage.getItem('email');
+        document.getElementById("title").innerHTML = data.nm_usuario;
 
         // informações vindas da API
         document.getElementById("id_usuario").innerHTML = data.cd_usuario;
@@ -187,7 +187,7 @@ function Logout() {
     }).then((result) => {
         if (result.isConfirmed) {
             window.location.replace("../Login/index.html");
-            window.localStorage.removeItem('nome');
+            window.localStorage.removeItem('email');
             window.localStorage.removeItem('senha');
         }
     })

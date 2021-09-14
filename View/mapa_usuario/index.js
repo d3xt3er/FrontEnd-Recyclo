@@ -10,7 +10,7 @@ function Logout() {
     }).then((result) => {
         if (result.isConfirmed) {
             window.location.replace("../Login/index.html");
-            window.localStorage.removeItem('nome');
+            window.localStorage.removeItem('email');
             window.localStorage.removeItem('senha');
         }
     })
@@ -25,7 +25,7 @@ function GetMap() {
         showMapTypeSelector: false,
         mapTypeId: Microsoft.Maps.MapTypeId.road,
         disableStreetside: true,
-        customMapStyle: {// mudanca de cores = +identidade
+        customMapStyle: { // mudanca de cores = +identidade
             elements: {
                 area: { fillColor: '#72ec89' },
                 water: { fillColor: '#2bb5e8' },
@@ -61,16 +61,16 @@ function GetMap() {
     const overlay = new PanningOverlay();
     map.layers.insert(overlay);
 
-    var infoboxTemplate ='<div id="infobox">'+
-    '<h3 id="ponto">{ponto}</h3>'+
-    '<img src="../img/homeNext.jpg">'+
-    '<h4>Endereço:</h4>'+
-    '<p id="logra">{endereco}</p>'+
-    '<button onclick="fecharInfobox()" >X</button>'+
-    '</div>';
+    var infoboxTemplate = '<div id="infobox">' +
+        '<h3 id="ponto">{ponto}</h3>' +
+        '<img src="../img/homeNext.jpg">' +
+        '<h4>Endereço:</h4>' +
+        '<p id="logra">{endereco}</p>' +
+        '<button onclick="fecharInfobox()" >X</button>' +
+        '</div>';
     infobox = new Microsoft.Maps.Infobox(map.getCenter(), {
         htmlContent: infoboxTemplate.replace(
-            '{ponto}','nmPonto').replace('{endereco}','endereco')
+            '{ponto}', 'nmPonto').replace('{endereco}', 'endereco')
     });
     
     infobox.setMap(map);
@@ -89,23 +89,23 @@ function GetMap() {
         .then(function(data) {
             // gerando os pontos do mapa
             for (var i = 0, len = data.length; i < len; i++) {
-                var pushpin = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(data[i].cd_latitude_ponto, data[i].cd_longitude_ponto),{
-                    icon:'../img/coleta.png',
-                    acnchor:new Microsoft.Maps.Point(20,20)
+                var pushpin = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(data[i].cd_latitude_ponto, data[i].cd_longitude_ponto), {
+                    icon: '../img/coleta.png',
+                    acnchor: new Microsoft.Maps.Point(20, 20)
                 });
 
                 map.entities.push(pushpin);
 
-                pushpin.metadata ={
-                    nmPonto:data[i].nm_ponto,
-                    empresa:data[i].nm_empresa,
-                    endereco:data[i].nm_logradouro
+                pushpin.metadata = {
+                    nmPonto: data[i].nm_ponto,
+                    empresa: data[i].nm_empresa,
+                    endereco: data[i].nm_logradouro
                 };
-               /* pushpin.metadata = {
-                    title: data[i].nm_ponto,
-                    description: '<b>Empresa: </b>' + data[i].nm_empresa + '<br>' + '<img src="../img/homeNext.jpg"  width="50" height="50"/><br>' + '<b>Endereço: </b>' + data[i].nm_logradouro
-                };
-                */
+                /* pushpin.metadata = {
+                     title: data[i].nm_ponto,
+                     description: '<b>Empresa: </b>' + data[i].nm_empresa + '<br>' + '<img src="../img/homeNext.jpg"  width="50" height="50"/><br>' + '<b>Endereço: </b>' + data[i].nm_logradouro
+                 };
+                 */
                 Microsoft.Maps.Events.addHandler(pushpin, 'click', pushingClicked);
             }
 
@@ -116,20 +116,23 @@ function GetMap() {
 }
 
 function pushingClicked(e) {
-    var h3= document.getElementById('ponto');
-    var p= document.getElementById('logra');
+    var h3 = document.getElementById('ponto');
+    var p = document.getElementById('logra');
     if (e.target.metadata) {
         h3.innerText = e.target.metadata.nmPonto;
         p.innerText = e.target.metadata.endereco;
         infobox.setOptions({
+
             visible:true,
             location:e.location
         });   
+
     }
 }
-function fecharInfobox(){
+
+function fecharInfobox() {
     infobox.setOptions({
-        visible:false
+        visible: false
     });
 }
 
@@ -149,4 +152,5 @@ function gerarDenuncia(e){
     });
 
 }
+
 

@@ -8,8 +8,11 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="../img/LogoRecycloV1.png">
     <script src="../sweetalert.js"></script>
+    <script src="../Cadastro/jquery-1.2.6.pack.js"></script>
+    <script src="../Cadastro/jquery.maskedinput-1.1.4.pack.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&family=Roboto:wght@100&display=swap" rel="stylesheet">
 
@@ -34,7 +37,7 @@
             <div id="formUsuario">
                 <form id="formUsuario" method="POST">
                     <h2>Login</h2>
-                    <input class="input" required type="text" placeholder="Email: usuario@example.com" id="nome" name="nome">
+                    <input class="input" required type="text" placeholder="Email: usuario@example.com" autocomplete="off" id="email" name="email">
                     <input class="input" required type="password" id="senha" placeholder="Senha:" name="senha">
                     <input id="btnLogin" class="BtnOk" type="submit" value="Entrar">
                 </form>
@@ -43,7 +46,7 @@
             <div id="formEmpresa">
                 <form id="formCompany" method="POST">
                     <h2>Login</h2>
-                    <input class="input" required type="text" placeholder="Email: empresa@email.com" id="razao" name="razao">
+                    <input class="input" required type="text" placeholder="Email: example@.com" id="razao" name="razao">
                     <input class="input" required type="password" id="senhaEmpresa" placeholder="Senha:" name="senhaEmpresa">
                     <input id="btnLogin" class="BtnOk" type="submit" value="Entrar">
                 </form>
