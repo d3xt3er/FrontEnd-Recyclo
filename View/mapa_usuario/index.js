@@ -22,6 +22,7 @@ function GetMap() {
 
     map = new Microsoft.Maps.Map('#myMap', {
         zoom: 15,
+        showMapTypeSelector: false,
         mapTypeId: Microsoft.Maps.MapTypeId.road,
         disableStreetside: true,
         customMapStyle: {// mudanca de cores = +identidade
@@ -39,6 +40,26 @@ function GetMap() {
             }
         }
     });
+    
+    // Botao gerar denuncia
+    PanningOverlay.prototype = new Microsoft.Maps.CustomOverlay({ beneathLabels : false });
+    function PanningOverlay(){
+        this.panBtn = document.createElement('button');
+        this.panBtn.id ='btnDenuncia';
+        this.panBtn.title = 'Fazer Denuncia';
+        this.panBtn.onclick = function(){gerarDenuncia();}
+    }
+    PanningOverlay.prototype.onAdd = function () {
+        const container = document.createElement('div');
+        container.appendChild(this.panBtn);
+        container.id='divBnt';
+        container.style.top = '41vw';
+        container.style.left = '50px';
+        container.style.position='absolute';
+        this.setHtmlElement(container);
+   }
+    const overlay = new PanningOverlay();
+    map.layers.insert(overlay);
 
     var infoboxTemplate ='<div id="infobox">'+
     '<h3 id="ponto">{ponto}</h3>'+
@@ -51,9 +72,9 @@ function GetMap() {
         htmlContent: infoboxTemplate.replace(
             '{ponto}','nmPonto').replace('{endereco}','endereco')
     });
-
+    
     infobox.setMap(map);
-
+    fecharInfobox();
 
     navigator.geolocation.getCurrentPosition(function(position) {
         var loc = new Microsoft.Maps.Location(
@@ -66,7 +87,7 @@ function GetMap() {
 
     fetch(`https://backend-recyclo.herokuapp.com/empresa/ponto/`).then((resp) => resp.json())
         .then(function(data) {
-
+            // gerando os pontos do mapa
             for (var i = 0, len = data.length; i < len; i++) {
                 var pushpin = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(data[i].cd_latitude_ponto, data[i].cd_longitude_ponto),{
                     icon:'../img/coleta.png',
@@ -94,8 +115,6 @@ function GetMap() {
         });
 }
 
-
-
 function pushingClicked(e) {
     var h3= document.getElementById('ponto');
     var p= document.getElementById('logra');
@@ -104,7 +123,7 @@ function pushingClicked(e) {
         p.innerText = e.target.metadata.endereco;
         infobox.setOptions({
             visible:true,
-            location: e.location
+            location:e.location
         });   
     }
 }
@@ -113,3 +132,21 @@ function fecharInfobox(){
         visible:false
     });
 }
+
+// denuncia
+function gerarDenuncia(e){
+    // console.log(e.location); 
+    Swal.fire({
+        title: "Gerar Denunia",
+        html:'<form id="frmDenuncia">' +
+            '<input id="dt" type="date"></input>'+
+            '<textarea id="descricao" required placeholder="Descricao do discarte" type="text" autocomplete="off"></textarea>' +
+            '</form>',
+        showDenyButton: true,
+        showCancelButton: false,
+        confirmButtonText: `Gerar Denuncia`,
+        denyButtonText: `Cancelar`,
+    });
+
+}
+

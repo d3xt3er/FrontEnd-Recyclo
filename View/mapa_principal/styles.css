@@ -192,14 +192,12 @@ input {
     height: 20px;
     border-radius: 50px;
 }
-
 #infobox button:hover{
     transition: 1s;
     color: white;
     background:black ;
     
 }
-
 #infobox h3{
     font-size: 17px;
 }
@@ -208,4 +206,28 @@ input {
 }
 #infobox p{
     font-size: 14px;
+}
+/*-- denuncias --*/
+form textarea{
+    margin: 0px;
+    width: 380px;
+    height: 254px;
+    padding: 5px;
+    margin-top: 5px;
+    resize: none;
+    font-size: 18px;
+    border: 0;
+    text-align: justify;
+}
+form input{
+    width: 285;
+}
+
+#btnDenuncia{
+    width: 50px;
+    height: 50px;
+    border-radius: 15px;
+    border: 0;
+    background: url('../img/denuncia.png') no-repeat;
+    background-size: cover;
 }

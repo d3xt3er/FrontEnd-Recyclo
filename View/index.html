@@ -1,6 +1,3 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,72 +8,42 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&family=Roboto:wght@100&display=swap" rel="stylesheet">
     <script type='text/javascript' src='http://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=AijOdUHzY5DvlON3_9lG2KYowiYa4tVQJEDyckIt6enyt7lxUK0yXzMBgLnhTHqV' async defer></script>
-
-
     <title>Seja bem vindo a Recyclo</title>
 </head>
-
 <body>
+    <ul id="nav">
+        <li><a class="lia"  href="Sobre/index.html">Sobre</a></li>
+        <li><a class="lia" href="mapa_principal/index.html">Mapa</a></li>
+        <li><a class="lia" href="Login/index.html">Entrar</a></li>
+        <li style="float:left"><img id="logo" src="img/LogoRecycloV1.png" alt=""></li>
+        <li id="titulo" style="float:left"><a>Recyclo</a></li>
+    </ul>
 
-    <div id="Home" class="Divs">
-        <!-- menu superior -->
-        <ul id="nav">
-            <li><a class="lia" href="Login/index.html">Entrar</a></li>
-            <li><a class="lia" href="mapa_principal/index.html">Mapa</a></li>
-            <li><a class="lia" href="Sobre/index.html">Sobre</a></li>
-            <li style="float:left"><img id="logo" src="img/LogoRecycloV1.png" alt=""></li>
-            <li id="titulo" style="float:left"><a>Recyclo</a></li>
-        </ul>
-        <!-- Home-->
-        <div id="content">
-            <h1>Seja bem vindo a Recyclo!</h1>
-
-            <div id="dvSeparador">
-                <div class="esquerda">
-                    <h3>Conheça nosso Mapa</h3>
-                    <p>Nosso serviço de mapa foi desenvolvido no intuito de facilitar a busca por pontos de coleta e gerar denuncias de discarte ilegal de lixo.</p>
-                </div>
-                <div class="direita">
-                    <img onclick="goMapa()" src="https://noticiasetecnologia.com/wp-content/uploads/2019/05/Bing-Maps-1140x641.jpg">
-                </div>
-            </div>
+    <div class="Content" id="inicio">
+        <h1>Seja bem vindo a Recyclo!</h1>
+        
+        <div >
+            <p>
+                Nosso serviço de mapa foi desenvolvido no intuito de facilitar a busca por pontos de coleta e gerar denuncias de discarte ilegal de lixo.</p>
+            <img onclick="goMapa()" src="img/mapa.PNG">
         </div>
+    </div>
 
-
-        <!-- login/ criar conta -->
-        <div id="conta">
-            <div id="contaBox">
-                <h3> Crie uma conta</h3>
-
-                <div id="sep">
-                    <div class="esquerda">
-                        <img src="img/icones/entrar.png">
-                        <button onclick="goCadastro()" class="btn">Se cadastrar</button>
-                    </div>
-
-                </div>
-
-                <div class="direita">
-                    <p>Faça seu cadastro como usuario para poder se manifestar com suas denúncias de descartes irregulares!, Ou faça com empresa para divulgar seu nome e pontos de coleta de reciclável.</p>
-                </div>
-            </div>
+    <div class="content" id="cadastrar">
+        <h3>Crie uma conta</h3>
+        <div>
+            <img src="img/icones/entrar.png">
+            <button class="btn">Se-Cadastrar</button>
         </div>
+        <p>Faça seu cadastro como usuario para poder se manifestar com suas denúncias de descartes irregulares!, Ou faça com empresa para divulgar seu nome e pontos de coleta de reciclável.</p>
+    </div>
 
-        <!-- Sobre/fim  -->
-        <div id="sobre">
-            <div id="box">
-                <h3>Recyclo</h3>
-                <div>
-                    <p>Recyclo é um projeto desenvolvido por estudantes de Análise & Desenvolvimento de Sistemas da Unibr. Criado no intuito de facilitar a busca de pontos de coleta e denuncias de discarte ilegal de lixo.
-                    </p>
-                    <button class="btn" onclick="goSobre()">Saiba mais</button>
-                </div>
-            </div>
-
-        </div>
-
-        <footer>Copyright @Recyclo</footer>
-        <script src="index.js"></script>
+    <div class="content" id="sobre">
+        <h3>Recyclo</h3>
+        <p>Recyclo é um projeto desenvolvido por estudantes de Análise & Desenvolvimento de Sistemas da Unibr. Criado no intuito de facilitar a busca de pontos de coleta e denuncias de discarte ilegal de lixo.</p>
+        <button class="btn" onclick="goSobre()">Saiba mais</button>
+    </div>
+    <footer>Copyright @Recyclo</footer>
+    <script src="index.js"></script>
 </body>
-
 </html>

@@ -102,21 +102,20 @@ h2 {
     display: table;
     content: " ";
     clear: both;
-    background: white;
     width: 100%;
 }
 
 .dev {
     padding: 20px;
-    background: whitesmoke;
     text-align: center;
     box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
     max-width: 500px;
-    margin: 5px 10vw 10px 10vw;
+    margin: 5px 6vw 10px 4vw;
     float: left;
     text-align: center;
     font-family: arial;
-    width: 18vw;
+    width: 32vw;
+    background: transparent;
 }
 
 .imgDev {
