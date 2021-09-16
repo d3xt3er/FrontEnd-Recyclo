@@ -65,14 +65,14 @@ function GetMap() {
     });
     // teste de icone
 
-    fetch(`https://backend-recyclo.herokuapp.com/empresa/ponto/${nome}/${senha}`).then((resp) => resp.json())
-    .then(function(data) {
-        // gerando os pontos do mapa
-        for (var i = 0, len = data.length; i < len; i++) {
-            var pushpin = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(data[i].cd_latitude_ponto, data[i].cd_longitude_ponto),{
-                icon:'../img/coleta.png',
-                acnchor:new Microsoft.Maps.Point(20,20)
-            });
+    fetch(`https://backend-recyclo.herokuapp.com/empresa/ponto/${email}/${senha}`).then((resp) => resp.json())
+        .then(function(data) {
+            // gerando os pontos do mapa
+            for (var i = 0, len = data.length; i < len; i++) {
+                var pushpin = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(data[i].cd_latitude_ponto, data[i].cd_longitude_ponto), {
+                    icon: '../img/coleta.png',
+                    acnchor: new Microsoft.Maps.Point(20, 20)
+                });
 
 
                 map.entities.push(pushpin);
