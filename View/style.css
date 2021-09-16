@@ -17,17 +17,19 @@ body {
     border-style: solid;
     border-width: 5px;
     border-radius: 5px;
-    border-color:#5ABE41;
+    border-color: #5ABE41;
     letter-spacing: 2px;
     font-size: 20px;
     font-weight: 900;
     cursor: pointer;
 }
-.btn:hover{
-    background: Rgb(90, 190, 65,0.5);
+
+.btn:hover {
+    background: Rgb(90, 190, 65, 0.5);
     transition: 0;
 }
-h3{
+
+h3 {
     font-size: 35px;
     letter-spacing: 3px;
 }
@@ -78,13 +80,16 @@ li {
     transition: 1.2s;
 }
 
+
 /*-- Base --*/
-.Content{
+
+.Content {
     height: 500px;
     text-align: center;
     padding: 20px;
 }
-p{
+
+p {
     text-align: left;
     color: white;
     font-weight: 600;
@@ -92,8 +97,10 @@ p{
     font-size: 25px;
 }
 
+
 /*-- Div Iniciar --*/
-h1{
+
+h1 {
     text-shadow: 2px 2px 5px #5e5e5ef3;
     color: white;
     font-size: 50px;
@@ -101,17 +108,20 @@ h1{
     font-weight: 800;
     font-family: 'Open Sans', sans-serif;
 }
-#inicio{
+
+#inicio {
     text-align: center;
     background: url("img/Inicio.jpg") no-repeat;
     background-size: cover;
     background-position-y: center;
 }
-#inicio p{
+
+#inicio p {
     margin-top: 50px;
     width: 60%;
 }
-#inicio img{
+
+#inicio img {
     height: 250px;
     right: 15px;
     background: url(../View/img/mapa.PNG) no-repeat;
@@ -119,63 +129,88 @@ h1{
     border-radius: 15px;
     margin-left: 5px;
     border-style: inset;
-    border-color: rgba(90, 190, 65,0.3);
+    border-color: rgba(90, 190, 65, 0.3);
 }
-#inicio div{
+
+#inicio div {
     text-align: center;
-    display: inline-flex; 
+    display: inline-flex;
     margin-top: 20px;
 }
 
+
 /*-- cadastro --*/
-#cadastrar{padding: 50px;}
-#cadastrar div{
+
+#cadastrar {
+    padding: 50px;
+}
+
+#cadastrar div {
     display: inline-grid;
     margin-top: 15px;
     margin-bottom: 25px;
-    box-shadow: 10px 10px Rgb(90, 190, 65,0.5 );
+    box-shadow: 10px 10px Rgb(90, 190, 65, 0.5);
     padding: 20px;
     border-radius: 5px;
 }
-#cadastrar img{
+
+#cadastrar img {
     width: 150px;
-    height: 100px;
+    height: 145px;
     margin-top: 10px;
-    
 }
-#cadastrar button{margin-top: 10px;}
-#cadastrar h1{color: black;}
-#cadastrar p{
+
+#cadastrar button {
+    margin-top: 10px;
+}
+
+#cadastrar h1 {
+    color: black;
+}
+
+#cadastrar p {
     color: black;
     width: 60%;
     text-align: justify;
     margin-left: 20%;
 }
 
+
 /*-- sobre --*/
-#sobre{
+
+#sobre {
     background: url("../View/img/sobre.png") no-repeat;
     background-size: cover;
     padding: 10vw;
     height: 300;
 }
-#sobre p{margin-top: 15px; 
-    text-align: center;}
-#sobre h3{color:white}
-#sobre button{
-    margin-top: 50px;
-    color: white;}
 
-footer{
+#sobre p {
+    margin-top: 15px;
+    text-align: center;
+}
+
+#sobre h3 {
+    color: white
+}
+
+#sobre button {
+    margin-top: 50px;
+    color: white;
+}
+
+footer {
     background: #5ABE41;
     color: white;
     text-align: center;
     padding: 20px;
 }
 
+
 /*-- Mobile --*/
+
 @media only screen and (max-width:600px) {
-    .Content{
+    .Content {
         height: 400px;
         width: auto;
     }
@@ -188,43 +223,48 @@ footer{
         border-radius: 5px;
         transition: 1.2s;
     }
-    h1 {font-size: 30px;}
-    p{font-size: 15px;}
-    h3{font-size: 30px;}
-    #inicio img{    
-        height: 40vw;
-        margin-left: 10vw;}
-    #inicio p{
-        margin-top: 10px;
-        width: 100%; 
-        text-align: justify;   
+    h1 {
+        font-size: 30px;
     }
-    #inicio div{
+    p {
+        font-size: 15px;
+    }
+    h3 {
+        font-size: 30px;
+    }
+    #inicio img {
+        height: 40vw;
+        margin-left: 10vw;
+    }
+    #inicio p {
+        margin-top: 10px;
+        width: 100%;
+        text-align: justify;
+    }
+    #inicio div {
         display: flex;
         flex-flow: wrap-reverse;
     }
-
-    .btn{
+    .btn {
         width: 150px;
         font-size: 17px;
     }
-    #cadastrar{ padding: 25px;}
-    #cadastrar img{
+    #cadastrar {
+        padding: 25px;
+    }
+    #cadastrar img {
         width: 100px;
         margin-left: 10px;
-        height: 80px;
-
+        height: 97px;
     }
-    #cadastrar div{
+    #cadastrar div {
         margin-top: 8px;
         margin-bottom: 10px;
-        box-shadow: 5px 5px Rgb(90, 190, 65,0.5 );
+        box-shadow: 5px 5px Rgb(90, 190, 65, 0.5);
     }
-    #cadastrar p{
+    #cadastrar p {
         width: auto;
         margin-left: 0;
         text-align: justify;
     }
-
-    
 }
