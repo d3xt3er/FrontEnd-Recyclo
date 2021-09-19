@@ -12,10 +12,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&family=Roboto:wght@100&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js" integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
     <title>Recyclo - Empresa</title>
 </head>
-
 <body>
     <ul id="nav">
         <li><a class="lia" href="../Sobre/index.html">Sobre</a></li>
@@ -23,30 +21,36 @@
         <li style="float:left"><img id="logo" src="../img/LogoRecycloV1.png" alt=""></li>
         <li id="titulo" style="float:left"><a>Recyclo</a></li>
     </ul>
+    <div id="home">   
+        <h1>Bem vindo</h1>
 
-    <div id="info">
-        <h1 id="title"></h1>
-        <ul>
-            <li class="infoTipo">Nome: </li>
-            <input id="id_empresa" type="hidden">
-            <li id="nomeEmpresa"></li>
-        </ul>
-        <ul>
-            <li class="infoTipo">Cnpj: </li>
-            <li id="cnpj"></li>
-            <li style="float: right;" id="telefone"></li>
-            <li class="infoTipo" style="float: right;" class="infoTipo">Telefone: </li>
-        </ul>
-        <button id="btnEditar" onclick="EditarInfo()">Editar</button>
+        <h3>Dados da Empresa</h3>
+        <div id="info">
+            <ul>
+                <li>Nome:</li>
+                <li id="id_empresa"></li>
+            </ul>
+            <ul>
+                <li>CNPJ:</li>
+                <li id="cnpf"></li>
+            </ul>
+            <ul>
+                <li>Telefone:</li>
+                <li id="telefone"></li>
+            </ul> 
+            <button id="btnEditar" class="btn" onclick="EditarInfo()">Editar</button>
+            <button id="btnExcluir" class="btn" style="float: left;">Excluir Conta</button>
+        </div>
 
+        <h2>Pontos de coleta</h3>
         <div id="pontoColeta">
-            <h2>Pontos de coleta</h2>
+           
             <div id="pontos">
+
             </div>
-            <button id="btnAddPonto" onclick="adicionarPonto()">Adicionar Ponto</button>
+            <button id="btnAddPonto" class="btn" onclick="adicionarPonto()">Adicionar Ponto</button>
         </div>
     </div>
     <script src="index.js"></script>
 </body>
-
 </html>

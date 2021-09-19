@@ -7,12 +7,8 @@
 }
 
 body {
-    background-color: whitesmoke;
+    background-color: white;
 }
-
-
-/*--navbar --*/
-
 #nav {
     list-style-type: none;
     margin: 0;
@@ -59,47 +55,58 @@ body {
     letter-spacing: 2px;
     font-weight: 900;
 }
-
 #home {
-    text-align: center;
     background: white;
+    margin: 30px 10% 10% 10%;
+    text-align: center;
     padding: 20px;
-    margin: 50px;
-    border-radius: 15px;
 }
-
-#info {
-    margin-top: 15px;
-    margin-bottom: 15px;
+h3{
+    margin-top: 50px;
+    margin-left: 5px;
+    text-align: left;
+    font-size: 25px;
 }
-
-#info ul {
+#home div{
+    margin-top: 30px;
+}
+#home ul{
     list-style: none;
-    width: 100%;
     display: flow-root;
-}
-
-#info ul li {
-    margin-top: 10px;
-    margin-left: 3px;
-    float: left;
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.btn {
-    margin-top: 20px;
-    height: 50px;
-    width: 120px;
-    border: 0;
-    font-size: 15px;
+    margin-top: 5px;
+    height: 60px;
     border-radius: 5px;
-    font-weight: bold;
+}
+#home ul li{
+    float: left;
+    height: 50px;
+    font-size: 25px;
+    padding: 15px 5px 0 5px;
+    padding-top: 15px;
+    padding-left: 5px;
+}
+#btnSenha{
+    border: 0;
+    border-radius: 2px;
+    height: 35px;
+    font-size: 30px;
+}
+.btn{
+    margin-top: 10px;
+    height: 50px;
+    width: 150px;
+    font-size: 15px;
+    font-weight: 900;
+    border-radius: 5px;
+    border: 0;
+    background: transparent;
+    float: right;
 }
 
 #btnEditar {
+    margin-left: 15px;
     background: rgba(90, 190, 65, 0.8);
-    margin-left: 5px;
+    margin-right: 10px;
 }
 
 #btnEditar:hover {
@@ -108,24 +115,22 @@ body {
 }
 
 #btnExcluir {
-    background: rgba(255, 44, 44, 0.8);
+    background: rgba(255, 44, 44, 0.5);
 }
 
 #btnExcluir:hover {
     transition: 1s;
-    background: rgba(255, 44, 44)
+    background: rgba(255, 44, 44,0.8)
 }
 
-.txtEditar {
-    margin-top: 10px;
-    height: 35px;
-    width: 300px;
-    padding: 3px;
-    font-size: 20px;
-    border-radius: 5px;
-}
-
-.img {
-    background: url(../img/icones/view.png) no-repeat scroll 273px 10px;
-    cursor: pointer;
+@media only screen and (max-width:600px) {
+    
+    #home{padding: 10px;}
+    #home ul{height: 50px;}
+    #home ul li{font-size: 20px;}
+    .btn{width: 120px;}
+    #btnEditar{
+        margin-left: 0;
+        margin-right: 0;
+        float: left;}
 }

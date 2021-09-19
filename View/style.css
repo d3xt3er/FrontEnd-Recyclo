@@ -159,7 +159,8 @@ h1{
     padding: 10vw;
     height: 300;
 }
-#sobre p{margin-top: 15px; 
+#sobre p{
+    margin-top: 15px; 
     text-align: center;}
 #sobre h3{color:white}
 #sobre button{
@@ -225,6 +226,4 @@ footer{
         margin-left: 0;
         text-align: justify;
     }
-
-    
 }
