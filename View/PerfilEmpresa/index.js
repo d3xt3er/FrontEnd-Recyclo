@@ -278,27 +278,6 @@ function hiddenPassword() {
     }
 }
 
-// deletar Ponto de coleta
-// function deletarPonto() {
-//     Swal.fire({
-//         text: "Você realmente deseja deletar esta ponto de coleta?",
-//         icon: 'warning',
-//         showCancelButton: true,
-//         confirmButtonColor: '#3085d6',
-//         cancelButtonColor: '#d33',
-//         cancelButtonText: 'Não',
-//         confirmButtonText: 'Sim'
-//     }).then((result) => {
-//         if (result.isConfirmed) {
-//             Swal.fire(
-//                 'Ponto Deletado',
-//                 '',
-//                 'success'
-//             )
-//         }
-//     })
-// }
-
 // Função adicionar ponto
 function adicionarPonto() {
     Swal.fire({

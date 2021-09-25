@@ -40,24 +40,25 @@ function GetMap() {
             }
         }
     });
-    
+
     // Botao gerar denuncia
-    PanningOverlay.prototype = new Microsoft.Maps.CustomOverlay({ beneathLabels : false });
-    function PanningOverlay(){
+    PanningOverlay.prototype = new Microsoft.Maps.CustomOverlay({ beneathLabels: false });
+
+    function PanningOverlay() {
         this.panBtn = document.createElement('button');
-        this.panBtn.id ='btnDenuncia';
+        this.panBtn.id = 'btnDenuncia';
         this.panBtn.title = 'Fazer Denuncia';
-        this.panBtn.onclick = function(){gerarDenuncia();}
+        this.panBtn.onclick = function() { gerarDenuncia(); }
     }
-    PanningOverlay.prototype.onAdd = function () {
+    PanningOverlay.prototype.onAdd = function() {
         const container = document.createElement('div');
         container.appendChild(this.panBtn);
-        container.id='divBnt';
+        container.id = 'divBnt';
         container.style.top = '41vw';
         container.style.left = '50px';
-        container.style.position='absolute';
+        container.style.position = 'absolute';
         this.setHtmlElement(container);
-   }
+    }
     const overlay = new PanningOverlay();
     map.layers.insert(overlay);
 
@@ -72,7 +73,7 @@ function GetMap() {
         htmlContent: infoboxTemplate.replace(
             '{ponto}', 'nmPonto').replace('{endereco}', 'endereco')
     });
-    
+
     infobox.setMap(map);
     fecharInfobox();
 
@@ -123,9 +124,9 @@ function pushingClicked(e) {
         p.innerText = e.target.metadata.endereco;
         infobox.setOptions({
 
-            visible:true,
-            location:e.location
-        });   
+            visible: true,
+            location: e.location
+        });
 
     }
 }
@@ -137,20 +138,25 @@ function fecharInfobox() {
 }
 
 // denuncia
-function gerarDenuncia(e){
+function gerarDenuncia(e) {
     // console.log(e.location); 
     Swal.fire({
         title: "Gerar Denunia",
-        html:'<form id="frmDenuncia">' +
-            '<input id="dt" type="date"></input>'+
+        html: '<form id="frmDenuncia">' +
+            '<input id="dt" type="date"></input>' +
             '<textarea id="descricao" required placeholder="Descricao do discarte" type="text" autocomplete="off"></textarea>' +
             '</form>',
         showDenyButton: true,
         showCancelButton: false,
         confirmButtonText: `Gerar Denuncia`,
         denyButtonText: `Cancelar`,
-    });
+    }).then((result) => {
+        if (result.isConfirmed) {
 
+            var dataDenun = document.getElementById("dt").value;
+            var denuncia = document.getElementById("descricao").value;
+            console.log(denuncia, dataDenun)
+
+        }
+    })
 }
-
-
