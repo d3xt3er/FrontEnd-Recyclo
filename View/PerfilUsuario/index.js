@@ -25,6 +25,7 @@ fetch(`https://backend-recyclo.herokuapp.com/usuario/user/${email}/${senha}`, {
         cpfUser = document.getElementById("cpf").innerHTML = data.cd_cpf;
         emailUser = document.getElementById("email").innerHTML = data.ds_email;
         telefoneUser = document.getElementById("telefone").innerHTML = data.cd_telefone;
+        senha = document.getElementById("senha").innerHTML = data.cd_senha;
     })
     .catch(function(err) {
         console.log(err);

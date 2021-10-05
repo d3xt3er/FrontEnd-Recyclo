@@ -14,6 +14,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js" integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <title>Recyclo - Empresa</title>
 </head>
+
 <body>
     <ul id="nav">
         <li><a class="lia" href="../Sobre/index.html">Sobre</a></li>
@@ -21,36 +22,38 @@
         <li style="float:left"><img id="logo" src="../img/LogoRecycloV1.png" alt=""></li>
         <li id="titulo" style="float:left"><a>Recyclo</a></li>
     </ul>
-    <div id="home">   
+    <div id="home">
         <h1>Bem vindo</h1>
 
         <h3>Dados da Empresa</h3>
         <div id="info">
             <ul>
+                <input type="hidden" id="id_empresa">
                 <li>Nome:</li>
-                <li id="id_empresa"></li>
+                <li id="nomeEmpresa"></li>
             </ul>
             <ul>
                 <li>CNPJ:</li>
-                <li id="cnpf"></li>
+                <li id="cnpj"></li>
             </ul>
             <ul>
                 <li>Telefone:</li>
                 <li id="telefone"></li>
-            </ul> 
+            </ul>
             <button id="btnEditar" class="btn" onclick="EditarInfo()">Editar</button>
             <button id="btnExcluir" class="btn" style="float: left;">Excluir Conta</button>
         </div>
 
         <h2>Pontos de coleta</h3>
-        <div id="pontoColeta">
-           
-            <div id="pontos">
+            <div id="pontoColeta">
 
+                <div id="pontos">
+
+                </div>
+                <button id="btnAddPonto" class="btn" onclick="adicionarPonto()">Adicionar Ponto</button>
             </div>
-            <button id="btnAddPonto" class="btn" onclick="adicionarPonto()">Adicionar Ponto</button>
-        </div>
     </div>
     <script src="index.js"></script>
 </body>
+
 </html>
