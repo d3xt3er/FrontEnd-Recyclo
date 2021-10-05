@@ -6,199 +6,93 @@
 }
 
 body {
-    background: white;
-}
-
-#esquerda {
     background: url("../img/login.jpg") no-repeat;
     background-size: cover;
-    width: 45%;
-    height: 100%;
-    background-position-x: right;
-    position: absolute;
+    display: flex;
 }
-
-#logoDesk {
-    width: 15vw;
-    height: 15vw;
-    opacity: 0.8;
-    margin-left: 12vw;
-    cursor: pointer;
+#info{
+    text-align: center;
+    margin-left: 60px;
+    margin-top: 70px;
+    width: 43%;
 }
-
-#logoMob {
-    display: none;
-}
-
-p {
-    margin-top: 15px;
-    opacity: 0.8;
-    font-family: sans-serif;
-    font-size: 4vw;
+img{
+    width: 200px;
+    height: 200px;
+}img:hover{opacity: 0.5;}
+p{
+    margin-top: 50px;
     color: white;
-    width: 70%;
-    text-align: center;
-    font-weight: bolder;
-    margin-left: 3.5vw;
+    font-family: sans-serif;
+    text-align: left;
+    font-size: 45px;
 }
 
-#direita {
+#retangulo{
+    border-radius: 50px;
     background: white;
-    width: 55%;
-    height: 100%;
-    position: absolute;
-    left: 40%;
-    align-items: center;
+    height: 83%;
+    width: 44%;
+    position: fixed;
+    left: 53%;
+    margin-top: 50px;
     text-align: center;
+    border-top-right-radius: 0;
 }
-
-#quadrado {
-    margin-left: 30px;
-    margin-top: 15%;
-}
-
-.home {
-    width: 30px;
-    height: 30px;
-    margin-right: -843px;
-    margin-top: 231px;
-    cursor: pointer;
-}
-
-form {
-    margin-top: 2vw;
-    padding: 10px;
-}
-
-h2 {
+h1{
+    margin-top: 5vw;
+    letter-spacing: 2px;
     letter-spacing: 10px;
-    /* font-weight: 900; */
-    font-size: 2.5vw;
-    text-transform: uppercase;
 }
-
-#selecao {
-    display: inline-block;
+ul{
+    margin-top: 3vw;
+    list-style: none;
+    width: auto;
+    overflow: hidden;
+}
+li{
+    color: black;
+    background: #35d786;
+    padding: 10px 4vw;
+}
+form{
+    margin-bottom: 20px;
+    text-align: center;
+    margin-top: 25px;
+}
+form input{
+    width: 72%;
+    height: 45px;
     margin-top: 15px;
-}
-
-a {
-    border-radius: 4px;
-    padding: 10px 7vw;
-    font-weight: bold;
-}
-
-a:hover {
-    background-color: #35d786;
-    transition: 1s;
-    cursor: pointer;
+    border: 0;
     border-radius: 5px;
-}
-
-input {
-    width: 47vw;
-    height: 50px;
-    margin-top: 15px;
+    font-weight: 800;
+    font-size: 15px;
     padding-left: 5px;
-    border: 0;
-    border-radius: 5px;
-    font-weight: bold;
+}
+#btnLogin{
+    background:#35d786;
+    font-size: 20px;
 }
 
-.BtnOk {
-    width: 47vw;
-    height: 50px;
-    margin-top: 30px;
-    border-radius: 5px;
-    border: 0;
-    background-color: rgba(90, 190, 65, 0.8);
-    font-size: larger;
-    font-weight: 500;
-    display: inline-block;
-    opacity: 6;
-    cursor: pointer;
-    font-weight: bold;
+a{
+    margin-top: 15px;
+    color: black;
+    font-size: 22px;
 }
 
-.BtnOk:hover {
-    transition: 1s;
-    background-color: rgb(90, 190, 65);
-}
-
-#btnCadastrar {
-    width: 47vw;
-    height: 50px;
-    margin-bottom: 15px;
-    border: 0;
-    border-radius: 5px;
-    background-color: rgba(41, 120, 160, 0.8);
-    font-size: larger;
-    font-weight: 500;
-    display: inline-block;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-#btnCadastrar:hover {
-    background-color: rgb(41, 120, 160);
-    transition: 1s;
-}
-
-
-/*-- Mobile --*/
-
+/*-- mobile vertical --*/
 @media only screen and (max-width:600px) {
-    body {
-        padding: 20px;
-        background-color: whitesmoke;
-    }
-    .home {
-        width: 30px;
-        height: 30px;
-        margin-right: 0px;
-        margin-top: 46px;
-        cursor: pointer;
-    }
-    #quadrado {
-        margin-left: 0;
-    }
-    #esquerda {
-        display: none;
-    }
-    h2 {
-        font-size: xx-large;
-    }
-    #formUsuario {
-        border-radius: 15px;
-        background-color: white;
-    }
-    #formEmpresa {
-        border-radius: 15px;
-        background-color: white;
-    }
-    #direita {
-        border-radius: 10px;
-        width: 80%;
-        height: 90%;
+    
+    body{background-size: initial;}
+    #info{display: none;}
+    #retangulo{
+        height: 77%;
+        width: 83%;
         left: 10%;
-        display: inline-block;
-        margin-top: 7%;
+        margin-top: 50px;
     }
-    input {
-        height: 40px;
-    }
-    .BtnOk {
-        height: 40px;
-        background-color: rgb(90, 190, 65);
-    }
-    #btnCadastrar {
-        /* height: 40px; */
-        margin-top: 0;
-        background-color: rgb(41, 120, 160);
-    }
-    #logoMob {
-        margin-top: 10%;
-        display: initial;
-        height: 20vw;
-    }
+    h1{margin-top: 10vw;}
+    ul{margin-top: 7vw;}
+    a{font-size: 22px;}
 }

@@ -10,8 +10,6 @@ function GetMap() {
         mapTypeId: Microsoft.Maps.MapTypeId.road,
         disableStreetside: true,
         customMapStyle: {//Leve alteracao de cores na vegetacao e ruas
-
-
             elements: {
                 area: { fillColor: '#72ec89' },
                 water: { fillColor: '#2bb5e8' },

@@ -18,43 +18,34 @@
 
     <title>Login</title>
 </head>
-
 <body>
-
-    <div id="esquerda">
-        <img id="logoDesk" onclick="window.location.assign('../index.html')" title="Home" src="../img/LogoRecycloV1.png">
+    <div id="info">
+        <img id="logo" title="home" onclick="home()" src="../img/LogoRecycloV1.png">
         <p>Ajude a tornar o mundo mais consciente</p>
     </div>
-
-    <div id="direita">
-        <div id="quadrado">
-            <div id="selecao">
-                <a id="changeU" onclick="SwitchForm(false)">Usuario</a>
-                <a id="changeE" onclick="SwitchForm(true)">Empresa</a>
-            </div>
-
-            <img id="logoMob" src="../img/LogoRecycloV1.png" onclick="window.location.assign('../index.html')" alt="">
-            <div id="formUsuario">
-                <form id="formUsuario" method="POST">
-                    <h2>Login</h2>
-                    <input class="input" required type="text" placeholder="Email: usuario@example.com" autocomplete="off" id="email" name="email">
-                    <input class="input" required type="password" id="senha" placeholder="Senha:" name="senha">
-                    <input id="btnLogin" class="BtnOk" type="submit" value="Entrar">
-                </form>
-            </div>
-
-            <div id="formEmpresa">
-                <form id="formCompany" method="POST">
-                    <h2>Login</h2>
-                    <input class="input" required type="text" placeholder="Email: example@.com" id="razao" name="razao">
-                    <input class="input" required type="password" id="senhaEmpresa" placeholder="Senha:" name="senhaEmpresa">
-                    <input id="btnLogin" class="BtnOk" type="submit" value="Entrar">
-                </form>
-            </div>
-            <button id="btnCadastrar" onclick="window.location.assign('../Cadastro/index.html');"> Não tem uma conta? </button>
-
+    
+    <div id="retangulo">
+    <h1>Login</h1>
+        <ul>
+            <li id="changeU"onclick="SwitchForm(false)" style="float: left; margin-left:5vw ;">Usuario</li>
+            <li id="changeE"onclick="SwitchForm(true)"  style="float: right; margin-right:5vw ;">Empresa</li>
+        </ul>
+        <div id="formUsuario">
+            <form id="formUsuario" method="POST">
+                <input required type="text" placeholder="Email: usuario@example.com" autocomplete="off" id="email" name="email">
+                <input required type="password" id="senha" placeholder="Senha:" name="senha">
+                <input id="btnLogin" type="submit" value="Entrar">
+            </form>
         </div>
+
+        <div id="formEmpresa">
+            <form id="formCompany" method="POST">
+                <input required type="text" placeholder="Email: example@.com" id="razao" name="razao">
+                <input  required type="password" id="senhaEmpresa" placeholder="Senha:" name="senhaEmpresa">
+                <input id="btnLogin" type="submit" value="Entrar">
+            </form>
+        </div>
+         <a href="../Cadastro/index.html">Nao tem uma conta?</a>
         <script src="js/index.js"></script>
 </body>
-
 </html>

@@ -5,182 +5,90 @@
     font-family: 'Roboto', sans-serif;
 }
 
-#esquerda {
+body{
     background: url("../img/imgCadastro.jpg") no-repeat;
     background-size: cover;
-    width: 45%;
-    height: 100%;
-    position: absolute;
+    display: flex;
 }
-
-#logoMob {
-    display: none;
+#info{
+    text-align: center;
+    margin-left: 60px;
+    margin-top: 70px;
+    width: 43%;
 }
-
-.home {
-    width: 30px;
-    height: 30px;
-    margin-left: 819px;
-    margin-top: 103px;
-    cursor: pointer;
+img{
+    width: 200px;
+    height: 200px;
 }
-
-img {
-    width: 15vw;
-    height: 15vw;
-    opacity: 0.8;
-    margin-left: 12vw;
-    cursor: pointer;
-}
-
-p {
-    margin-top: 15px;
-    opacity: 0.8;
-    font-family: sans-serif;
-    font-size: 4vw;
+img:hover{opacity: 0.5;}
+p{
+    margin-top: 50px;
     color: white;
-    width: 70%;
-    text-align: center;
-    font-weight: bolder;
-    margin-left: 3.5vw;
+    font-family: sans-serif;
+    text-align: left;
+    font-size: 45px;
 }
 
-#direita {
+#retangulo{
+    border-radius: 15px;
     background: white;
-    width: 55%;
-    height: 100%;
-    position: absolute;
-    left: 40%;
-    align-items: center;
+    height: 83%;
+    width: 44%;
+    position: fixed;
+    left: 53%;
+    margin-top: 50px;
     text-align: center;
+}
+h1{
+    margin-top: 2vw;
+    letter-spacing: 10px;
+}
+ul{
+    margin-top: 15px;
+    list-style: none;
+    width: auto;
     overflow: hidden;
 }
-
-#quadrado {
-    border-radius: 15px;
-    margin-left: 20px;
+li{
+    color: black;
+    background: #35d786;
+    padding: 10px 4vw;
 }
-
-#selecao {
-    display: inline-block;
+form{
+    margin-bottom: 15px;
     margin-top: 15px;
 }
-
-a {
-    border-radius: 4px;
-    padding: 10px 7vw;
-    font-weight: bold;
-}
-
-a:hover {
-    background-color: #35d786;
-    transition: 1s;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-form {
-    margin-top: 15px;
-    padding: 10px;
-}
-
-input {
-    width: 48vw;
-    height: 50px;
-    margin-top: 15px;
+input{
+    width: 72%;
+    height: 45px;
+    margin-top: 5px;
     padding-left: 5px;
     border: 0;
-    border-radius: 10px;
-    font-weight: bold;
-}
-
-.BtnOk {
-    width: 48vw;
-    height: 50px;
-    border: 0;
-    border-radius: 10px;
-    background-color: rgb(90, 190, 65);
-    font-size: larger;
-    font-weight: 500;
-    display: inline-block;
-    opacity: 6;
-    cursor: pointer;
     border-radius: 5px;
     font-weight: bold;
+    font-size: 20px;
+}
+#btnCadastrar{
+    background:#35d786;
+    font-size: 20px;
+}#btnCadastrar:hover{opacity: 0.8;}
+a{
+    margin-top: 15px;
+    color: black;
+    font-size: 22px;
 }
 
-.BtnOk:hover {
-    transition: 1s;
-    background-color: rgb(90, 190, 65);
-}
-
-#btnLogin {
-    width: 48vw;
-    height: 50px;
-    margin-left: 20px;
-    border: 0;
-    border-radius: 5px;
-    cursor: pointer;
-    background-color: rgb(41, 120, 160);
-    font-size: larger;
-    font-weight: 500;
-    display: inline-block;
-    font-weight: bold;
-}
-
-#btnLogin:hover {
-    background-color: rgb(14, 108, 216);
-    transition: 1s;
-}
-
-
-/*-- Mobile --*/
-
+/*-- mobile vertical --*/
 @media only screen and (max-width:600px) {
-    body {
-        padding: 20px;
-        background-color: whitesmoke;
-    }
-    .home {
-        width: 30px;
-        height: 30px;
-        margin-left: 10px;
-        margin: 2px;
-        cursor: pointer;
-    }
-    #esquerda {
-        display: none;
-    }
-    #direita {
-        width: 80%;
-        height: fit-content;
+    
+    body{background-size: initial;}
+    #info{display:none}
+    #retangulo{
+        height: auto;
+        width: 83%;
         left: 10%;
-        display: inline-block;
-        border-radius: 10px;
+        margin-top: 50px;
+        padding-bottom: 15px;
     }
-    #selecao {
-        display: inline-flex;
-    }
-    a {
-        padding: 5px 7vw;
-    }
-    input {
-        height: 40px;
-    }
-    .BtnOk {
-        height: 40px;
-        background-color: rgb(90, 190, 65);
-    }
-    #btnLogin {
-        height: 40px;
-        margin-top: 0;
-        margin-bottom: 15px;
-        background-color: rgb(14, 108, 216);
-    }
-    #logoMob {
-        display: initial;
-        height: 23vw;
-        width: 82px;
-        margin-left: 0;
-    }
+    a{font-size: 22px;}
 }

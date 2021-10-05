@@ -26,6 +26,7 @@ function SwitchForm(op) {
         document.getElementById("changeU").style.background = "white";
     }
 }
+function home(){window.location.assign("../index.html");}
 
 // Código JS Back-End - Cadastro Usuario
 
