@@ -96,3 +96,24 @@ a{
     ul{margin-top: 7vw;}
     a{font-size: 22px;}
 }
+/*-- mobile horizontal --*/
+@media only screen and (min-width:600px ) and (max-width:900px){
+    #info{width: 40%;}
+    #info img{
+        width: 150px;
+        height: 150px;
+    }
+    #info p{
+        margin-top: 0;
+        font-size: 25px;
+    }
+    #retangulo{
+       height: 100%;
+       width: auto;
+       margin-top: 0; 
+    }
+    form{margin-bottom: 0;}
+    h1{margin-top: 0;}
+    #btnLogin{margin-bottom: 10px;}
+
+}

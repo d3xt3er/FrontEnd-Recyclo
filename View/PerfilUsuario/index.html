@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="../img/LogoRecycloV1.png">
     <script src="../sweetalert.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,7 +18,7 @@
     <ul id="nav">
         <li><a class="lia" onclick="Logout()">Sair</a></li>
         <li><a class="lia" href="../mapa_usuario/index.html">Mapa</a></li>
-        <li style="float:left"><img id="logo" src="../img/LogoRecycloV1.png" alt=""></li>
+        <li style="float:left"><img id="logo" title="Home" src="../img/LogoRecycloV1.png" onclick="window.location.assign('../index.html')"></li>
         <li id="titulo" style="float:left"><a>Recyclo</a></li>
     </ul>
 
@@ -49,11 +50,12 @@
                 <li>Senha:</li>
                 <li id="senha"></li>
                 <li style="float: right;">
-                    <button id="btnSenha" title="Mostrar Senha">?</button>
+                    <button id="btnSenha" onclick="mostrarSenha()" title="Mostrar Senha">?</button>
                 </li>
             </ul>
-            <button id="btnExcluir" class="btn" onclick="excluirConta()">Excluir Conta</button>
+            <button id="btnExcluir" style="float: left;" class="btn" onclick="excluirConta()">Excluir Conta</button>
             <button id="btnEditar" class="btn" onclick="alterarConta()">Editar Conta</button>
+            <button  id="btnEditarSenha" class="btn" onclick="novaSenha()">Mudar Senha</button>
         </div>
 
     </div>

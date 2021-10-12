@@ -26,6 +26,7 @@ fetch(`https://backend-recyclo.herokuapp.com/usuario/user/${email}/${senha}`, {
         emailUser = document.getElementById("email").innerHTML = data.ds_email;
         telefoneUser = document.getElementById("telefone").innerHTML = data.cd_telefone;
         senha = document.getElementById("senha").innerHTML = data.cd_senha;
+        document.getElementById("senha").innerHTML ="**********";
     })
     .catch(function(err) {
         console.log(err);
@@ -38,6 +39,17 @@ function hiddenPassword() {
         pass.type = "text";
     } else {
         pass.type = "password";
+    }
+}
+function mostrarSenha(){
+
+    if(senha == document.getElementById("senha").innerHTML){
+        document.getElementById("senha").innerHTML = "******";
+        document.getElementById("senha").title ="Mostrar Senha"
+    }
+    else{
+        document.getElementById("senha").innerHTML = senha;
+        document.getElementById("senha").title ="Ocultar Senha"
     }
 }
 
@@ -171,7 +183,6 @@ function excluirConta() {
                     window.location.assign("../Login/index.html");
                 }
             })
-
         }
     })
 }
@@ -192,4 +203,29 @@ function Logout() {
             window.localStorage.removeItem('senha');
         }
     })
+}
+
+function novaSenha(){
+    Swal.fire({
+        title: "Editar informações",
+        html: '<form id="EditarSenha" method="PUT">' +
+            `<input id="senhaAntiga" 
+                placeholder="Senha atual:"    
+                type="password"     
+                class="txtEditar img"   
+                onclick="hiddenPassword()" >` +
+            '<input id="novaSenha" placeholder="Nova senha:" type="password" class="txtEditar" type="text">' +
+            '<input id="formConfirmar" placeholder="Confirmar senha:" type="password" class="txtEditar" type="text">' +
+            '</form>',
+        showDenyButton: true,
+        showCancelButton: false,
+        confirmButtonText: `Salvar`,
+        denyButtonText: `Cancelar`,
+    }).then((result)=>{
+        
+        if(senha ==document.getElementById("senhaAntiga").innerText){
+
+        }
+        
+    });
 }

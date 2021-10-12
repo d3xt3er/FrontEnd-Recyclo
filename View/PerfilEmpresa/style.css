@@ -102,7 +102,11 @@ h3{
     transition: 1s;
     background: rgba(255, 44, 44, 0.8);
 }
-
+#myMap{
+    width: -webkit-fill-available;
+    height: 350px;
+    margin-top: 70px;
+}
 h2{margin-top: 75px}
 #pontoColeta{
     margin-top: 15px;

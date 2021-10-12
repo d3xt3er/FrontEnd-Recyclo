@@ -46,6 +46,7 @@ body {
     height: 45px;
     width: 47px;
 }
+#logo:hover{opacity: 0.8;}
 
 #titulo {
     display: block;
@@ -113,6 +114,17 @@ h3{
     background: rgba(90, 190, 65);
     transition: 1s;
 }
+#btnEditarSenha {
+    margin-left: 15px;
+    background: rgba(90, 190, 65, 0.8);
+    margin-right: 10px;
+}
+
+#btnEditarSenha:hover {
+    background: rgba(90, 190, 65);
+    transition: 1s;
+}
+
 
 #btnExcluir {
     background: rgba(255, 44, 44, 0.5);
@@ -121,6 +133,13 @@ h3{
 #btnExcluir:hover {
     transition: 1s;
     background: rgba(255, 44, 44,0.8)
+}
+#btnSenha:hover{background:white;}
+input{
+    width: 29vw;
+    height: 40px;
+    padding-left: 5px;
+    margin-top: 5px;
 }
 
 @media only screen and (max-width:600px) {
@@ -133,4 +152,7 @@ h3{
         margin-left: 0;
         margin-right: 0;
         float: left;}
+    input{
+        width: 65vw;
+        height: 38px;}
 }

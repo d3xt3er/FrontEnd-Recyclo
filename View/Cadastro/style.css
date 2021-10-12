@@ -92,3 +92,19 @@ a{
     }
     a{font-size: 22px;}
 }
+@media only screen and (min-width:600px ) and (max-width:900px){
+    #info img{
+        height:150px;
+        width: 150px;
+    }
+    #info p{
+        margin-top: 0;
+        font-size: 20px;}
+    #retangulo{
+        position: absolute;
+        height: auto;
+        width: auto;
+        margin-top: 0;
+        border-radius: 0;
+    }
+}

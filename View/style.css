@@ -93,7 +93,6 @@ p {
     text-align: left;
     color: white;
     font-weight: 600;
-    text-shadow: 2px 2px 5px #ccc;
     font-size: 25px;
 }
 
@@ -262,5 +261,17 @@ footer {
         width: auto;
         margin-left: 0;
         text-align: justify;
+    }
+}
+
+/*-- Horizontal --*/
+@media only screen and (min-width:600px) and (max-height:500px){
+    #inicio div {margin-top: 30px;}
+    #inicio p {margin-top: 0;}
+    #inicio img {height: 170px ;}
+
+    #cadastrar p {
+        width: 77%;
+        margin-left: 15%;
     }
 }
