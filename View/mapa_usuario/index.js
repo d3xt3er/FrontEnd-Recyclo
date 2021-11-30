@@ -185,7 +185,7 @@ function gerarDenuncia(e) {
             $.ajax({
                     method: "POST",
                     // https://backend-recyclo.herokuapp.com/usuario/criar/
-                    url: "http://localhost:8080/usuario/criar/denuncia",
+                    url: "https://backend-recyclo.herokuapp.com/usuario/criar/denuncia",
                     data: { id: id_usuario, nm_logradouro: logradouro, ds_comentario: denuncia, cd_localizacao: "-23.968 -46.3864825" },
                     beforeSend: function() {
                         Swal.fire({
