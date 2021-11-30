@@ -137,13 +137,37 @@ function fecharInfobox() {
     });
 }
 
+var email = localStorage.getItem('email');
+var senha = localStorage.getItem('senha');
+
+
+
 // denuncia
 function gerarDenuncia(e) {
+    var id_usuario
+
+    fetch(`https://backend-recyclo.herokuapp.com/usuario/user/${email}/${senha}`, {
+            method: 'get'
+        })
+        .then((resp) => resp.json())
+        .then(function(data) {
+
+            id_usuario = data.cd_usuario;
+
+        })
+        .catch(function(err) {
+            console.log(err);
+        });
     // console.log(e.location); 
     Swal.fire({
-        title: "Gerar Denunia",
+        title: "Gerar Denuncia",
         html: '<form id="frmDenuncia">' +
-            '<input id="dt" type="date"></input>' +
+            `<input type="hidden" value="${id_usuario}" ></input>` +
+            '<label>Local para denunciar</label>' +
+            '<br>' +
+            '<input id="logradouro" type="text"></input>' +
+            '<br>' +
+            // '<input id="dt" type="date"></input>' +
             '<textarea id="descricao" required placeholder="Descricao do discarte" type="text" autocomplete="off"></textarea>' +
             '</form>',
         showDenyButton: true,
@@ -153,9 +177,46 @@ function gerarDenuncia(e) {
     }).then((result) => {
         if (result.isConfirmed) {
 
-            var dataDenun = document.getElementById("dt").value;
+            var logradouro = document.getElementById("logradouro").value;
+            // var dataDenun = document.getElementById("dt").value;
             var denuncia = document.getElementById("descricao").value;
-            console.log(denuncia, dataDenun)
+
+
+            $.ajax({
+                    method: "POST",
+                    // https://backend-recyclo.herokuapp.com/usuario/criar/
+                    url: "http://localhost:8080/usuario/criar/denuncia",
+                    data: { id: id_usuario, nm_logradouro: logradouro, ds_comentario: denuncia, cd_localizacao: "-23.968 -46.3864825" },
+                    beforeSend: function() {
+                        Swal.fire({
+                            title: 'Aguarde...',
+                            html: '<img src="../img/Gif-Recyclo.gif" alt="description of gif" style="display: block;  margin-left: auto;margin-right: auto;" width="600" height="600" /> ',
+                            //lembrar que tira o click do fundo 
+                            allowOutsideClick: false,
+                            showCancelButton: false,
+                            showConfirmButton: false,
+                            onBeforeOpen: () => {
+                                Swal.showLoading()
+                            },
+                        });
+                    }
+                }).done(function(msg) {
+                    Swal.fire(
+                        'Parabéns!',
+                        'Cadastrado com sucesso!',
+                        'success'
+                    )
+
+                })
+                .fail(function(msg) {
+                    if (msg.responseText == 'Usuário já cadastrado') {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Desculpe,',
+                            text: 'Este E-mail ou CPF de usuário ja existe!',
+                        })
+                    }
+                });
 
         }
     })
