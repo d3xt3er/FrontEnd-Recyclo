@@ -8,6 +8,7 @@ var cfpUser;
 var emailUser;
 var telefoneUser;
 
+var cont;
 //https://backend-recyclo.herokuapp.com Função que captura as informações do usuario
 fetch(`https://backend-recyclo.herokuapp.com/usuario/user/${email}/${senha}`, {
         method: 'get'
@@ -27,6 +28,7 @@ fetch(`https://backend-recyclo.herokuapp.com/usuario/user/${email}/${senha}`, {
         telefoneUser = document.getElementById("telefone").innerHTML = data.cd_telefone;
         senha = document.getElementById("senha").innerHTML = data.cd_senha;
         document.getElementById("senha").innerHTML ="**********";
+        cont = data.cd_cpf;
     })
     .catch(function(err) {
         console.log(err);
@@ -123,6 +125,15 @@ function alterarConta() {
             })
         }
     })
+}
+
+function hideCpf(){
+    var emp = document.getElementById('cpf');
+    if(document.getElementById('cpf').innerText != cont)
+        document.getElementById('cpf').innerText = cont;
+    else {
+        document.getElementById('cpf').innerText  = "**************";
+    }
 }
 
 function excluirConta() {
