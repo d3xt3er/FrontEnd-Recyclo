@@ -9,6 +9,7 @@ var id_company;
 var nameCompany;
 var cnpjCompany;
 var telefoneCompany;
+var cont ;
 // https://backend-recyclo.herokuapp.com
 fetch(`https://backend-recyclo.herokuapp.com/empresa/company/${email}/${senha}`, {
         method: 'get'
@@ -25,6 +26,7 @@ fetch(`https://backend-recyclo.herokuapp.com/empresa/company/${email}/${senha}`,
         nameCompany = document.getElementById("nomeEmpresa").innerHTML = data.nm_empresa;
         cnpjCompany = document.getElementById("cnpj").innerHTML = data.cd_cnpj;
         telefoneCompany = document.getElementById("telefone").innerHTML = data.cd_telefone;
+        cont =data.cd_cnpj;
     })
     .catch(function(err) {
         console.log(err);
@@ -275,6 +277,16 @@ function hiddenPassword() {
         pass.type = "text";
     } else {
         pass.type = "password";
+    }
+}
+
+function hideCnpj(){
+    var emp = document.getElementById('cnpj');
+    if(document.getElementById('cnpj').innerText != cont)
+        document.getElementById('cnpj').innerText = cont;
+    else {
+        document.getElementById('cnpj').innerText  = "**************";
+        console.log("AAAA");
     }
 }
 

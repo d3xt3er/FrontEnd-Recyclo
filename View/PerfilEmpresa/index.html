@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../mapa_empresa/styles.css">
     <script src="../sweetalert.js"></script>
     <link rel="icon" href="../img/LogoRecycloV1.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,6 +37,7 @@
             <ul>
                 <li>CNPJ:</li>
                 <li id="cnpj"></li>
+                <li><a onclick="hideCnpj()" style="float: right;">?</a></li>
             </ul>
             <ul>
                 <li>Telefone:</li>
@@ -54,7 +56,7 @@
                 <button id="btnAddPonto" class="btn" onclick="adicionarPonto()">Adicionar Ponto</button>
             </div>
     </div>
-    <script src="map.js"></script>
+    <script src="../mapa_empresa/index.js"></script>
     <script src="index.js"></script>
 </body>
 
