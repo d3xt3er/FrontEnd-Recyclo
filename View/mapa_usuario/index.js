@@ -160,7 +160,7 @@ function gerarDenuncia(e) {
         });
     // console.log(e.location); 
     Swal.fire({
-        title: "Gerar Denuncia",
+        title: "Gerar Denúncia",
         html: '<form id="frmDenuncia">' +
             `<input type="hidden" value="${id_usuario}" ></input>` +
             '<label>Local para denunciar</label>' +
