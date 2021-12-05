@@ -172,7 +172,7 @@ function gerarDenuncia(e) {
             '</form>',
         showDenyButton: true,
         showCancelButton: false,
-        confirmButtonText: `Gerar Denuncia`,
+        confirmButtonText: `Gerar Denúncia`,
         denyButtonText: `Cancelar`,
     }).then((result) => {
         if (result.isConfirmed) {
@@ -203,7 +203,7 @@ function gerarDenuncia(e) {
                 }).done(function(msg) {
                     Swal.fire(
                         'Parabéns!',
-                        'Cadastrado com sucesso!',
+                        'Denúncia efetuada com sucesso!',
                         'success'
                     )
 
