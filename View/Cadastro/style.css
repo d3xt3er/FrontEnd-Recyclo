@@ -39,6 +39,11 @@ p{
     margin-top: 50px;
     text-align: center;
 }
+#logoMob{
+    height: 70px;
+    width: 87px;
+    display: none;
+}
 h1{
     margin-top: 2vw;
     letter-spacing: 10px;
@@ -71,7 +76,8 @@ input{
 #btnCadastrar{
     background:#35d786;
     font-size: 20px;
-}#btnCadastrar:hover{opacity: 0.8;}
+}
+#btnCadastrar:hover{opacity: 0.8;}
 a{
     margin-top: 15px;
     color: black;
@@ -80,19 +86,28 @@ a{
 
 /*-- mobile vertical --*/
 @media only screen and (max-width:600px) {
-    
-    body{background-size: initial;}
+    #logoMob{
+        position: relative;
+        display: inherit;
+        left: 35%;
+        display: inherit;}
+    body{
+        background: white;
+        background-size: initial;}
     #info{display:none}
     #retangulo{
         height: auto;
         width: 83%;
         left: 10%;
-        margin-top: 50px;
+        margin-top: 30px;
         padding-bottom: 15px;
     }
     a{font-size: 22px;}
+    li{padding: 10px 9vw;}
 }
+
 @media only screen and (min-width:600px ) and (max-width:900px){
+   
     #info img{
         height:150px;
         width: 150px;

@@ -39,6 +39,11 @@ p{
     text-align: center;
     border-top-right-radius: 0;
 }
+#logoMob{
+    height: 70px;
+    width: 87px;
+    display: none;
+}
 h1{
     margin-top: 5vw;
     letter-spacing: 2px;
@@ -83,8 +88,14 @@ a{
 
 /*-- mobile vertical --*/
 @media only screen and (max-width:600px) {
-    
-    body{background-size: initial;}
+    #logoMob{
+        position: relative;
+        display: inherit;
+        left: 35%;
+        display: inherit;}
+    body{
+        background: white;
+        background-size: initial;}
     #info{display: none;}
     #retangulo{
         height: 77%;
