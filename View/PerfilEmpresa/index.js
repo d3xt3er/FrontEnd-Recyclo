@@ -270,7 +270,6 @@ function EditarInfo() {
         }
     })
 }
-
 function hiddenPassword() {
     var pass = document.getElementById("formSenha");
     if (pass.type == "password") {
@@ -278,6 +277,7 @@ function hiddenPassword() {
     } else {
         pass.type = "password";
     }
+    
 }
 
 function hideCnpj(){

@@ -240,3 +240,33 @@ function novaSenha(){
         
     });
 }
+
+function Denuncia()
+{
+    const ul = document.createElement('ul');
+    ul.className='denuncia';
+    const logra = document.createElement('li');
+    logra.className = 'logra';
+    logra.textContent ="oliver e muito legal voce deveria conhecer ele";
+    
+    const dt = document.createElement('li');
+    dt.className = "dat";
+    dt.textContent="30/20/1202";
+
+    const li = document.createElement('li');
+    const img = document.createElement('img');
+
+
+    img.setAttribute("src","../img/icones/comentario.png");
+    img.onclick= function(){
+        Swal.fire({
+            text:"hahahaahahahahah muito ruim"
+        });
+    }    
+    ul.appendChild(logra);
+    li.appendChild(img);
+    ul.appendChild(li);
+    ul.appendChild(dt);
+    document.getElementById('denuncias').appendChild(ul);
+
+}

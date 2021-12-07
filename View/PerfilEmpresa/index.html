@@ -18,11 +18,19 @@
 
 <body>
     <ul id="nav">
+        <li id="mob"><img onclick="showMenu()" src="../img/icones/menu.png" ></li>
         <li><a class="lia" href="../Sobre/index.html">Sobre</a></li>
         <li><a class="lia" href="../mapa_empresa/index.html">Mapa</a></li>
-        <li style="float:left"><img id="logo" src="../img/LogoRecycloV1.png" alt=""></li>
+        <li style="float:left"><img id="logo" onclick="goHome()" src="../img/LogoRecycloV1.png" alt=""></li>
         <li id="titulo" style="float:left"><a>Recyclo</a></li>
     </ul>
+
+    <ul id="navMob">
+        <li><a href="../mapa_principal/index.html">Mapa</a></li>
+        <li><a href="../Sobre/index.html">Sobre</a></li>
+        <li><a >Sair</a></li>
+    </ul>
+    
     <div id="home">
         <h1>Bem vindo</h1>
 
@@ -36,7 +44,7 @@
             <ul>
                 <li>CNPJ:</li>
                 <li id="cnpj"></li>
-                <li><a onclick="hideCnpj()" style="float: right;">?</a></li>
+                <li style="float: right;"><img id="cnpj" onclick="hideCnpj()" src="../img/icones/senha.png"></li>
             </ul>
             <ul>
                 <li>Telefone:</li>
@@ -46,7 +54,7 @@
             <button id="btnExcluir" class="btn" style="float: left;">Excluir Conta</button>
         </div>
         <div id="myMap"></div>
-        <h2>Pontos de coleta</h3>
+            <h2>Pontos de coleta</h3>
             <div id="pontoColeta">
 
                 <div id="pontos">
@@ -54,9 +62,10 @@
                 </div>
                 <button id="btnAddPonto" class="btn" onclick="adicionarPonto()">Adicionar Ponto</button>
             </div>
-    </div>
+        </div>
     <script src="../mapa_empresa/index.js"></script>
     <script src="index.js"></script>
+    <script src="../index.js"></script>
 </body>
 
 </html>

@@ -16,10 +16,18 @@
 
 <body>
     <ul id="nav">
+        <li id="mob"><img onclick="showMenu()" src="../img/icones/menu.png" ></li>
         <li><a class="lia" onclick="Logout()">Sair</a></li>
         <li><a class="lia" href="../mapa_usuario/index.html">Mapa</a></li>
         <li style="float:left"><img id="logo" title="Home" src="../img/LogoRecycloV1.png" onclick="window.location.assign('../index.html')"></li>
         <li id="titulo" style="float:left"><a>Recyclo</a></li>
+    </ul>
+
+    <ul id="navMob">
+        <li><a href="../Login/index.html">Entrar</a></li>
+        <li><a href="../mapa_principal/index.html">Mapa</a></li>
+        <li><a href="../Sobre/index.html">Sobre</a></li>
+        <li><a id="sair" onclick="Logout()">Sair</a></li>
     </ul>
 
     <div id="home">
@@ -27,42 +35,52 @@
             <p id="title"></p>
         </h1>
 
-        <h3>Dados do Perfil</h3>
+        <h3 id="d">Dados do Perfil</h3>
         <div>
-            <ul style="background-color: whitesmoke;">
+            <ul class="dados" style="background-color: whitesmoke;">
                 <input type="hidden" id="id_usuario" name="id_usuario" value="">
                 <li>Nome:</li>
                 <li id="nome"></li>
             </ul>
-            <ul>
+            <ul class="dados">
                 <li>Telefone:</li>
                 <li id="telefone"></li>
             </ul>
-            <ul style="background-color: whitesmoke;">
+            <ul class="dados" style="background-color: whitesmoke;">
                 <li>Email:</li>
                 <li id="email"></li>
             </ul>
-            <ul>
+            <ul class="dados">
                 <li>CPF:</li>
                 <li id="cpf"></li>
                 <li style="float: right;">
-                    <button style="background-color: white;" id="btnSenha" onclick="hideCpf()" title="Mostrar Senha">?</button>
+                    <img src="../img/icones/senha.png"  id="btnSenha" onclick="hideCpf()" title="Mostrar Senha">
                 </li>
             </ul>
-            <ul style="background-color: whitesmoke;">
+            <ul class="dados" style="background-color: whitesmoke;">
                 <li>Senha:</li>
                 <li id="senha"></li>
                 <li style="float: right;">
-                    <button id="btnSenha" onclick="mostrarSenha()" title="Mostrar Senha">?</button>
+                    <img src="../img/icones/senha.png" id="btnSenha" onclick="mostrarSenha()" title="Mostrar Senha">
                 </li>
             </ul>
             <button id="btnExcluir" style="float: left;" class="btn" onclick="excluirConta()">Excluir Conta</button>
             <button id="btnEditar" class="btn" onclick="alterarConta()">Editar Conta</button>
             <button  id="btnEditarSenha" class="btn" onclick="novaSenha()">Mudar Senha</button>
         </div>
-
+        <h3 id="h3Denuncia">Denuncias realizadas</h3>
+        <div id="denuncias">
+           
+            <ul class="denuncia">
+                <li class="logra">gffffgffffffffffffffffffffffffffff</li>
+                <li><img class="imCom" src="../img/icones/comentario.png" aria-placeholder="Mostrar Comentario"></li>
+                <li class="dat">23/20/2021</li>
+            </ul>
+            
+        </div>
     </div>
     <script src="index.js"></script>
+    <script src="../index.js"></script>
 </body>
 
 </html>

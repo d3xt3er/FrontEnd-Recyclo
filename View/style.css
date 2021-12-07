@@ -33,7 +33,7 @@ h3 {
     font-size: 35px;
     letter-spacing: 3px;
 }
-
+#navMob{display: none;}
 #nav {
     width: auto;
     height: 50px;
@@ -186,7 +186,7 @@ h1 {
 
 #sobre p{
     margin-top: 15px; 
-    text-align: center;}
+    text-align: justify;}
 #sobre h3{color:white}
 #sobre button{
 
@@ -200,11 +200,48 @@ footer {
     text-align: center;
     padding: 20px;
 }
-
+#mob{display: none;}
 
 /*-- Mobile --*/
 
 @media only screen and (max-width:600px) {
+    
+    .lia{display: none;}
+    #mob{
+        border-radius: 5px;
+        height: 50px;
+        display: initial;}
+    #mob img{height: 50px;}
+    #mob:active{
+        background: rgba(245, 245, 245, 0.479);
+    }
+    #navMob{
+        display: none;
+        width: 200px;
+        position: absolute;
+        height: 380px;
+        right: 0;
+        list-style: none;
+        text-align: center;
+        padding: 10px;
+        background: rgba(245, 245, 245, 0.822);
+    }
+    #navMob li{
+        height: 75px;
+        width: 100%;
+        padding-top: 30px;
+        border-radius: 5px;
+    }
+    #navMob li:hover{
+        background: #5ABE41;
+    }
+    #navMob a{
+        color: black;
+        text-decoration: none;
+        font-size: 25px;
+        letter-spacing: 2px;
+        font-weight: bolder;
+    }
     .Content {
         height: 400px;
         width: auto;

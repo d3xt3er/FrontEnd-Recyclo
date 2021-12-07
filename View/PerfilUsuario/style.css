@@ -7,6 +7,7 @@
 }
 
 body {
+    text-align: center;
     background-color: white;
 }
 #nav {
@@ -61,6 +62,8 @@ body {
     margin: 30px 10% 10% 10%;
     text-align: center;
     padding: 20px;
+    display: inline-grid;
+    
 }
 h3{
     margin-top: 50px;
@@ -71,14 +74,14 @@ h3{
 #home div{
     margin-top: 30px;
 }
-#home ul{
+.dados{
     list-style: none;
     display: flow-root;
     margin-top: 5px;
     height: 60px;
     border-radius: 5px;
 }
-#home ul li{
+.dados li{
     float: left;
     height: 50px;
     font-size: 25px;
@@ -87,6 +90,7 @@ h3{
     padding-left: 5px;
 }
 #btnSenha{
+    background-size: cover;
     border: 0;
     border-radius: 2px;
     height: 35px;
@@ -142,17 +146,99 @@ input{
     margin-top: 5px;
 }
 
+#denuncias{
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+    margin-bottom: 0;
+    margin-top: 15px;
+    text-align: center;
+    box-shadow: thistle;
+    height: 400px;
+    overflow:auto;
+    overflow-x: hidden;
+}
+#h3Denuncia {
+    margin-top: 25px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.denuncia{
+    padding:0px 0px 5px 5px;
+    text-overflow: ellipsis;
+    list-style: none;
+    width: 100%;
+    display: inline-block;
+    font-size: 20px;
+}
+.denuncia:hover{
+    transition: 1s;
+    background:whitesmoke;
+}
+.logra{
+    max-width: 330px;
+    float: left;
+    white-space: nowrap;
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+}
+.dat{
+    margin-right: 5px;
+    float: right;
+}
+.denuncia img{
+    margin-right: 10px;
+    height: 30px;
+    float: right;
+}
+#navMob{display: none;}
+#mob{display: none;}
 @media only screen and (max-width:600px) {
     
+    .lia{display: none;}
+    #mob{
+        border-radius: 5px;
+        height: 50px;
+        display: initial;}
+    #mob img{height: 50px;}
+    #mob:active{
+        background: rgba(245, 245, 245, 0.479);
+    }
+    #navMob{
+        width: 200px;
+        position: absolute;
+        height: 380px;
+        right: 0;
+        list-style: none;
+        text-align: center;
+        padding: 10px;
+        background: rgba(245, 245, 245, 0.822);
+    }
+    #navMob li{
+        height: 75px;
+        width: 100%;
+        padding-top: 30px;
+        border-radius: 5px;
+    }
+    #navMob li:hover{
+        background: #5ABE41;
+    }
+    #navMob a{
+        color: black;
+        text-decoration: none;
+        font-size: 25px;
+        letter-spacing: 2px;
+        font-weight: bolder;
+    }
+    #sair:hover{background: rgba(255, 44, 44,0.8);}
     #home{padding: 10px;}
     #home ul{height: 50px;}
     #home ul li{font-size: 20px;}
-    .btn{width: 120px;}
+    .btn{width: 100%;}
     #btnEditar{
         margin-left: 0;
         margin-right: 0;
         float: left;}
-    input{
+        #btnEditarSenha{margin-right: 0;}
+        input{
         width: 65vw;
         height: 38px;}
 }
