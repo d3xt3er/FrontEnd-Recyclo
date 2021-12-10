@@ -27,7 +27,7 @@ fetch(`https://backend-recyclo.herokuapp.com/usuario/user/${email}/${senha}`, {
         emailUser = document.getElementById("email").innerHTML = data.ds_email;
         telefoneUser = document.getElementById("telefone").innerHTML = data.cd_telefone;
         senha = document.getElementById("senha").innerHTML = data.cd_senha;
-        document.getElementById("senha").innerHTML ="**********";
+        document.getElementById("senha").innerHTML = "**********";
         cont = data.cd_cpf;
     })
     .catch(function(err) {
@@ -43,15 +43,15 @@ function hiddenPassword() {
         pass.type = "password";
     }
 }
-function mostrarSenha(){
 
-    if(senha == document.getElementById("senha").innerHTML){
+function mostrarSenha() {
+
+    if (senha == document.getElementById("senha").innerHTML) {
         document.getElementById("senha").innerHTML = "******";
-        document.getElementById("senha").title ="Mostrar Senha"
-    }
-    else{
+        document.getElementById("senha").title = "Mostrar Senha"
+    } else {
         document.getElementById("senha").innerHTML = senha;
-        document.getElementById("senha").title ="Ocultar Senha"
+        document.getElementById("senha").title = "Ocultar Senha"
     }
 }
 
@@ -127,12 +127,12 @@ function alterarConta() {
     })
 }
 
-function hideCpf(){
+function hideCpf() {
     var emp = document.getElementById('cpf');
-    if(document.getElementById('cpf').innerText != cont)
+    if (document.getElementById('cpf').innerText != cont)
         document.getElementById('cpf').innerText = cont;
     else {
-        document.getElementById('cpf').innerText  = "**************";
+        document.getElementById('cpf').innerText = "**************";
     }
 }
 
@@ -216,7 +216,7 @@ function Logout() {
     })
 }
 
-function novaSenha(){
+function novaSenha() {
     Swal.fire({
         title: "Editar informações",
         html: '<form id="EditarSenha" method="PUT">' +
@@ -232,41 +232,91 @@ function novaSenha(){
         showCancelButton: false,
         confirmButtonText: `Salvar`,
         denyButtonText: `Cancelar`,
-    }).then((result)=>{
-        
-        if(senha ==document.getElementById("senhaAntiga").innerText){
+    }).then((result) => {
+
+        if (senha == document.getElementById("senhaAntiga").innerText) {
 
         }
-        
+
     });
 }
 
-function Denuncia()
-{
-    const ul = document.createElement('ul');
-    ul.className='denuncia';
-    const logra = document.createElement('li');
-    logra.className = 'logra';
-    logra.textContent ="oliver e muito legal voce deveria conhecer ele";
-    
-    const dt = document.createElement('li');
-    dt.className = "dat";
-    dt.textContent="30/20/1202";
-
-    const li = document.createElement('li');
-    const img = document.createElement('img');
 
 
-    img.setAttribute("src","../img/icones/comentario.png");
-    img.onclick= function(){
-        Swal.fire({
-            text:"hahahaahahahahah muito ruim"
-        });
-    }    
-    ul.appendChild(logra);
-    li.appendChild(img);
-    ul.appendChild(li);
-    ul.appendChild(dt);
-    document.getElementById('denuncias').appendChild(ul);
-
+// Função exibe os pontos
+function getReports() {
+    //http://localhost:8080/empresa/ponto/${email}/${senha} || https://backend-recyclo.herokuapp.com/empresa/ponto/${email}/${senha}
+    return fetch(`https://backend-recyclo.herokuapp.com/usuario/denuncias/${email}/${senha}`).then(res =>
+        res.json()
+    );
 }
+
+
+getReports().then(res => {
+
+    const reports = res.forEach(report => {
+        console.log(report);
+
+
+        const ul = document.createElement('ul');
+        ul.className = 'denuncia';
+        const logra = document.createElement('li');
+        logra.className = 'logra';
+        logra.textContent = report.nm_logradouro;
+
+        data = new Date(report.dt_denuncia);
+        dataFormatada = data.toLocaleDateString('pt-BR', { timeZone: 'UTC' });
+
+        const dt = document.createElement('li');
+        dt.className = "dat";
+        dt.textContent = dataFormatada;
+
+
+
+        const li = document.createElement('li');
+        const img = document.createElement('img');
+
+
+        img.setAttribute("src", "../img/icones/comentario.png");
+        img.onclick = function() {
+            Swal.fire({
+                text: report.ds_comentario
+            });
+        }
+        ul.appendChild(logra);
+        li.appendChild(img);
+        ul.appendChild(li);
+        ul.appendChild(dt);
+        document.getElementById('denuncias').appendChild(ul);
+    })
+
+});
+
+// function Denuncia() {
+//     const ul = document.createElement('ul');
+//     ul.className = 'denuncia';
+//     const logra = document.createElement('li');
+//     logra.className = 'logra';
+//     logra.textContent = "oliver e muito legal voce deveria conhecer ele";
+
+//     const dt = document.createElement('li');
+//     dt.className = "dat";
+//     dt.textContent = "30/20/1202";
+
+//     const li = document.createElement('li');
+//     const img = document.createElement('img');
+
+
+//     img.setAttribute("src", "../img/icones/comentario.png");
+//     img.onclick = function() {
+//         Swal.fire({
+//             text: "hahahaahahahahah muito ruim"
+//         });
+//     }
+//     ul.appendChild(logra);
+//     li.appendChild(img);
+//     ul.appendChild(li);
+//     ul.appendChild(dt);
+//     document.getElementById('denuncias').appendChild(ul);
+
+// }
