@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    /* font-family: Arial; */
+    font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    text-align: center;
+    background-color: white;
+}
+div{
+    position: absolute;
+    left: 25%;
+    right: 25%;
+    top: 20%;
+    background: whitesmoke;
+    padding: 20px;
+    border-radius: 20px;
+}
+img{
+    height: 70px;
+}
+form{
+    text-align: center;
+}
+form input{
+    font-size: 18px;
+    height: 40px;
+    width: 400px;
+    margin-top: 5px;
+    border: 0;
+    border-radius: 5px;
+}
+#btn{ background: #35d786;
+}
+@media only screen and (max-width:600px) {
+    div{
+        left: 15%;
+        right: 15%;
+    }
+    form input{
+        height: 30px;
+        width: 200px;
+    }
+
+}
