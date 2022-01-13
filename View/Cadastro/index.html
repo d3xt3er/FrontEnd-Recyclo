@@ -24,13 +24,13 @@
         <img id="logo" title="home" onclick="home()" src="../img/LogoRecycloV1.png">
         <p>Nos ajude a tonar um mundo um lugar mais ecológico</p>
     </div>
-    
+
     <div id="retangulo">
-        <img id="logoMob" onclick="home()"  src="../img/LogoRecycloV1.png" >
+        <img id="logoMob" onclick="home()" src="../img/LogoRecycloV1.png">
         <h1>Cadastro</h1>
         <ul>
-            <li id="changeU"onclick="SwitchForm(false)" style="float: left; margin-left:5vw ;">Usuario</li>
-            <li id="changeE"onclick="SwitchForm(true)"style="float: right; margin-right:5vw ;">Empresa</li>
+            <li id="changeU" onclick="SwitchForm(false)" style="float: left; margin-left:5vw;cursor: pointer;">Usuario</li>
+            <li id="changeE" onclick="SwitchForm(true)" style="float: right; margin-right:5vw;cursor: pointer;">Empresa</li>
         </ul>
 
         <div id="formUsuario">
@@ -43,11 +43,11 @@
                 <input class="input" required type="password" placeholder="Senha:" id="senha" name="senha">
                 <input class="input" required type="password" placeholder="Confirme a sua senha: " id="ConfirmarSsenha" name="ConfirmarSsenha">
 
-                <input id="btnCadastrar" class="BtnOk" type="submit" value="Criar Conta">
+                <input id="btnCadastrar" class="BtnOk" type="submit" value="Criar conta">
             </form>
         </div>
-        
-            <!-- Cadastro de empresas -->
+
+        <!-- Cadastro de empresas -->
         <div id="formEmpresa">
             <form id="formCompany" method="POST" type="hidden" name="formEmpresa">
                 <input class="input" required type="text" placeholder="Razão Social:" id="razao" name="razao">
@@ -56,14 +56,14 @@
                 <input class="input" required type="text" placeholder="CNPJ: " id="cnpj" name="cnpj">
                 <input class="input" required type="password" placeholder="Senha:" id="Senha" name="Senha">
                 <input class="input" required type="password" placeholder="Confirme a sua senha: " id="ConfirmarSenha" name="ConfirmarSenha">
-                <input id="btnCadastrar" class="BtnOk" type="submit" value="Criar Conta">
+                <input id="btnCadastrar" class="BtnOk" type="submit" value="Criar conta">
             </form>
         </div>
 
         <a href="../Login/index.html">Ja tem uma conta?</a>
     </div>
-    
-    
+
+
     <script src="index.js"></script>
 </body>
 

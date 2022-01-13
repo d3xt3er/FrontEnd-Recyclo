@@ -5,23 +5,30 @@
     font-family: 'Roboto', sans-serif;
 }
 
-body{
+body {
     background: url("../img/imgCadastro.jpg") no-repeat;
     background-size: cover;
     display: flex;
 }
-#info{
+
+#info {
     text-align: center;
     margin-left: 60px;
     margin-top: 70px;
     width: 43%;
 }
-img{
+
+img {
     width: 200px;
     height: 200px;
+    cursor: pointer;
 }
-img:hover{opacity: 0.5;}
-p{
+
+img:hover {
+    opacity: 0.5;
+}
+
+p {
     margin-top: 50px;
     color: white;
     font-family: sans-serif;
@@ -29,7 +36,7 @@ p{
     font-size: 45px;
 }
 
-#retangulo{
+#retangulo {
     border-radius: 15px;
     background: white;
     height: 83%;
@@ -39,31 +46,37 @@ p{
     margin-top: 50px;
     text-align: center;
 }
-#logoMob{
+
+#logoMob {
     height: 70px;
     width: 87px;
     display: none;
 }
-h1{
+
+h1 {
     margin-top: 2vw;
     letter-spacing: 10px;
 }
-ul{
+
+ul {
     margin-top: 15px;
     list-style: none;
     width: auto;
     overflow: hidden;
 }
-li{
+
+li {
     color: black;
     background: #35d786;
     padding: 10px 4vw;
 }
-form{
+
+form {
     margin-bottom: 15px;
     margin-top: 15px;
 }
-input{
+
+input {
     width: 72%;
     height: 45px;
     margin-top: 5px;
@@ -73,49 +86,65 @@ input{
     font-weight: bold;
     font-size: 20px;
 }
-#btnCadastrar{
-    background:#35d786;
+
+#btnCadastrar {
+    background: #35d786;
     font-size: 20px;
+    cursor: pointer;
 }
-#btnCadastrar:hover{opacity: 0.8;}
-a{
+
+#btnCadastrar:hover {
+    opacity: 0.8;
+}
+
+a {
     margin-top: 15px;
     color: black;
     font-size: 22px;
 }
 
+
 /*-- mobile vertical --*/
+
 @media only screen and (max-width:600px) {
-    #logoMob{
+    #logoMob {
         position: relative;
         display: inherit;
         left: 35%;
-        display: inherit;}
-    body{
+        display: inherit;
+    }
+    body {
         background: white;
-        background-size: initial;}
-    #info{display:none}
-    #retangulo{
+        background-size: initial;
+    }
+    #info {
+        display: none
+    }
+    #retangulo {
         height: auto;
         width: 83%;
         left: 10%;
         margin-top: 30px;
         padding-bottom: 15px;
     }
-    a{font-size: 22px;}
-    li{padding: 10px 9vw;}
+    a {
+        font-size: 22px;
+    }
+    li {
+        padding: 10px 9vw;
+    }
 }
 
-@media only screen and (min-width:600px ) and (max-width:900px){
-   
-    #info img{
-        height:150px;
+@media only screen and (min-width:600px) and (max-width:900px) {
+    #info img {
+        height: 150px;
         width: 150px;
     }
-    #info p{
+    #info p {
         margin-top: 0;
-        font-size: 20px;}
-    #retangulo{
+        font-size: 20px;
+    }
+    #retangulo {
         position: absolute;
         height: auto;
         width: auto;

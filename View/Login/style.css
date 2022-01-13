@@ -10,17 +10,25 @@ body {
     background-size: cover;
     display: flex;
 }
-#info{
+
+#info {
     text-align: center;
     margin-left: 60px;
     margin-top: 70px;
     width: 43%;
 }
-img{
+
+img {
     width: 200px;
     height: 200px;
-}img:hover{opacity: 0.5;}
-p{
+    cursor: pointer;
+}
+
+img:hover {
+    opacity: 0.5;
+}
+
+p {
     margin-top: 50px;
     color: white;
     font-family: sans-serif;
@@ -28,7 +36,7 @@ p{
     font-size: 45px;
 }
 
-#retangulo{
+#retangulo {
     border-radius: 50px;
     background: white;
     height: 83%;
@@ -39,33 +47,39 @@ p{
     text-align: center;
     border-top-right-radius: 0;
 }
-#logoMob{
+
+#logoMob {
     height: 70px;
     width: 87px;
     display: none;
 }
-h1{
+
+h1 {
     margin-top: 5vw;
     letter-spacing: 2px;
     letter-spacing: 10px;
 }
-ul{
+
+ul {
     margin-top: 3vw;
     list-style: none;
     width: auto;
     overflow: hidden;
 }
-li{
+
+li {
     color: black;
     background: #35d786;
     padding: 10px 4vw;
 }
-form{
+
+form {
     margin-bottom: 20px;
     text-align: center;
     margin-top: 25px;
 }
-form input{
+
+form input {
     width: 72%;
     height: 45px;
     margin-top: 15px;
@@ -75,56 +89,80 @@ form input{
     font-size: 15px;
     padding-left: 5px;
 }
-#btnLogin{
-    background:#35d786;
+
+#btnLogin {
+    background: #35d786;
     font-size: 20px;
+    cursor: pointer;
 }
 
-a{
+a {
     margin-top: 15px;
     color: black;
     font-size: 22px;
 }
 
+
 /*-- mobile vertical --*/
+
 @media only screen and (max-width:600px) {
-    #logoMob{
+    #logoMob {
         position: relative;
         display: inherit;
         left: 35%;
-        display: inherit;}
-    body{
+        display: inherit;
+    }
+    body {
         background: white;
-        background-size: initial;}
-    #info{display: none;}
-    #retangulo{
+        background-size: initial;
+    }
+    #info {
+        display: none;
+    }
+    #retangulo {
         height: 77%;
         width: 83%;
         left: 10%;
         margin-top: 50px;
     }
-    h1{margin-top: 10vw;}
-    ul{margin-top: 7vw;}
-    a{font-size: 22px;}
+    h1 {
+        margin-top: 10vw;
+    }
+    ul {
+        margin-top: 7vw;
+    }
+    a {
+        font-size: 22px;
+    }
 }
+
+
 /*-- mobile horizontal --*/
-@media only screen and (min-width:600px ) and (max-width:900px){
-    #info{width: 40%;}
-    #info img{
+
+@media only screen and (min-width:600px) and (max-width:900px) {
+    #info {
+        width: 40%;
+    }
+    #info img {
         width: 150px;
         height: 150px;
     }
-    #info p{
+    #info p {
         margin-top: 0;
         font-size: 25px;
     }
-    #retangulo{
-       height: 100%;
-       width: auto;
-       margin-top: 0; 
+    #retangulo {
+        height: 100%;
+        width: auto;
+        margin-top: 0;
     }
-    form{margin-bottom: 0;}
-    h1{margin-top: 0;}
-    #btnLogin{margin-bottom: 10px;}
-
+    form {
+        margin-bottom: 0;
+    }
+    h1 {
+        margin-top: 0;
+    }
+    #btnLogin {
+        margin-bottom: 10px;
+    }
 }

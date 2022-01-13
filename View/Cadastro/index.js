@@ -26,7 +26,8 @@ function SwitchForm(op) {
         document.getElementById("changeU").style.background = "white";
     }
 }
-function home(){window.location.assign("../index.html");}
+
+function home() { window.location.assign("../index.html"); }
 
 // Código JS Back-End - Cadastro Usuario
 
@@ -56,7 +57,7 @@ $(document).ready(() => {
         } else {
             $.ajax({
                     method: "POST",
-                    // https://backend-recyclo.herokuapp.com/usuario/criar/
+
                     url: "https://backend-recyclo.herokuapp.com/usuario/criar/",
                     data: { nome: nome, email: email, celular: celular, cpf: cpf, senha: senha, confSenha: ConfirmSenha },
                     beforeSend: function() {
@@ -77,7 +78,10 @@ $(document).ready(() => {
                         'Parabéns!',
                         'Cadastrado com sucesso!',
                         'success'
-                    )
+                    ).then(() => {
+                        window.location.assign("../Login/index.html");
+                    })
+
 
                 })
                 .fail(function(msg) {
@@ -113,8 +117,6 @@ $(document).ready(() => {
         var senha = document.getElementById("Senha").value;
         var ConfirmaSenha = document.getElementById("ConfirmarSenha").value;
 
-        // var url = "http://localhost:8080/empresa/criar/";
-        // var url = "https://backend-recyclo.herokuapp.com/empresa/criar/";
 
         if (senha != ConfirmaSenha) {
             Swal.fire({
@@ -145,8 +147,12 @@ $(document).ready(() => {
                     Swal.fire(
                         'Parabéns!',
                         'Cadastrado com sucesso!',
-                        'success'
-                    )
+                        'success',
+
+                    ).then(() => {
+                        window.location.assign("../Login/index.html");
+                    })
+
                 })
                 .fail(function(msg) {
                     if (msg.responseText == 'Empresa já cadastrada') {

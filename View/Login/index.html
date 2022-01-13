@@ -18,18 +18,19 @@
 
     <title>Login</title>
 </head>
+
 <body>
     <div id="info">
         <img id="logo" title="home" onclick="home()" src="../img/LogoRecycloV1.png">
         <p>Ajude a tornar o mundo mais consciente</p>
     </div>
-    
+
     <div id="retangulo">
         <img id="logoMob" src="../img/LogoRecycloV1.png">
         <h1>Login</h1>
         <ul>
-            <li id="changeU"onclick="SwitchForm(false)" style="float: left; margin-left:5vw ;">Usuario</li>
-            <li id="changeE"onclick="SwitchForm(true)"  style="float: right; margin-right:5vw ;">Empresa</li>
+            <li id="changeU" onclick="SwitchForm(false)" style="float: left; margin-left:5vw;cursor: pointer;">Usuario</li>
+            <li id="changeE" onclick="SwitchForm(true)" style="float: right; margin-right:5vw;cursor: pointer;">Empresa</li>
         </ul>
         <div id="formUsuario">
             <form id="formUsuario" method="POST">
@@ -42,11 +43,15 @@
         <div id="formEmpresa">
             <form id="formCompany" method="POST">
                 <input required type="text" placeholder="Email: example@.com" id="razao" name="razao">
-                <input  required type="password" id="senhaEmpresa" placeholder="Senha:" name="senhaEmpresa">
+                <input required type="password" id="senhaEmpresa" placeholder="Senha:" name="senhaEmpresa">
                 <input id="btnLogin" type="submit" value="Entrar">
             </form>
         </div>
-         <a href="../senha/index.html">Esqueceu a senha?</a>
+        <a href="../senha/index.html">Esqueceu a senha?</a>
+        <br>
+        <br>
+        <a href="../Cadastro/index.html">Cadastre-se</a>
         <script src="js/index.js"></script>
 </body>
+
 </html>
