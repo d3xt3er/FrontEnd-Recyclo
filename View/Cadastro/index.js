@@ -34,6 +34,7 @@ function home() { window.location.assign("../index.html"); }
 $(document).ready(() => {
 
     $("#cpf").mask("999.999.999-99");
+    $("#celular").mask("(00) 0000-00000");
 
     $("#formUser").submit((event) => {
 

@@ -17,7 +17,9 @@ $(document).ready(() => {
         var email = document.getElementById("email").value;
 
         var request = new XMLHttpRequest();
-        var url = "http://localhost:3000/usuario/editar/" + email;
+        // https://backend-recyclo.herokuapp.com/
+        // http://localhost:3000/
+        var url = "https://backend-recyclo.herokuapp.com/usuario/editar/" + email;
 
         request.open("GET", url, true);
         request.setRequestHeader("Content-Type", "application/json");
