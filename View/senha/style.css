@@ -1,15 +1,4 @@
-* {
-    margin: 0;
-    padding: 0;
-    /* font-family: Arial; */
-    font-family: 'Roboto', sans-serif;
-    scroll-behavior: smooth;
-}
 
-body {
-    text-align: center;
-    background-color: white;
-}
 div{
     position: absolute;
     left: 25%;
@@ -18,17 +7,19 @@ div{
     background: whitesmoke;
     padding: 20px;
     border-radius: 20px;
+    text-align: center;
 }
 img{
     height: 70px;
 }
 form{
+    padding: 20px;
     text-align: center;
 }
 form input{
+   width: 100%;
     font-size: 18px;
     height: 40px;
-    width: 400px;
     margin-top: 5px;
     border: 0;
     border-radius: 5px;
@@ -37,8 +28,8 @@ form input{
 }
 @media only screen and (max-width:600px) {
     div{
-        left: 15%;
-        right: 15%;
+        left: 5%;
+        right: 5%;
     }
     form input{
         height: 30px;

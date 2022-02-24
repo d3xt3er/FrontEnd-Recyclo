@@ -1,44 +1,3 @@
-* {
-    margin: 0;
-    padding: 0;
-    /* font-family: Arial; */
-    font-family: 'Roboto', sans-serif;
-    scroll-behavior: smooth;
-}
-
-body {
-    text-align: center;
-    background-color: white;
-}
-#nav {
-    list-style-type: none;
-    margin: 0;
-    padding: 5px;
-    overflow: hidden;
-    background-color: rgba(90, 190, 65);
-    box-shadow: -7px 4px 16px #000;
-}
-
-#nav li {
-    float: right;
-}
-
-.lia {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-.lia:hover {
-    background-color: rgb(83, 83, 83);
-    border-radius: 5px;
-    transition: 1.2s;
-}
-
 #logoTitulo {
     height: 20vw;
 }
@@ -189,55 +148,24 @@ input{
     height: 30px;
     float: right;
 }
-#navMob{display: none;}
-#mob{display: none;}
+
 @media only screen and (max-width:600px) {
-    
-    .lia{display: none;}
-    #mob{
-        border-radius: 5px;
-        height: 50px;
-        display: initial;}
-    #mob img{height: 50px;}
-    #mob:active{
-        background: rgba(245, 245, 245, 0.479);
+    #sair:hover{
+        background: rgba(255, 44, 44,0.8);
     }
-    #navMob{
-        width: 200px;
-        position: absolute;
-        height: 380px;
-        right: 0;
-        list-style: none;
-        text-align: center;
-        padding: 10px;
-        background: rgba(245, 245, 245, 0.822);
-    }
-    #navMob li{
-        height: 75px;
-        width: 100%;
-        padding-top: 30px;
-        border-radius: 5px;
-    }
-    #navMob li:hover{
-        background: #5ABE41;
-    }
-    #navMob a{
-        color: black;
-        text-decoration: none;
-        font-size: 25px;
-        letter-spacing: 2px;
-        font-weight: bolder;
-    }
-    #sair:hover{background: rgba(255, 44, 44,0.8);}
-    #home{padding: 10px;}
-    #home ul{height: 50px;}
-    #home ul li{font-size: 20px;}
-    .btn{width: 100%;}
+    #home{
+        padding: 10px;}
+    #home ul{
+        height: 50px;}
+    #home ul li{
+        font-size: 20px;}
+    .btn{
+        width: 100%;}
     #btnEditar{
         margin-left: 0;
         margin-right: 0;
         float: left;}
-        #btnEditarSenha{margin-right: 0;}
+    #btnEditarSenha{margin-right: 0;}
         input{
         width: 65vw;
         height: 38px;}
