@@ -10,6 +10,7 @@
     <script src="../index.js"></script>
     <script src="../sweetalert.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&family=Roboto:wght@100&display=swap" rel="stylesheet">
     <title>Esqueceu a senha</title>
@@ -18,11 +19,16 @@
     <div id="frm">
        <img onclick="goHome()" src="../img/LogoRecycloV1.png" >
         <form method="post">
-            <input id="" placeholder="Senha Atual:" type="password">
-            <input id="" placeholder="Nova Senha:" type="password">
-            <input id="" placeholder="Repita sua nova senha:" type="password">
-            <input id="btn" value="Confirmar nova senha" type="submit">
+
+            <input id="email" placeholder="Email:" type="email" required>
+            <input id="novaSenha" placeholder="Nova Senha:" type="password" disabled>
+            <input id="novaSenhaRepeat" placeholder="Repita sua nova senha:" type="password" disabled>
+            <input id="btn" type="submit">
+
         </form>
+        <br>
+        <button class="btn" >Voltar</button>
     </div>
+    <script src="index.js"></script>
 </body>
 </html>

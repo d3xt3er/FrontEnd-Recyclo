@@ -25,7 +25,30 @@ form input{
     border-radius: 5px;
 }
 #btn{ background: #35d786;
+    cursor: pointer;
+    font-weight: 600;
+
 }
+
+.btn {
+    background: #35d786;
+        cursor: pointer;
+        font-size: 18px;
+        height: 40px;
+        width: 100px;
+        margin-top: 5px;
+        font-weight: 600;
+        border: 0;
+        border-radius: 5px;
+    }
+
+
+
+#btn:hover{
+    background: #2ba568;
+    transition: 0.5s;
+}
+
 @media only screen and (max-width:600px) {
     div{
         left: 5%;
