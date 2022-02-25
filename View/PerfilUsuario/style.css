@@ -1,3 +1,4 @@
+body{text-align: center;}
 #logoTitulo {
     height: 20vw;
 }
@@ -21,7 +22,7 @@
     margin: 30px 10% 10% 10%;
     text-align: center;
     padding: 20px;
-    display: inline-grid;
+    display: flow-root;
     
 }
 h3{
@@ -116,7 +117,7 @@ input{
     overflow-x: hidden;
 }
 #h3Denuncia {
-    margin-top: 25px;
+    margin-top: 98px;
     text-align: center;
     margin-bottom: 20px;
 }

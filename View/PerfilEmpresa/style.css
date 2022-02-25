@@ -5,7 +5,9 @@
     scroll-behavior: smooth;
 }
 
-body {background: white}
+body {
+    text-align: center;    
+}
 /*-- navbar --*/
 #nav {
     list-style-type: none;

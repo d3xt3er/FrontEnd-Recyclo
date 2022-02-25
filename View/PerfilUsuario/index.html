@@ -18,17 +18,17 @@
 <body>
     <ul id="nav">
         <li id="mob"><img onclick="showMenu()" src="../img/icones/menu.png"></li>
-        <li><a class="lia" onclick="Logout()">Sair</a></li>
-        <li><a class="lia" href="../mapa_usuario/index.html">Mapa</a></li>
-        <li style="float:left"><img id="logo" title="Home" src="../img/LogoRecycloV1.png" onclick="window.location.assign('../index.html')"></li>
+  
+        <li style="float:left">
+            <a href="../index.html">
+                <img id="logo" src="../img/LogoRecycloV1.png" alt="">
+            </a>
+        </li>
         <li id="titulo" style="float:left"><a>Recyclo</a></li>
     </ul>
 
     <ul id="navMob" style="display: none;">
-        <li><a href="../Login/index.html">Entrar</a></li>
-        <li><a href="../mapa_principal/index.html">Mapa</a></li>
-        <li><a href="../Sobre/index.html">Sobre</a></li>
-        <li><a id="sair" onclick="Logout()">Sair</a></li>
+  
     </ul>
 
     <div id="home">
@@ -81,7 +81,7 @@
         </div>
     </div>
     <script src="index.js"></script>
-    <script src="../index.js"></script>
+    <script src="../navBar.js"></script>
 </body>
 
 </html>
