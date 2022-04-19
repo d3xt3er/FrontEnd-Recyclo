@@ -10,82 +10,109 @@
     <link rel="icon" href="../img/LogoRecycloV1.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&family=Roboto:wght@100&display=swap" rel="stylesheet">
     <title>Recyclo - Sobre</title>
 </head>
-
-<style type="text/css">
-    cite {
-        display: block;
-    }
-</style>
-
 <body>
-    <!--nav-->
-    <ul id="nav">
-        <li id="mob"><img onclick="showMenu()" src="../img/icones/menu.png" ></li>
-        <li style="float:left">
-            <a href="../index.html">
-                <img id="logo" src="../img/LogoRecycloV1.png" alt="">
-            </a>
-        </li>
-        <li id="titulo" style="float:left"><a>Recyclo</a></li>
-    </ul>
-
-    <ul id="navMob" style="display: none;">
-      
-    </ul>
-    <div id="home">
-        <div id="intro">
-            <img id="logoTitulo" src="../img/LogoRecycloV1.png">
-            <h1>Recyclo</h1>
+    <!-- Navbar desktop e mobile horizontal-->
+    <nav id="nav" class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container-fluid">
+          <a id="titulo" class="navbar-brand" href="../index.html">
+            <img src="../img/LogoRecycloV1.png" height="40" width="40">  
+            Recyclo</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end " id="navbarNavAltMarkup">
+            <div class="nav navbar-nav navbar-right">
+              <a class="nav-link" href="./Sobre/index.html">Sobre</a>
+              <a class="nav-link" href="../Login/index.html">Login</a>
+              <a class="nav-link" href="../mapa_principal/index.html">Mapa</a>
+            </div>
+          </div>
         </div>
-        <div id="textSobre">
-            <p>
-                O seguinte projeto desenvolvido por alunos do curso de Análise e Desenv. de Sistemas da FSV - (Faculdade de São Vicente) - Unibr com enfâse em reciclagem, aqui nosso agradecimento e desempenho em programar um software para fins acadêmicos, demonstrar
-                nosso conhecimento como Técnicos em Desenvolvimento de Sistemas pela ETEC Ruth Cardoso agregado aos ensinamentos das aulas no curso.
-            </p>
-            <br>
-            <article>
-                <blockquote>
-                    <p style="
-                    font-style: italic;
-                    margin-left: 50%;
-                    text-align: justify;">
-                        "Seu trabalho vai preencher uma parte grande da sua vida, e a única maneira de ficar realmente satisfeito é fazer o que você acredita ser um ótimo trabalho. E a única maneira de fazer um excelente trabalho é amar o que você faz."
-                    </p>
-                    <cite style="text-align: end;"> - Steve Jobs</cite>
-                </blockquote>
-            </article>
+      </nav>
 
-            <div id="devs">
-                <h2 style="margin-bottom: 17px;">Desenvolvedores</h2>
-                <div id="Separador">
+      <!-- Navbar mobile vertical-->
+      <nav id="navMob" class="navbar navbar-dark fixed-top">
+        <div class="container-fluid">
+            <a id="titulo" class="navbar-brand" href="index.html">
+                <img src="../img/LogoRecycloV1.png" height="40" width="40">  
+                Recyclo</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+              <button type="button" class="btn-close text-reset bg-light" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="../Login/index.html">Login</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../mapa_principal/index.html">Mapa</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
 
-                    <div class="dev">
-                        <img class="imgDev" src="https://d3xt3er.github.io/paulojose.github.io/images/Eu.jpg">
-                        <h2>Paulo José</h2>
-                        <h3>Back-end</h3>
-                        <div style="margin: 24px 0;">
-                            <a href="https://www.linkedin.com/in/paulo-santos-258125189/" ><img title="linkedin" src="../img/icones/linkedin.png" alt=""></a>
-                            <a href="https://github.com/d3xt3er"><img title="Github" src="../img/icones/Git.png" alt=""></a>
-                        </div>
+
+    <div id="intro" class="cover-container">
+        
+        <img src="../img/LogoRecycloV1.png" id="logoTitulo">
+        <h1>Recyclo</h1>
+    </div>
+
+    <div id="textSobre">
+        <p>
+            O seguinte projeto desenvolvido por alunos do curso de Análise e Desenv. de Sistemas da FSV - (Faculdade de São Vicente) - Unibr com enfâse em reciclagem, aqui nosso agradecimento e desempenho em programar um software para fins acadêmicos, demonstrar
+            nosso conhecimento como Técnicos em Desenvolvimento de Sistemas pela ETEC Ruth Cardoso agregado aos ensinamentos das aulas no curso.
+        </p>
+        <br>
+        <article>
+            <blockquote>
+                <p style="
+                font-style: italic;
+                margin-left: 50%;
+                text-align: justify;">
+                    "Seu trabalho vai preencher uma parte grande da sua vida, e a única maneira de ficar realmente satisfeito é fazer o que você acredita ser um ótimo trabalho. E a única maneira de fazer um excelente trabalho é amar o que você faz."
+                </p>
+                <cite style="text-align: end;"> - Steve Jobs</cite>
+            </blockquote>
+        </article>
+
+        <div id="devs">
+            <h2 style="margin-bottom: 17px;">Desenvolvedores</h2>
+            <div id="Separador">
+
+                <div class="dev">
+                    <img class="imgDev" src="https://d3xt3er.github.io/paulojose.github.io/images/Eu.jpg">
+                    <h2>Paulo José</h2>
+                    <h3>Back-end</h3>
+                    <div style="margin: 24px 0;">
+                        <a href="https://www.linkedin.com/in/paulo-santos-258125189/" ><img title="linkedin" src="../img/icones/linkedin.png" alt=""></a>
+                        <a href="https://github.com/d3xt3er"><img title="Github" src="../img/icones/Git.png" alt=""></a>
                     </div>
-                    <div style="float: right;" class="dev">
-                        <img class="imgDev" src="../img/Caio.jpeg">
-                        <h2>Caio Corrêa</h2>
-                        <h3>Front-End</h3>
-                        <div style="margin: 24px 0;">
-                            <a href="https://www.linkedin.com/in/caio-corrêa-jesus-4aa4731b2/"><img title="linkedin" src="../img/icones/linkedin.png" alt=""></a>
-                            <a href="https://github.com/CaioCDJ"><img title="Github" src="../img/icones/Git.png" alt=""></a>
-                        </div>
+                </div>
+                <div style="float: right;" class="dev">
+                    <img class="imgDev" src="../img/Caio.jpeg">
+                    <h2>Caio Corrêa</h2>
+                    <h3>Front-End</h3>
+                    <div style="margin: 24px 0;">
+                        <a href="https://www.linkedin.com/in/caio-corrêa-jesus-4aa4731b2/"><img title="linkedin" src="../img/icones/linkedin.png" alt=""></a>
+                        <a href="https://github.com/CaioCDJ"><img title="Github" src="../img/icones/Git.png" alt=""></a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <footer>Copyright @Recyclo</footer>
     <script src="../navBar.js"></script>
+    <footer>Copyright @Recyclo</footer>
 </body>
-
 </html>

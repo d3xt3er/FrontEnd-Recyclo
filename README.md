@@ -1,8 +1,15 @@
-# Recyclo
+# **RECYCLO**
 
-<p>
-<b>Front-End do sistema "Recyclo" juntamente em desenvovlvimento com o Back-End durante o 3º, 4º e 5º semestre do curso de Análise e Desenvolvimento de Sistemas FSV - Faculdade de São Vicente - Unibr.</b>
-</p>
+<center>
+    <img src="View/img/LogoRecycloV1.png" height="200px">
+</center>
+
+
+Front-End do sistema "Recyclo" juntamente em desenvovlvimento com o Back-End durante o 3º, 4º e 5º semestre do curso de Análise e Desenvolvimento de Sistemas FSV - Faculdade de São Vicente - Unibr.
+
+
+![GitHub last commit](https://img.shields.io/github/last-commit/d3xt3er/FrontEnd-Recyclo)
+![GitHub top language](https://img.shields.io/github/languages/top/d3xt3er/FrontEnd-Recyclo)
 
 ## Integrantes
  - Paulo José `<d3xt3er>` : <https://github.com/d3xt3er> 
@@ -10,10 +17,14 @@
  <hr>
  
  ## Tecnologias || Linguagens 
- <center>:computer:</center>
+
  - <b>HTML</b>
  - <b>CSS</b>
  - <b>JavaScript</b>
  - <b>Bing Maps</b>
  - <b>SweetAlert</b>
  - <b>jQuery</b>
+  
+## Back-End
+
+<https://github.com/d3xt3er/Backend-Recyclo>

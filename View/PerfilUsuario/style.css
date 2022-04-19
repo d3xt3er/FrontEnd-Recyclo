@@ -156,6 +156,9 @@ input{
     }
     #home{
         padding: 10px;}
+    #home h1{
+        margin-top: 10vh;
+    }
     #home ul{
         height: 50px;}
     #home ul li{

@@ -128,7 +128,10 @@ $(document).ready(() => {
 
                     localStorage['email'] = razao;
                     localStorage['senha'] = senha;
-
+                    /*
+                        localStorage['Tipo'] = 'usuario' || empresa
+                        Facilitar a manipulacao da navbar 
+                    */
                 } else if (json == 'Usuario não existente') {
                     Swal.fire({
                         icon: 'error',

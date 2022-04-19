@@ -2,13 +2,13 @@
     background: url("../img/sobre.png") no-repeat;
     background-size: cover;
     background-position-y: center;
-    height: 30vw;
+    height: 100vh;
     text-align: center;
 }
 
 #logoTitulo {
     height: 18vw;
-    margin-top: 3%;
+    margin-top: 20%;
 }
 
 h1 {
@@ -20,6 +20,7 @@ h1 {
 }
 
 #textSobre {
+    background: white;
     border-radius: 9px;
     margin: 20px;
     padding: 20px;
@@ -106,7 +107,7 @@ footer {
     margin: 0 auto;
     left: 0;
     bottom: 0;
-    background-color: rgb(90, 190, 65);
+    background-color: #5ABE41;
     color: white;
     text-align: center;
 }
@@ -117,7 +118,11 @@ footer {
 @media only screen and (max-width:600px) {
     
     #intro {
-        height: 70vw;
+        height: 150vw;
+    }
+    #logoTitulo {
+        height: 20vh;
+        margin-top: 50%;
     }
     #textSobre p {
         font-size: 15px;
@@ -141,8 +146,13 @@ footer {
     }
 }
 @media only screen and (max-width:800px ) and  (max-height:500px){
-    #logoTitulo{margin: 0;}
-    .dev{margin: 0 0 0 0}
-    #mob{display: none;}
-    #navMob{display: none;}
+    #logoTitulo{
+        margin: 0;}
+    .dev{
+        margin: 0 0 0 0
+    }
+    #logoTitulo {
+        margin-top: 15%;
+    }
+    
 }

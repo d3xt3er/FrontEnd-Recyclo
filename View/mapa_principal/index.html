@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="../DefautStyle.css">
     <link rel="icon" href="../img/LogoRecycloV1.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src='https://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=AijOdUHzY5DvlON3_9lG2KYowiYa4tVQJEDyckIt6enyt7lxUK0yXzMBgLnhTHqV' async defer></script>
     <script src="../sweetalert.js"></script>
@@ -16,24 +18,83 @@
 </head>
 
 <body onload="GetMap()">
+ <!-- Navbar desktop e mobile horizontal-->
+ <nav id="nav" class="navbar navbar-expand-lg navbar-dark fixed-top" style="background:#5ABE41 ;">
+  <div class="container-fluid">
+    <a id="titulo" class="navbar-brand" href="../index.html">
+      <img src="../img/LogoRecycloV1.png" height="40" width="40">  
+      Recyclo</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end " id="navbarNavAltMarkup">
+      <div class="nav navbar-nav navbar-right">
+        <a class="nav-link" href="./Sobre/index.html">Sobre</a>
+        <a class="nav-link" href="../Login/index.html">Login</a>
+        <a class="nav-link" href="../mapa_principal/index.html">Mapa</a>
+      </div>
+    </div>
+  </div>
+</nav>
 
-    <!-- navbar -->
-    <ul id="nav">
-        <li id="mob"><img onclick="showMenu()" src="../img/icones/menu.png" ></li>
-        <li><a class="lia"  href="index.html">Sobre</a></li>
-        <li><a class="lia" href="mapa_principal/index.html">Mapa</a></li>
-        <li><a class="lia" href="Login/index.html">Entrar</a></li>
-        <li style="float:left">
-            <a href="../index.html">
-                <img id="logo" src="../img/LogoRecycloV1.png" alt="">
-            </a>
-        </li>
-        <li id="titulo" style="float:left"><a>Recyclo</a></li>
-    </ul>
+<!-- Navbar mobile vertical-->  
+  <nav id="navMob" class="navbar navbar-dark fixed-top" style="background:#5ABE41 ;">
+    <div class="container-fluid">
+        <a id="titulo" class="navbar-brand">
+            <img src="../img/LogoRecycloV1.png" height="40" width="40">  
+            Recyclo</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <button type="button" class="btn-close text-reset bg-light" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="../Login/index.html">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../mapa_principal/index.html">Mapa</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+    </div>
+  </nav>
+
+
+    <!-- Navbar mobile vertical-->
+    <nav id="navMob" class="navbar navbar-dark fixed-top">
+      <div class="container-fluid">
+          <a id="titulo" class="navbar-brand" href="index.html">
+              <img src="../img/LogoRecycloV1.png" height="40" width="40">  
+              Recyclo</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
+            <button type="button" class="btn-close text-reset bg-light" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="../Login/index.html">Login</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../Sobre/index.html">Sobre</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
 
 
     <!-- Mapa -->
-    <div id="myMap" style="height: 100%; position: absolute">
+    <div id="myMap" style="height: 100%; margin-top:84px;position: absolute">
     
     </div>
     
@@ -47,7 +108,7 @@
     </div>
 -->
 
-
+<script src="../navBar.js"></script>
 </body>
 
 </html>

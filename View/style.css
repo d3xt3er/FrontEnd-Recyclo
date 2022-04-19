@@ -1,6 +1,3 @@
-body {
-    background-color: whitesmoke;
-}
 
 .btn {
     width: 200px;
@@ -30,7 +27,7 @@ h3 {
 /*-- Base --*/
 
 .Content {
-    height: 500px;
+    height: 100vh;
     text-align: center;
     padding: 20px;
 }
@@ -59,35 +56,30 @@ h1 {
     background: url("img/Inicio.jpg") no-repeat;
     background-size: cover;
     background-position-y: center;
+    height: 100vh;
 }
-
+#row{
+    margin-top: 10vh;
+}
+.row .col-md-6{
+    margin-top: 15px;
+}
 #inicio p {
     margin-top: 50px;
-    width: 60%;
+    margin-left: 5vh;
+}
+#inicio img{
+    height:auto;
 }
 
-#inicio img {
-    height: 250px;
-    right: 15px;
-    background: url(../View/img/mapa.PNG) no-repeat;
-    background-size: cover;
-    border-radius: 15px;
-    margin-left: 5px;
-    border-style: inset;
-    border-color: rgba(90, 190, 65, 0.3);
-}
-
-#inicio div {
-    text-align: center;
-    display: inline-flex;
-    margin-top: 20px;
-}
 
 
 /*-- cadastro --*/
 
 #cadastrar {
-    padding: 50px;
+  margin: auto;
+  text-align: center;
+  padding: 20px;
 }
 
 #cadastrar div {
@@ -107,6 +99,10 @@ h1 {
 
 #cadastrar button {
     margin-top: 10px;
+    border-style: solid;
+    border-width: 5px;
+    border-radius: 5px;
+    border-color: #5ABE41;
 }
 
 #cadastrar h1 {
@@ -115,9 +111,10 @@ h1 {
 
 #cadastrar p {
     color: black;
-    width: 60%;
+    padding-left: 15%;
+    padding-right: 15%;
     text-align: justify;
-    margin-left: 20%;
+    
 }
 
 
@@ -127,17 +124,24 @@ h1 {
     background: url("../View/img/sobre.png") no-repeat;
     background-size: cover;
     padding: 10vw;
-    height: 300;
+    height: auto;
 }
 
 #sobre p{
     margin-top: 15px; 
-    text-align: justify;}
-#sobre h3{color:white}
+    text-align: justify;
+}
+#sobre h3{
+    color:white
+}
 #sobre button{
-
     margin-top: 50px;
+    border-style: solid;
+    border-width: 5px;
+    border-radius: 5px;
+    border-color: #5ABE41;
     color: white;
+    
 }
 
 footer {
@@ -146,11 +150,10 @@ footer {
     text-align: center;
     padding: 20px;
 }
-#mob{display: none;}
 
 /*-- Mobile --*/
 
-@media only screen and (max-width:600px) {
+@media only screen and (max-width:700px) {
     h1 {
         font-size: 30px;
     }
@@ -160,18 +163,21 @@ footer {
     h3 {
         font-size: 30px;
     }
-    #inicio img {
-        height: 40vw;
-        margin-left: 10vw;
+    #row{
+        margin-top: 15vh;
     }
     #inicio p {
         margin-top: 10px;
+        margin-left: 0;
         width: 100%;
         text-align: justify;
+        font-weight: 1000;
+        color: white;
+        font-family: arial;
+      
     }
     #inicio div {
         display: flex;
-        flex-flow: wrap-reverse;
     }
     .btn {
         width: 150px;
@@ -179,6 +185,7 @@ footer {
     }
     #cadastrar {
         padding: 25px;
+        height: auto;
     }
     #cadastrar img {
         width: 100px;
@@ -195,16 +202,27 @@ footer {
         margin-left: 0;
         text-align: justify;
     }
+    
 }
 
-/*-- Horizontal --*/
-@media only screen and (min-width:600px) and (max-height:500px){
-    #inicio div {margin-top: 30px;}
-    #inicio p {margin-top: 0;}
-    #inicio img {height: 170px ;}
 
-    #cadastrar p {
-        width: 77%;
-        margin-left: 15%;
+/*-- Horizontal --*/
+@media all and (orientation:landscape){
+    p{
+        font-size: 25px;
     }
+    #inicio{
+       height: 150vh;
+   }
+   #row{
+       margin-top:10vh ;
+   }
+   .Content{
+       height: 150vh;
+   }
+   #cadastrar p{
+        width: auto;
+        margin-left: 0;
+   }
+
 }

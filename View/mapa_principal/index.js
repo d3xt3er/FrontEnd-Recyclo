@@ -68,7 +68,6 @@ function GetMap() {
         menu.appendChild(liLogin);
         menu.appendChild(li);
 
-        this.setHtmlElement(container);
         this.setHtmlElement(menu);
     }
     const overlay = new PanningOverlay();
