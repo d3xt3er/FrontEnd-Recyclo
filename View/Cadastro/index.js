@@ -30,14 +30,12 @@ function SwitchForm(op) {
 function home() { window.location.assign("../index.html"); }
 
 // Código JS Back-End - Cadastro Usuario
-
 $(document).ready(() => {
 
     $("#cpf").mask("999.999.999-99");
     $("#celular").mask("(00) 0000-00000");
 
     $("#formUser").submit((event) => {
-
 
         event.preventDefault();
 
@@ -49,17 +47,22 @@ $(document).ready(() => {
         var ConfirmSenha = document.getElementById("ConfirmarSsenha").value;
 
         if (senha != ConfirmSenha) {
+
             Swal.fire({
                 icon: 'error',
                 title: 'Desculpe,',
                 text: 'Senhas são diferentes!',
             })
-            return false;
-        } else {
-            $.ajax({
-                    method: "POST",
 
+            return false;
+
+        } else {
+
+            $.ajax({
+
+                    method: "POST",
                     url: "https://backend-recyclo.herokuapp.com/usuario/criar/",
+                    // url: "http://localhost:3000/usuario/criar",
                     data: { nome: nome, email: email, celular: celular, cpf: cpf, senha: senha, confSenha: ConfirmSenha },
                     beforeSend: function() {
                         Swal.fire({
@@ -75,6 +78,7 @@ $(document).ready(() => {
                         });
                     }
                 }).done(function(msg) {
+
                     Swal.fire(
                         'Parabéns!',
                         'Cadastrado com sucesso!',
@@ -83,25 +87,24 @@ $(document).ready(() => {
                         window.location.assign("../Login/index.html");
                     })
 
-
                 })
                 .fail(function(msg) {
-                    if (msg.responseText == 'Usuário já cadastrado') {
+
+                    if (msg.status === 400) {
                         Swal.fire({
                             icon: 'error',
                             title: 'Desculpe,',
-                            text: 'Este E-mail ou CPF de usuário ja existe!',
+                            text: 'Este E-mail ou CNPJ de usuário ja existe!',
                         })
                     }
+
                 });
         }
 
     });
 });
 
-
 // Código JS Back-End - Cadastro Empresa
-
 $(document).ready(() => {
 
     $("#cnpj").mask("99.999.999/9999-99");
@@ -118,19 +121,22 @@ $(document).ready(() => {
         var senha = document.getElementById("Senha").value;
         var ConfirmaSenha = document.getElementById("ConfirmarSenha").value;
 
-
         if (senha != ConfirmaSenha) {
             Swal.fire({
                 icon: 'error',
                 title: 'Desculpe,',
                 text: 'Senhas são diferentes!',
             })
+
             return false;
+
         } else {
+
             $.ajax({
                     method: "POST",
                     url: "https://backend-recyclo.herokuapp.com/empresa/criar/",
-                    data: { nome: razao, email: email, telefone: telefone, cnpj: cnpj, senha: senha, confSenha: ConfirmaSenha },
+                    // url: "http://localhost:3000/empresa/criar",
+                    data: { nome: razao, cnpj: cnpj, telefone: telefone, email: email, senha: senha, confSenha: ConfirmaSenha },
                     beforeSend: function() {
                         Swal.fire({
                             title: 'Aguarde...',
@@ -145,25 +151,27 @@ $(document).ready(() => {
                         });
                     }
                 }).done(function(msg) {
-                    Swal.fire(
-                        'Parabéns!',
-                        'Cadastrado com sucesso!',
-                        'success',
 
-                    ).then(() => {
-                        window.location.assign("../Login/index.html");
-                    })
+                        Swal.fire(
+                            'Parabéns!',
+                            'Cadastrado com sucesso!',
+                            'success',
+    
+                        ).then(() => {
+                            window.location.assign("../Login/index.html");
+                        })               
+                    
+                }).fail(function(msg) {
 
-                })
-                .fail(function(msg) {
-                    if (msg.responseText == 'Empresa já cadastrada') {
+                    if (msg.status === 400) {
                         Swal.fire({
                             icon: 'error',
                             title: 'Desculpe,',
                             text: 'Este E-mail ou CNPJ de usuário ja existe!',
                         })
                     }
-                });
+
+            })
         }
 
     });

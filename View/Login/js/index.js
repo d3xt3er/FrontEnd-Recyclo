@@ -31,8 +31,11 @@ function home(){window.location.assign("../index.html");}
 
 // Login - Usuario
 $(document).ready(() => {
+
     $("#formUsuario").submit((event) => {
+
         Swal.fire({
+
             title: 'Aguarde...',
             html: '<img src="./Gif-Recyclo.gif" alt="description of gif" style="display: block;  margin-left: auto;margin-right: auto;" width="200" height="200" /> ',
             //lembrar que tira o click do fundo 
@@ -42,15 +45,17 @@ $(document).ready(() => {
             onBeforeOpen: () => {
                 Swal.showLoading()
             },
+
         });
+
         event.preventDefault();
 
         var email = document.getElementById("email").value;
         var senha = document.getElementById("senha").value;
 
         var request = new XMLHttpRequest();
-        // var url = "http://localhost:8080/usuario/login/" + email + "/" + senha + "";
-        var url = "https://backend-recyclo.herokuapp.com/usuario/login/" + email + "/" + senha + "";
+        var url = "http://localhost:8080/usuario/login/" + email + "/" + senha + "";
+        // var url = "https://backend-recyclo.herokuapp.com/usuario/login/" + email + "/" + senha + "";
 
         request.open("GET", url, true);
         request.setRequestHeader("Content-Type", "application/json");
@@ -80,7 +85,9 @@ $(document).ready(() => {
                 }
             }
         };
+
         request.send();
+
     });
 });
 
@@ -88,9 +95,10 @@ $(document).ready(() => {
 // Login - Empresa
 $(document).ready(() => {
 
-
     $("#formCompany").submit((event) => {
+
         Swal.fire({
+
             title: 'Aguarde...',
             html: '<img src="./Gif-Recyclo.gif" alt="description of gif" style="display: block;  margin-left: auto;margin-right: auto;" width="200" height="200" /> ',
             //lembrar que tira o click do fundo 
@@ -100,7 +108,9 @@ $(document).ready(() => {
             onBeforeOpen: () => {
                 Swal.showLoading()
             },
+
         });
+
         event.preventDefault();
 
         var razao = document.getElementById("razao").value;
@@ -117,6 +127,7 @@ $(document).ready(() => {
         request.onreadystatechange = function() {
 
             if (request.readyState === 4 && request.status === 200) {
+
                 var json = (request.responseText);
 
                 if (json == 'Usuario encontrado!') {
@@ -139,8 +150,11 @@ $(document).ready(() => {
                         text: 'Não te encontramos em nosso sistema!',
                     })
                 }
+
             }
         };
+
         request.send();
+        
     });
 });
