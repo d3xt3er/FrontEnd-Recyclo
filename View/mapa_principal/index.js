@@ -33,42 +33,17 @@ function GetMap() {
         this.panBtn.title = 'Fazer Denuncia';
         this.panBtn.onclick = function(){gerarDenuncia();
         }
-
-        this.linkLogin = document.createElement('a');
-        this.linkLogin.innerText='Login';
-        this.linkLogin.href='../Login/index.html';
-
-        this.Link = document.createElement('a');
-        this.Link.innerText='Mapa';
-        this.Link.href='../mapa_principal/index.html';
-        
-        this.index = document.createElement('a');
-        this.index.innerText='Home';
-        this.index.href='index.html"';
-
     }
     PanningOverlay.prototype.onAdd = function () {
         const container = document.createElement('div');
         container.appendChild(this.panBtn);
         container.id='divBnt';
-        container.style.top = '41vw';
+        container.style.top = '80vh';
         container.style.left = '50px';
         container.style.position='absolute';
 
-        const menu = document.createElement('ul');
-        menu.id='navMobMaps';
-        menu.style.display = 'none';
 
-        var liLogin = document.createElement('li');
-        liLogin.appendChild(this.linkLogin);
-
-        var li = document.createElement('li');
-        li.appendChild(this.index);
-        
-        menu.appendChild(liLogin);
-        menu.appendChild(li);
-
-        this.setHtmlElement(menu);
+        this.setHtmlElement(container);
     }
     const overlay = new PanningOverlay();
     map.layers.insert(overlay);

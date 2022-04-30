@@ -86,7 +86,7 @@ input {
 }
 
 .btn {
-    width: 250px;
+    width: 80%;
     height: 30px;
     border: 0;
     font-family: Roboto;
@@ -159,7 +159,7 @@ input {
 /*-- denuncias --*/
 form textarea{
     margin: 0px;
-    width: 380px;
+    width: 80%;
     height: 254px;
     padding: 5px;
     margin-top: 5px;

@@ -53,10 +53,9 @@ function GetMap() {
     PanningOverlay.prototype.onAdd = function() {
         const container = document.createElement('div');
         container.appendChild(this.panBtn);
-        container.id = 'divBnt';
-        container.style.top = '41vw';
-        container.style.left = '50px';
         container.style.position = 'absolute';
+        container.style.top= '90vh';
+        container.style.left = '10px';
         this.setHtmlElement(container);
     }
     const overlay = new PanningOverlay();

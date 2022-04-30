@@ -352,7 +352,7 @@ function adicionarPonto() {
         }
     })
 }
-
+document.getElementById('nav').style.background ='#5ABE41';
 // function editarPonto() {
 //     Swal.fire({
 //         title: "Adicionar Ponto de Coleta",

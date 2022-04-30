@@ -18,80 +18,53 @@
 </head>
 
 <body onload="GetMap()">
- <!-- Navbar desktop e mobile horizontal-->
- <nav id="nav" class="navbar navbar-expand-lg navbar-dark fixed-top" style="background:#5ABE41 ;">
-  <div class="container-fluid">
-    <a id="titulo" class="navbar-brand" href="../index.html">
-      <img src="../img/LogoRecycloV1.png" height="40" width="40">  
-      Recyclo</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse justify-content-end " id="navbarNavAltMarkup">
-      <div class="nav navbar-nav navbar-right">
-        <a class="nav-link" href="./Sobre/index.html">Sobre</a>
-        <a class="nav-link" href="../Login/index.html">Login</a>
-        <a class="nav-link" href="../mapa_principal/index.html">Mapa</a>
-      </div>
-    </div>
-  </div>
-</nav>
-
-<!-- Navbar mobile vertical-->  
-  <nav id="navMob" class="navbar navbar-dark fixed-top" style="background:#5ABE41 ;">
+  <nav id="nav" class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #5ABE41;">
     <div class="container-fluid">
-        <a id="titulo" class="navbar-brand">
-            <img src="../img/LogoRecycloV1.png" height="40" width="40">  
-            Recyclo</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+      <a id="titulo" class="navbar-brand" href="../index.html">
+        <img src="../img/LogoRecycloV1.png" height="40" width="40">  
+        Recyclo</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-        <div class="offcanvas-header">
-          <button type="button" class="btn-close text-reset bg-light" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      <div class="collapse navbar-collapse justify-content-end " id="navbarNavAltMarkup">
+        <div class="nav navbar-nav navbar-right">
+          <a class="nav-link" href="../Sobre/index.html">Sobre</a>
+          <a class="nav-link" href="../Login/index.html">Login</a>
+          <a class="nav-link" href="../mapa_principal/index.html">Mapa</a>
         </div>
-        <div class="offcanvas-body">
-          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="../Login/index.html">Login</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="../mapa_principal/index.html">Mapa</a>
-            </li>
-        </ul>
       </div>
-    </div>
     </div>
   </nav>
 
-
-    <!-- Navbar mobile vertical-->
-    <nav id="navMob" class="navbar navbar-dark fixed-top">
-      <div class="container-fluid">
-          <a id="titulo" class="navbar-brand" href="index.html">
-              <img src="../img/LogoRecycloV1.png" height="40" width="40">  
-              Recyclo</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-          <div class="offcanvas-header">
-            <button type="button" class="btn-close text-reset bg-light" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-          </div>
-          <div class="offcanvas-body">
-            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="../Login/index.html">Login</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="../Sobre/index.html">Sobre</a>
-              </li>
-            </ul>
+      <!-- Navbar mobile vertical-->
+      <nav id="navMob" class="navbar navbar-dark fixed-top" style="background-color: #5ABE41;">
+        <div class="container-fluid">
+            <a id="titulo" class="navbar-brand" href="../index.html">
+                <img src="../img/LogoRecycloV1.png" height="40" width="40">  
+                Recyclo</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+              <button type="button" class="btn-close text-reset bg-light" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="../Login/index.html">Login</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../mapa_principal/index.html">Mapa</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="../Sobre/index.html">Sobre</a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
-    </nav>
-
+      </nav>    
 
     <!-- Mapa -->
     <div id="myMap" style="height: 100%; margin-top:84px;position: absolute">
