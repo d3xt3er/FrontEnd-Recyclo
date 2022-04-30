@@ -1,6 +1,15 @@
 body{
     overflow:hidden;
 }
+
+#nav{
+    background-color: #5ABE41;
+    display: initial;
+}
+#navMob{
+    background-color: #5ABE41;
+    display: none;
+}
 /*-- map config --*/
 .infobox {
     text-align: center;
@@ -182,32 +191,10 @@ form input{
 }
 
 @media only screen and (max-width:600px) {
-    #navMobMaps{
-        width: 200px;
-        position: absolute;
-        height: 380px;
-        list-style: none;
-        text-align: center;
-        padding: 10px;
-        background: rgba(245, 245, 245, 0.822);
-        left: 100%;
-        right: 0;
-        margin-left: 21vh;
+    #navMob{
+        display: initial;
     }
-    #navMobMaps li{
-        height: 75px;
-        width: 100%;
-        padding-top: 30px;
-        border-radius: 5px;
-    }
-    #navMobMaps li:hover{background: #5ABE41;}
-    #navMobMaps a{color: black;
-        text-decoration: none;
-        font-size: 25px;
-        letter-spacing: 2px;
-        font-weight: bolder;}
-
-    #btnDenuncia{
-        
+    #nav{
+        display:none ;
     }
     }
