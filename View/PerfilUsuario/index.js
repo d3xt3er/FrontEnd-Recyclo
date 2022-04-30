@@ -69,7 +69,7 @@ function alterarConta() {
                 type="password"     
                 class="txtEditar img"   
                 onclick="hiddenPassword()"  
-                value="${senha}">` +
+                value="${senha}" required>` +
             '<input id="formConfirmar" placeholder="Sua nova senha:" type="password" class="txtEditar" type="text">' +
             '</form>',
         showDenyButton: true,
