@@ -1,8 +1,11 @@
 #  **RECYCLO**
 
 <center>
-    <img src="View/img/LogoRecycloV1.png" height="200px">
+    <img src="Frecyclo.png" height="200px">
 </center>
+
+## Projeto Cancelado
+<hr>
 
 Um site voltado principalmente a localização de pontos de coleta de materiais reciclaveis, e denuncias de discarte ilegal pela cidade.
 
