@@ -1,7 +1,7 @@
 #  **RECYCLO**
 
 <center>
-    <img src="Frecyclo.png" height="200px">
+    <img src="Frecyclo.png">
 </center>
 
 ## Projeto Cancelado
